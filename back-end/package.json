@@ -1,0 +1,25 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "nodemon ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-load": "^1.1.16",
+    "express-router": "0.0.1",
+    "http": "0.0.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "nodemon": "^1.18.4",
+    "sequelize": "^4.38.0"
+  }
+}
