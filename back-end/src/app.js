@@ -27,5 +27,8 @@ app.use(function (req, res, next) {
 
 
 const produtos = require('./../src/routes/produtos');
+const categorias = require('./../src/routes/categorias');
 app.use('/produtos', produtos);
+
+app.use('/categorias', categorias);
 module.exports = app;

@@ -35,3 +35,23 @@ exports.listarUm = async (req, res) => {
         res.status(500).send(e.message);
     }
 }
+
+exports.excluirUm = async (req, res) => {
+    try {
+        await repository.atualizarUm(req, res);
+        const resposta = await repository.excluirUm(req, res);
+        res.status(200).send(resposta);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
+}
+
+exports.pegarFornecedor= async (req, res) => {
+    try {
+        const resposta = await repository.pegarFornecedor(req, res);
+        res.status(200).send(resposta);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
+}
+
