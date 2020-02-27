@@ -241,8 +241,8 @@ section {
     position: relative;
 }
 
-.bg-black{
-   background-color:  #181a1b;
+.bg-black {
+    background-color: #181a1b;
 }
 
 
@@ -434,7 +434,7 @@ section {
 }
 
 .register-link>p>a {
-    color: #08e613;
+    color: #1000e9;
 }
 
 .fontawesome-list-wrap {
@@ -857,9 +857,18 @@ section {
     }
     */
 }
+/*------------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+    .botaomargin {
+        margin-bottom: 15px;
+    }
+
+}
+
 .modal-backdrop {
     z-index: -2;
-  }
+}
+
 .au-btn--submit {
     position: relative;
     right: 0;
@@ -1828,7 +1837,7 @@ section {
 .navbar-mobile-sub__list {
     display: none;
     padding-left: 30px;
-   
+
 }
 
 .header-mobile .navbar-mobile .navbar-mobile-sub__list li a {
