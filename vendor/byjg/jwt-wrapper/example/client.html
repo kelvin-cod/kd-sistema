@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Jwt</title>
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/site.js"></script>
+</head>
+<body>
+
+<script>
+    $(function() {
+        $("#btnLogin").click(function(e) {
+            e.preventDefault();
+            app.doLogin();
+        });
+
+        $("#btnCallApi").click(function(e){
+            e.preventDefault();
+            app.callApi();
+        });
+
+        $("#btnLogout").click(function(e){
+            e.preventDefault();
+            app.doLogout();
+        });
+    });
+</script>
+
+<input id="btnLogin" type="button" value="Login"  /><br/>
+
+<input id="btnCallApi" type="button" value="Call to API"  /><br/>
+
+<input id="btnLogout" type="button" value="Logout"  /><br/>
+
+<div id="result"></div>
+
+</body>
+</html>
