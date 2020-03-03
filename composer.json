@@ -1,5 +1,0 @@
-{
-    "require": {
-        "byjg/jwt-session": "2.0.*"
-    }
-}

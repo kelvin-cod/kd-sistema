@@ -6,8 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="au theme template" />
-  <meta name="author" content="Hau Nguyen" />
+  <meta name="author" content="KD devs" />
   <meta name="keywords" content="au theme template" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <!-- Title Page-->
   <title>Dashboard</title>
 
@@ -37,11 +38,11 @@
   <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
-      <div class="header-mobile__bar">
-        <div class="container-fluid">
+      <div class="header-mobile__bar bg-black">
+        <div class="container-fluid ">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="images/icon/logo.png" alt="CoolAdmin" />
+              <img src="images/kd_sistema_blue.png" alt="KD Gerenciador" style="width: 200px; height: auto;" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
@@ -77,26 +78,26 @@
               </ul>
             </li>
             <li>
-              <a href="chart.html"> <i class="fas fa-chart-bar"></i>Charts</a>
+              <a href="chart.html"> <i class="fas fa-chart-bar"></i>gráficos</a>
             </li>
             <li>
-              <a href="table.html"> <i class="fas fa-table"></i>Tables</a>
+              <a href="table.html"> <i class="fas fa-table"></i>Tabelas</a>
             </li>
             <li>
               <a href="form.html">
-                <i class="far fa-check-square"></i>Forms</a>
+                <i class="far fa-check-square"></i>Formulários</a>
             </li>
             <li>
               <a href="calendar.html">
-                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                <i class="fas fa-calendar-alt"></i>Calendario</a>
             </li>
             <li>
               <a href="map.html">
-                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                <i class="fas fa-map-marker-alt"></i>Mapas</a>
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-copy"></i>Pages</a>
+                <i class="fas fa-copy"></i>Pagínas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="produtos.html">Produtos</a>
@@ -161,7 +162,7 @@
     <aside class="menu-sidebar d-none d-lg-block">
       <div class="logo">
         <a href="#">
-          <img src="images/icon/logo.png" alt="Cool Admin" />
+          <img src="images/kd_sistema_blue.png" alt="KD Gerenciador" />
         </a>
       </div>
       <div class="menu-sidebar__content js-scrollbar1 text-white">
@@ -189,26 +190,26 @@
               <a href="stock.html"> <i class="fas fa-box"></i>Estoque</a>
             </li>
             <li>
-              <a href="chart.html"> <i class="fas fa-chart-bar"></i>Charts</a>
+              <a href="chart.html"> <i class="fas fa-chart-bar"></i>Gráficos</a>
             </li>
             <li>
-              <a href="table.html"> <i class="fas fa-table"></i>Tables</a>
+              <a href="table.html"> <i class="fas fa-table"></i>Tabelas</a>
             </li>
             <li>
               <a href="form.html">
-                <i class="far fa-check-square"></i>Forms</a>
+                <i class="far fa-check-square"></i>Formúlarios</a>
             </li>
             <li>
               <a href="calendar.html">
-                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                <i class="fas fa-calendar-alt"></i>Caléndarios</a>
             </li>
             <li>
               <a href="map.html">
-                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                <i class="fas fa-map-marker-alt"></i>Mapas</a>
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-copy"></i>Pages</a>
+                <i class="fas fa-copy"></i>Pagínas</a>
               <ul class="list-unstyled navbar__sub-list js-sub-list">
                 <li>
                   <a href="produtos.html">Produtos</a>
@@ -405,7 +406,7 @@
                       <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                     </div>
                     <div class="content">
-                      <a class="js-acc-btn" href="#">john doe</a>
+                      <a class="js-acc-btn text-white" href="#" id="usuario_nome"></a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                       <div class="info clearfix">
@@ -436,7 +437,7 @@
                         </div>
                       </div>
                       <div class="account-dropdown__footer">
-                        <a href="#"> <i class="zmdi zmdi-power"></i>Logout</a>
+                        <a href="login.html" id="logout"> <i class="zmdi zmdi-power"></i>Logout</a>
                       </div>
                     </div>
                   </div>
@@ -1034,6 +1035,26 @@
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+  <script>
+    var novaURL = "login.html";
+    window.onload = function () {
+      var user = {};
+      if (sessionStorage.user == null) {
+        $(window.document.location).attr('href', novaURL);
+        // 
+     
+        //
+     
+      }else{
+      
+        user = JSON.parse(sessionStorage.getItem("user"));
+        console.log(user)
+        document.getElementById("usuario_nome").innerHTML = user.Nome
+      }
+
+
+    }
+  </script>
 </body>
 
 </html>
