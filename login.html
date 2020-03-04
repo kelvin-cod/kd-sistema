@@ -33,7 +33,11 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
+   <style>
+       .container{
+           height: 1000px;
+       }
+   </style>
 </head>
 
 <body class="animsition">
@@ -42,24 +46,24 @@
             <div class="container">
 
                 <div class="login-wrap">
-                    <div class="login-conten bg-white">
+                    <div class="bg-white">
                         <h2 class="text-info  text-center pt-2 mb-2">LOGIN</h2>
                         <div class="login-logo bg-black">
                             <a href="#">
                                 <img src="./images/kd_sistema_blue.png" alt="KD Sistema">
                             </a>
                         </div>
-                        <div class="login-form ml-3 mr-3">
+                        <div class="login-form ml-3 mr-3 login-content ">
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>Email </label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email"
-                                        id="email">
+                                        id="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Senha</label>
                                     <input class="au-input au-input--full" type="password" name="password"
-                                        placeholder="Senha" id="password">
+                                        placeholder="Senha" id="password" required>
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
@@ -72,7 +76,8 @@
 
                                 <div class="mt-4">
                                     <button class="au-btn au-btn--block btn-info m-b-20" type="button"
-                                        id="login"><b></b>
+                                        id="login" >
+                                        <b>
                                         Entrar</b>
 
                                     </button>
@@ -88,7 +93,7 @@
                                 </div>
                             -->
                             </form>
-                            <div class="register-link">
+                            <div class="register-link pb-3">
                                 <p>
                                     Não tem uma conta?
                                     <a href="register.html">Cadastre-se aqui</a>
@@ -155,6 +160,7 @@
 
                 });
             */
+          
             $.ajax({
                 url: post_url,
                 type: 'POST',

@@ -136,7 +136,7 @@ function fazerRequisicaoUM(id) {
     }).done(function (response) { //
 
         $('#DescricaoA').val(response[0].Descricao);
-        $('#ValorA').val(response[0].Valor);
+        $('#ValorA').val(response[0].Valor_Venda);
         $('#fornecedorum option[value= ' + response[0].idFornecedor + ' ]').attr('selected', 'selected');
         $('#categoriaum option[value= ' + response[0].idCategoria + ' ]').attr('selected', 'selected');
     })
