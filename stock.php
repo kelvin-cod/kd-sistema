@@ -161,7 +161,7 @@
     </header>
     <!-- END HEADER MOBILE-->
 
-    <!-- MENU SIDEBAR-->
+    <!-- MENU SIDEBAR
     <aside class="menu-sidebar d-none d-lg-block">
       <div class="logo">
         <a href="#">
@@ -274,8 +274,12 @@
         </nav>
       </div>
     </aside>
-    <!-- END MENU SIDEBAR-->
-
+    END MENU SIDEBAR-->
+   <?
+   require('menu.html')
+   ?>
+  
+    <div id="menu"> </div>
     <!-- PAGE CONTAINER-->
     <div class="page-container">
       <!-- HEADER DESKTOP-->
@@ -693,6 +697,11 @@
 
   <!-- Jquery JS-->
   <script src="vendor/jquery-3.2.1.min.js"></script>
+  <script> 
+    $(function(){
+      $("#includedContent").load("menu.html"); 
+    });
+    </script> 
   <!-- Bootstrap JS-->
   <script src="vendor/bootstrap-4.1/popper.min.js"></script>
   <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -710,7 +719,9 @@
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
-
+ <script>
+   $("#menu").append("./menu.html")
+ </script>
   <script src="js/estoque.js"></script>
 </body>
 
