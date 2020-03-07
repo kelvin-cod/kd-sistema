@@ -1571,7 +1571,7 @@
       event.stopPropagation();
     });
 
-    $("body,html").on("click", function () {
+    $("body.html").on("click", function () {
       right_sidebar.removeClass("show-sidebar");
 
     });
