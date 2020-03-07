@@ -866,7 +866,7 @@ section {
 }
 
 .modal-backdrop {
-    z-index: -2;
+    z-index: -1;
 }
 
 .au-btn--submit {
