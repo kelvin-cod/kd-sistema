@@ -4804,14 +4804,13 @@ section {
 .copyright {
     text-align: center;
     padding: 60px 0;
-    padding-top: 20px;
-    background-color: white;
+    padding-top:30px;
     width: 100%;
 }
 
 .copyright p {
     font-size: 14px;
-    color: #666;
+    color: rgb(255, 255, 255);
     line-height: -webkit-calc(24/14);
     line-height: -moz-calc(24/14);
     line-height: calc(24/14);
