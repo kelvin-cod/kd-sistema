@@ -31,6 +31,7 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/theme2.css" rel="stylesheet" media="all" />
 </head>
 
 <body class="animsition">
@@ -458,110 +459,126 @@
                 <!-- <h3 class="title-5 m-b-35">Balcão de Vendas</h3> -->
                 <div class="login-logo1 card-header1" style="border: 1px solid grey;">
                   <a href="#">
-                    <p style="font-size: 24px; color: rgb(8, 8, 8); font-weight: bold; margin-left: 5px;" >Balcão de
+                    <p style="font-size: 24px; color: rgb(8, 8, 8); font-weight: bold; margin-left: 5px;">Balcão de
                       Vendas</p>
-                  </a>                 
+                  </a>
                 </div>
-                <div class="balcao-form" style="border: 1px solid grey;"> 
-                <div class="table-responsive table-responsive-data2">
-                  <table class="table table-data2">
-                    <thead>
-                      <tr>
-                        <th>
-                          <label class="au-checkbox">
-                            <input type="checkbox">
-                            <span class="au-checkmark"></span>
-                          </label>
-                        </th>
-                        <th>Descrção Produto</th>
-                        <th>$ Unitário</th>
-                        <th>Quantidade</th>
-                        <th>SubTotal</th>                       
-                      </tr>
-                      <div class="form-group col-md-2">
-                        <input class="au-input au-input--full" type="number" name="numero_pedido" placeholder="00001">
-                      </div>                    
-                    </thead>
-                    <tbody>
-                      <div class="section__content section__content--p30">
-                        <div class="container-fluid">
-                          <form action="" method="post">
-                            <div class="row">
-                              <div class="form-group col-md-10"></div>                              
-                            </div>
-                            <div class="row">
-                              <div class="form-group col-md-6">
-                                <label>Cliente</label>
-                                <input class="au-input au-input--full" type="text" name="cliente" placeholder="Nome Cliente">
-                              </div>
-                              <div class="form-group col-md-3">
-                                <label>Data</label>
-                                <input class="au-input au-input--full" type="date" name="data" placeholder="Data">
-                              </div>
-                              <div class="form-group col-md-3">
-                                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                  <i class="zmdi zmdi-plus"></i>add item</button>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="form-group col-md-5">
-                                <label>Produto</label>
-                                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
-                                <input class="au-input au-input--full" type="text" name="descricao" placeholder="Descrição">
-                                <input class="au-input au-input--full" type="text" name="observacao"
-                                  placeholder="Obs deste Produto ">
-            
-                              </div>
-                              <div class="form-group col-md-2">
-                                <label>$ Unitário</label>
-                                <input class="au-input au-input--full" type="money" name="valor" placeholder="R$ Unitário">
-                              </div>
-                              <div class="form-group col-md-2">
-                                <label>Quantidade</label>
-                                <input class="au-input au-input--full" type="money" name="quantidade" placeholder="Qtd">
-                              </div>
-                              <div class="form-group col-md-3">
-                                <label>Sub Total</label>
-                                <input class="au-input au-input--full" type="money" name="sub_total" placeholder="Sub_Total">
-                              </div>
-                            </div>
-                      <tr class="tr-shadow">
-                        <td>
-                          <label class="au-checkbox">
-                            <input type="checkbox">
-                            <span class="au-checkmark"></span>
-                          </label>
-                        </td>
-                        <td class="desc">Lanche N1</td>
-                        <td>$9.00</td>
-                        <td>2</td>
-                        <td>$18.00</td>
-
-                        <td>
-                          <div class="table-data-feature">
-                            
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                              <i class="zmdi zmdi-edit"></i>
-                            </button>
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                              <i class="zmdi zmdi-delete"></i>
-                            </button>
-                            
+                <div class="balcao-form" style="border: 1px solid grey;">
+                  <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                      <thead>
+                        <tr>
+                          <th>
+                            <label class="au-checkbox">
+                              <input type="checkbox">
+                              <span class="au-checkmark"></span>
+                            </label>
+                          </th>
+                          <th>Descrção Produto</th>
+                          <th>$ Unitário</th>
+                          <th>Quantidade</th>
+                          <th>SubTotal</th>
+                        </tr>
+                        <div class="row">
+                          <div class="form-group col-md-10"></div>
+                          <div class="form-group col-md-2">
+                            <input class="au-input au-input--full" type="number" name="numero_pedido"
+                              placeholder="00001" st>
                           </div>
-                        </td>
-                      </tr>
-                      <tr class="spacer"></tr>
+                        </div>
+                      </thead>
+                      <tbody>
+                        <div class="section__content section__content--p30">
+                          <div class="container-fluid">
+                            <form action="" method="post">
+                              <div class="row">
+                                <div class="form-group col-md-10"></div>
+                              </div>
+                              <div class="row">
+                                <div class="form-group col-md-6">
+                                  <label>Cliente</label>
+                                  <input class="au-input au-input--full" type="text" name="cliente"
+                                    placeholder="Nome Cliente">
+                                </div>
+                                <div class="form-group col-md-3">
+                                  <label>Data</label>
+                                  <input class="au-input au-input--full" type="date" name="data" placeholder="Data">
+                                </div>
+                                <div class="form-group col-md-3">
+                                  <button class="au-btn1 au-btn-icon au-btn--green au-btn--small1"
+                                    style="margin-top: 40px;">
+                                    <i class="zmdi zmdi-plus"></i>add item</button>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="form-group col-md-4">
+                                  <label>Produto</label>
+                                  <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
+                                  <input class="au-input au-input--full" type="text" name="descricao"
+                                    placeholder="Descrição">
+                                  <input class="au-input au-input--full" type="text" name="observacao"
+                                    placeholder="Obs deste Produto ">
 
-                    </tbody>
-                  </table>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>$ Unitário</label>
+                                  <input class="au-input au-input--full" type="money" name="valor"
+                                    placeholder="R$ Unitário">
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>Quantidade</label>
+                                  <input class="au-input au-input--full" type="money" name="quantidade"
+                                    placeholder="Qtd">
+                                </div>
+                                <div class="form-group col-md-3">
+                                  <label>Sub Total</label>
+                                  <input class="au-input au-input--full" type="money" name="sub_total"
+                                    placeholder="Sub_Total">
+                                </div>
+                              </div>
+                              <tr class="tr-shadow">
+                                <td>
+                                  <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                  </label>
+                                </td>
+                                <td class="desc">Lanche N1</td>
+                                <td>$9.00</td>
+                                <td>2</td>
+                                <td>$18.00</td>
+
+                                <td>
+                                  <div class="table-data-feature">
+
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                      <i class="zmdi zmdi-edit"></i>
+                                    </button>
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                      <i class="zmdi zmdi-delete"></i>
+                                    </button>
+
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="spacer"></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row form-group col-md-12">
+                    <button class="btn btn-danger btn-sm col-md-2">Cancelar</button>
+                    <div class="form-group col-md-8"></div>
+                    <button class="btn btn-warning btn-sm col-md-2">Concluir Pedido</button>
+                  </div>
+
+                  <!-- END DATA TABLE -->
                 </div>
-                <!-- END DATA TABLE -->
               </div>
-            </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div class="copyright">
+                <div class="copyright1">
                   <p>
                     <span style="color:blue;">S</span>istema
                     <span style="color: blue;">G</span>erenciador
