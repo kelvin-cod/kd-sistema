@@ -857,12 +857,12 @@ section {
     }
     */
 }
+
 /*------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 767px) {
     .botaomargin {
         margin-bottom: 15px;
     }
-
 }
 
 .modal-backdrop {
@@ -4804,7 +4804,7 @@ section {
 .copyright {
     text-align: center;
     padding: 60px 0;
-    padding-top:30px;
+    padding-top: 30px;
     width: 100%;
 }
 

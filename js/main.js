@@ -1595,6 +1595,13 @@
   }
 
 
+    // includeHTML();
+    $(document).ready(function () {
+      $.get("menu.html", function (data) {
+        $(".menu-html").append(data);
+      });
+    })
+
   try {
     // Hamburger Menu
     $('.hamburger').on('click', function () {
