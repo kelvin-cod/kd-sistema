@@ -1,4 +1,3 @@
-
 (function ($) {
   // USE STRICT
   "use strict";
@@ -18,7 +17,7 @@
             label: 'Dataset',
             backgroundColor: 'rgba(255,255,255,.1)',
             borderColor: 'rgba(255,255,255,.55)',
-          },]
+          }, ]
         },
         options: {
           maintainAspectRatio: true,
@@ -84,7 +83,7 @@
             label: 'Dataset',
             backgroundColor: 'transparent',
             borderColor: 'rgba(255,255,255,.55)',
-          },]
+          }, ]
         },
         options: {
 
@@ -155,7 +154,7 @@
             label: 'Dataset',
             backgroundColor: 'transparent',
             borderColor: 'rgba(255,255,255,.55)',
-          },]
+          }, ]
         },
         options: {
 
@@ -219,15 +218,13 @@
         type: 'bar',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: "rgba(255,255,255,.3)"
-            }
-          ]
+          datasets: [{
+            label: "My First dataset",
+            data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "rgba(255,255,255,.3)"
+          }]
         },
         options: {
           maintainAspectRatio: true,
@@ -263,8 +260,7 @@
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
-          datasets: [
-            {
+          datasets: [{
               label: 'My First dataset',
               backgroundColor: brandService,
               borderColor: 'transparent',
@@ -338,27 +334,25 @@
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
-          ],
+          datasets: [{
+            label: "My First dataset",
+            data: [60, 40],
+            backgroundColor: [
+              '#00b5e9',
+              '#fa4251'
+            ],
+            hoverBackgroundColor: [
+              '#00b5e9',
+              '#fa4251'
+            ],
+            borderWidth: [
+              0, 0
+            ],
+            hoverBorderColor: [
+              'transparent',
+              'transparent'
+            ]
+          }],
           labels: [
             'Products',
             'Services'
@@ -410,8 +404,7 @@
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
-          datasets: [
-            {
+          datasets: [{
               label: 'My First dataset',
               backgroundColor: brandService2,
               borderColor: bd_brandService2,
@@ -504,8 +497,7 @@
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', ''],
-          datasets: [
-            {
+          datasets: [{
               label: 'My First dataset',
               backgroundColor: brandService3,
               borderColor: bd_brandService3,
@@ -585,15 +577,13 @@
         type: 'bar',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [78, 81, 80, 64, 65, 80, 70, 75, 67, 85, 66, 68],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: "#ccc",
-            }
-          ]
+          datasets: [{
+            label: "My First dataset",
+            data: [78, 81, 80, 64, 65, 80, 70, 75, 67, 85, 66, 68],
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "#ccc",
+          }]
         },
         options: {
           maintainAspectRatio: true,
@@ -627,27 +617,25 @@
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
-          ],
+          datasets: [{
+            label: "My First dataset",
+            data: [60, 40],
+            backgroundColor: [
+              '#00b5e9',
+              '#fa4251'
+            ],
+            hoverBackgroundColor: [
+              '#00b5e9',
+              '#fa4251'
+            ],
+            borderWidth: [
+              0, 0
+            ],
+            hoverBorderColor: [
+              'transparent',
+              'transparent'
+            ]
+          }],
           labels: [
             'Products',
             'Services'
@@ -805,7 +793,7 @@
             pointRadius: 5,
             pointBorderColor: 'transparent',
             pointBackgroundColor: 'rgba(0,103,255,0.5)',
-          },]
+          }, ]
         },
         options: {
           responsive: true,
@@ -883,8 +871,7 @@
         defaultFontFamily: 'Poppins',
         data: {
           labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-            {
+          datasets: [{
               label: "My First dataset",
               data: [65, 59, 80, 81, 56, 55, 40],
               borderColor: "rgba(0, 123, 255, 0.9)",
@@ -942,10 +929,12 @@
       var myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: [["Eating", "Dinner"], ["Drinking", "Water"], "Sleeping", ["Designing", "Graphics"], "Coding", "Cycling", "Running"],
+          labels: [
+            ["Eating", "Dinner"],
+            ["Drinking", "Water"], "Sleeping", ["Designing", "Graphics"], "Coding", "Cycling", "Running"
+          ],
           defaultFontFamily: 'Poppins',
-          datasets: [
-            {
+          datasets: [{
               label: "My First dataset",
               data: [65, 59, 66, 45, 56, 55, 40],
               borderColor: "rgba(0, 123, 255, 0.6)",
@@ -994,8 +983,7 @@
         data: {
           labels: ["January", "February", "March", "April", "May", "June", "July"],
           defaultFontFamily: "Poppins",
-          datasets: [
-            {
+          datasets: [{
               label: "My First dataset",
               borderColor: "rgba(0,0,0,.09)",
               borderWidth: "1",
@@ -1208,15 +1196,13 @@
         type: 'bar',
         data: {
           labels: ["Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat"],
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [40, 55, 75, 81, 56, 55, 40],
-              borderColor: "rgba(0, 123, 255, 0.9)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0, 123, 255, 0.5)"
-            }
-          ]
+          datasets: [{
+            label: "My First dataset",
+            data: [40, 55, 75, 81, 56, 55, 40],
+            borderColor: "rgba(0, 123, 255, 0.9)",
+            borderWidth: "0",
+            backgroundColor: "rgba(0, 123, 255, 0.5)"
+          }]
         },
         options: {
           legend: {
@@ -1253,32 +1239,32 @@
 
 
 (function ($) {
-    // USE STRICT
-    "use strict";
-    $(".animsition").animsition({
-      inClass: 'fade-in',
-      outClass: 'fade-out',
-      inDuration: 900,
-      outDuration: 900,
-      linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])',
-      loading: true,
-      loadingParentElement: 'html',
-      loadingClass: 'page-loader',
-      loadingInner: '<div class="page-loader__spin"></div>',
-      timeout: false,
-      timeoutCountdown: 5000,
-      onLoadEvent: true,
-      browser: ['animation-duration', '-webkit-animation-duration'],
-      overlay: false,
-      overlayClass: 'animsition-overlay-slide',
-      overlayParentElement: 'html',
-      transition: function (url) {
-        window.location.href = url;
-      }
-    });
-  
-  
-  })(jQuery);
+  // USE STRICT
+  "use strict";
+  $(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-out',
+    inDuration: 900,
+    outDuration: 900,
+    linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])',
+    loading: true,
+    loadingParentElement: 'html',
+    loadingClass: 'page-loader',
+    loadingInner: '<div class="page-loader__spin"></div>',
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: ['animation-duration', '-webkit-animation-duration'],
+    overlay: false,
+    overlayClass: 'animsition-overlay-slide',
+    overlayParentElement: 'html',
+    transition: function (url) {
+      window.location.href = url;
+    }
+  });
+
+
+})(jQuery);
 (function ($) {
   // USE STRICT
   "use strict";
@@ -1287,8 +1273,8 @@
   try {
 
     var vmap = $('#vmap');
-    if(vmap[0]) {
-      vmap.vectorMap( {
+    if (vmap[0]) {
+      vmap.vectorMap({
         map: 'world_en',
         backgroundColor: null,
         color: '#ffffff',
@@ -1297,7 +1283,7 @@
         enableZoom: true,
         showTooltip: true,
         values: sample_data,
-        scaleColors: [ '#1de9b6', '#03a9f5'],
+        scaleColors: ['#1de9b6', '#03a9f5'],
         normalizeFunction: 'polynomial'
       });
     }
@@ -1308,10 +1294,10 @@
 
   // Europe Map
   try {
-    
+
     var vmap1 = $('#vmap1');
-    if(vmap1[0]) {
-      vmap1.vectorMap( {
+    if (vmap1[0]) {
+      vmap1.vectorMap({
         map: 'europe_en',
         color: '#007BFF',
         borderColor: '#fff',
@@ -1327,11 +1313,11 @@
 
   // USA Map
   try {
-    
+
     var vmap2 = $('#vmap2');
 
-    if(vmap2[0]) {
-      vmap2.vectorMap( {
+    if (vmap2[0]) {
+      vmap2.vectorMap({
         map: 'usa_en',
         color: '#007BFF',
         borderColor: '#fff',
@@ -1341,12 +1327,12 @@
         selectedColor: null,
         hoverColor: null,
         colors: {
-            mo: '#001BFF',
-            fl: '#001BFF',
-            or: '#001BFF'
+          mo: '#001BFF',
+          fl: '#001BFF',
+          or: '#001BFF'
         },
-        onRegionClick: function ( event, code, region ) {
-            event.preventDefault();
+        onRegionClick: function (event, code, region) {
+          event.preventDefault();
         }
       });
     }
@@ -1357,32 +1343,32 @@
 
   // Germany Map
   try {
-    
+
     var vmap3 = $('#vmap3');
-    if(vmap3[0]) {
-      vmap3.vectorMap( {
+    if (vmap3[0]) {
+      vmap3.vectorMap({
         map: 'germany_en',
         color: '#007BFF',
         borderColor: '#fff',
         backgroundColor: '#fff',
-        onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
+        onRegionClick: function (element, code, region) {
+          var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
 
-            alert( message );
+          alert(message);
         }
       });
     }
-    
+
   } catch (error) {
     console.log(error);
   }
-  
+
   // France Map
   try {
-    
+
     var vmap4 = $('#vmap4');
-    if(vmap4[0]) {
-      vmap4.vectorMap( {
+    if (vmap4[0]) {
+      vmap4.vectorMap({
         map: 'france_fr',
         color: '#007BFF',
         borderColor: '#fff',
@@ -1399,8 +1385,8 @@
   // Russia Map
   try {
     var vmap5 = $('#vmap5');
-    if(vmap5[0]) {
-      vmap5.vectorMap( {
+    if (vmap5[0]) {
+      vmap5.vectorMap({
         map: 'russia_en',
         color: '#007BFF',
         borderColor: '#fff',
@@ -1409,7 +1395,7 @@
         selectedColor: '#999999',
         enableZoom: true,
         showTooltip: true,
-        scaleColors: [ '#C8EEFF', '#006491' ],
+        scaleColors: ['#C8EEFF', '#006491'],
         normalizeFunction: 'polynomial'
       });
     }
@@ -1418,20 +1404,20 @@
   } catch (error) {
     console.log(error);
   }
-  
+
   // Brazil Map
   try {
-    
+
     var vmap6 = $('#vmap6');
-    if(vmap6[0]) {
-      vmap6.vectorMap( {
+    if (vmap6[0]) {
+      vmap6.vectorMap({
         map: 'brazil_br',
         color: '#007BFF',
         borderColor: '#fff',
         backgroundColor: '#fff',
-        onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
-            alert( message );
+        onRegionClick: function (element, code, region) {
+          var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
+          alert(message);
         }
       });
     }
@@ -1461,8 +1447,8 @@
             });
           }
         }, {
-            offset: 'bottom-in-view'
-          });
+          offset: 'bottom-in-view'
+        });
 
       });
     });
@@ -1477,8 +1463,8 @@
   // Scroll Bar
   try {
     var jscr1 = $('.js-scrollbar1');
-    if(jscr1[0]) {
-      const ps1 = new PerfectScrollbar('.js-scrollbar1');      
+    if (jscr1[0]) {
+      const ps1 = new PerfectScrollbar('.js-scrollbar1');
     }
 
     var jscr2 = $('.js-scrollbar2');
@@ -1524,12 +1510,11 @@
     for (var i = 0; i < menu.length; i++) {
       $(menu[i]).on('click', function (e) {
         e.preventDefault();
-        $('.js-right-sidebar').removeClass("show-sidebar");        
+        $('.js-right-sidebar').removeClass("show-sidebar");
         if (jQuery.inArray(this, menu) == sub_menu_is_showed) {
           $(this).toggleClass('show-dropdown');
           sub_menu_is_showed = -1;
-        }
-        else {
+        } else {
           for (var i = 0; i < menu.length; i++) {
             $(menu[i]).removeClass("show-dropdown");
           }
@@ -1554,28 +1539,28 @@
   }
 
   var wW = $(window).width();
-    // Right Sidebar
-    var right_sidebar = $('.js-right-sidebar');
-    var sidebar_btn = $('.js-sidebar-btn');
+  // Right Sidebar
+  var right_sidebar = $('.js-right-sidebar');
+  var sidebar_btn = $('.js-sidebar-btn');
 
-    sidebar_btn.on('click', function (e) {
-      e.preventDefault();
-      for (var i = 0; i < menu.length; i++) {
-        menu[i].classList.remove("show-dropdown");
-      }
-      sub_menu_is_showed = -1;
-      right_sidebar.toggleClass("show-sidebar");
-    });
+  sidebar_btn.on('click', function (e) {
+    e.preventDefault();
+    for (var i = 0; i < menu.length; i++) {
+      menu[i].classList.remove("show-dropdown");
+    }
+    sub_menu_is_showed = -1;
+    right_sidebar.toggleClass("show-sidebar");
+  });
 
-    $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
-      event.stopPropagation();
-    });
+  $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
+    event.stopPropagation();
+  });
 
-    $("body.html").on("click", function () {
-      right_sidebar.removeClass("show-sidebar");
+  $("body.html").on("click", function () {
+    right_sidebar.removeClass("show-sidebar");
 
-    });
- 
+  });
+
 
   // Sublist Sidebar
   try {
@@ -1595,12 +1580,12 @@
   }
 
 
-    // includeHTML();
-    $(document).ready(function () {
-      $.get("menu.html", function (data) {
-        $(".menu-html").append(data);
-      });
-    })
+  // includeHTML();
+  $(document).ready(function () {
+    $.get("menu.html", function (data) {
+      $(".menu-html").append(data);
+    });
+  })
 
   try {
     // Hamburger Menu
@@ -1650,7 +1635,7 @@
   "use strict";
 
   try {
-    
+
     $('[data-toggle="tooltip"]').tooltip();
 
   } catch (error) {
@@ -1661,14 +1646,14 @@
   try {
     var inbox_wrap = $('.js-inbox');
     var message = $('.au-message__item');
-    message.each(function(){
+    message.each(function () {
       var that = $(this);
 
-      that.on('click', function(){
+      that.on('click', function () {
         $(this).parent().parent().parent().toggleClass('show-chat-box');
       });
     });
-    
+
 
   } catch (error) {
     console.log(error);

@@ -6,10 +6,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="au theme template" />
-  <meta name="author" content="Hau Nguyen" />
+  <meta name="author" content="Kelvin/Diogo" />
   <meta name="keywords" content="au theme template" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <!-- Title Page-->
-  <title>Estoque</title>
+  <title>Vendas</title>
 
   <!-- Fontfaces CSS-->
   <link href="css/font-face.css" rel="stylesheet" media="all" />
@@ -31,6 +32,10 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/vendas.css" rel="stylesheet" media="all" />
+
+  <!-- Jquery JS-->
+  <script src="vendor/jquery-3.2.1.min.js"></script>
 </head>
 
 <body class="animsition">
@@ -157,7 +162,7 @@
     </header>
     <!-- END HEADER MOBILE-->
 
-    <!-- MENU SIDEBAR-->
+    <!-- MENU SIDEBAR
     <aside class="menu-sidebar d-none d-lg-block">
       <div class="logo">
         <a href="#">
@@ -270,8 +275,8 @@
         </nav>
       </div>
     </aside>
-    <!-- END MENU SIDEBAR-->
-
+    END MENU SIDEBAR-->
+    <div class="menu-html"></div>
     <!-- PAGE CONTAINER-->
     <div class="page-container">
       <!-- HEADER DESKTOP-->
@@ -405,7 +410,7 @@
                       <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                     </div>
                     <div class="content">
-                      <a class="js-acc-btn" href="#">john doe</a>
+                      <a class="js-acc-btn text-white usuario_nome" href="#" id="usuario_nome"></a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                       <div class="info clearfix">
@@ -451,16 +456,15 @@
       <!-- MAIN CONTENT-->
       <div class="main-content">
         <div class="section__content section__content--p30">
-          <div class="container-fluid">
+          <div class="container-fluid " style="background-color: rgb(211, 211, 211);">
             <div class="row">
               <div class="col-md-12">
                 <!-- DATA TABLE -->
                 <!-- <h3 class="title-5 m-b-35">Balcão de Vendas</h3> -->
-                <div class="login-logo1 card-header1" style="border: 1px solid grey;">
-                  <a href="#">
-                    <p style="font-size: 24px; color: rgb(8, 8, 8); font-weight: bold; margin-left: 5px;">Balcão de
-                      Vendas</p>
-                  </a>
+                <div class="login-logo1 card-header1 bg-info text-center " style="border: 1px solid grey;">
+                
+                    <h2 class="text-center text-white">Balcão de Vendas</h2>
+               
                 </div>
                 <div class="balcao-form" style="border: 1px solid grey;">
                   <div class="table-responsive table-responsive-data2">
@@ -469,18 +473,18 @@
                         <div class="row ">
                           <tr class="text-center text-white">
 
-                            <th>Descrção Produto</th>
+                            <th>Descrição Produto</th>
                             <th>Obs</th>
-                            <th>$ Unitário</th>
+                            <th>R$ Unitário</th>
                             <th>Quantidade</th>
                             <th>SubTotal</th>
                           </tr>
                         </div>
                         <div class="row">
-                          <div class="form-group col-md-10"></div>
-                          <div class="form-group col-md-2">
-                            <input class="au-input au-input--full" type="number" name="numero_pedido"
-                              placeholder="00001" st>
+
+                          <div class="form-group offset-md-10 col-md-2  mt-2">
+                            <input class="au-input au-input--full bg-white text-center" type="number"
+                              name="numero_pedido" placeholder="00001" disabled>
                           </div>
                         </div>
                       </thead>
@@ -533,8 +537,8 @@
                                     placeholder="Sub_Total">
                                 </div>
                                 <!-- </div> -->
-                                <div class="row  ">
-                                  <tr class="tr-shadow text-center">
+                                <div class="row bg-white ">
+                                  <tr class="tr-shadow text-center font-weight-bold">
 
                                     <td class="desc">Lanche N1</td>
                                     <td>Sem Mostarda</td>
@@ -576,20 +580,30 @@
                     <button type="button" class="btn btn-info col-md-1-2">Concluir Pedido</button>
 
                   </div>
-                  <div class="form-group col-md-12 mt-5
-                   copyright1 bg-dark text-white">
-                    <p>
-                      <span style="color:blue;">S</span>istema
-                      <span style="color: blue;">G</span>erenciador
-                      <a href="#">KD</a>
-                    </p>
-                  </div>
+
                 </div>
 
 
                 <!-- END DATA TABLE -->
+
               </div>
             </div>
+            <footer class="footer navbar-fixed-bottom">
+              <div class="row mt-5 bg-black">
+                <div class="col-md-12 ">
+                  <div class="copyright ">
+                    <p>
+                      Copyright © 2020 KD. All rights reserved. <br>
+                      <span class="text-info">KD</span>
+                      <span class="text-info">S</span>istema
+                      <span class="text-info">G</span>erenciador
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </footer>
           </div>
         </div>
       </div>
@@ -599,8 +613,6 @@
   </div>
   </div>
 
-  <!-- Jquery JS-->
-  <script src="vendor/jquery-3.2.1.min.js"></script>
   <!-- Bootstrap JS-->
   <script src="vendor/bootstrap-4.1/popper.min.js"></script>
   <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -615,9 +627,10 @@
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
   <script src="vendor/select2/select2.min.js"></script>
-
+  <script src="js/allpages.js"> </script>
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
 </body>
 
 </html>

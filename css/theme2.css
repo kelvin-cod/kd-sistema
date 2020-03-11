@@ -376,11 +376,6 @@ section {
     margin-bottom: 30px;
 }
 
-.login-logo1 {
-    text-align: left;
-    margin-bottom: 30px;
-}
-
 .login-checkbox {
     display: -webkit-box;
     display: -webkit-flex;
@@ -467,8 +462,6 @@ section {
     margin-right: 10px;
 }
 
-
-
 .fa-hover a:hover {
     color: #333;
 }
@@ -496,20 +489,6 @@ section {
     cursor: pointer;
 }
 
-.au-btn1 {
-    line-height: -45px;
-    padding: 0 -35px;
-    text-transform: uppercase;
-    color: #fff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 .au-btn:hover {
     color: #fff;
     background: #3868cd;
@@ -529,11 +508,6 @@ section {
 }
 
 .au-btn-icon i {
-    vertical-align: baseline;
-    margin-right: 5px;
-}
-
-.au-btn-icon1 i {
     vertical-align: baseline;
     margin-right: 5px;
 }
@@ -616,12 +590,6 @@ section {
 }
 
 .au-btn--small {
-    padding: 0 20px;
-    line-height: 40px;
-    font-size: 14px;
-}
-
-.au-btn--small1 {
     padding: 0 20px;
     line-height: 40px;
     font-size: 14px;
@@ -889,12 +857,12 @@ section {
     }
     */
 }
+
 /*------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 767px) {
     .botaomargin {
         margin-bottom: 15px;
     }
-
 }
 
 .modal-backdrop {
@@ -1227,14 +1195,6 @@ section {
 
 .card {
     margin-bottom: 30px;
-}
-
-
-.card-header1 {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgb(127, 243, 218);
-    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .input-group-addon {
@@ -4429,11 +4389,6 @@ section {
     }
 }
 
-.table {
-    width: 97% !important;
-
-    
-}
 .table-style1 {
     max-width: 280px;
     margin-bottom: 30px;
