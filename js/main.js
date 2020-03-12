@@ -1,4 +1,10 @@
 (function ($) {
+    // includeHTML();
+    $(document).ready(function () {
+      $.get("menu.html", function (data) {
+        $(".menu-html").append(data);
+      });
+    })
   // USE STRICT
   "use strict";
 
@@ -1579,13 +1585,6 @@
     console.log(error);
   }
 
-
-  // includeHTML();
-  $(document).ready(function () {
-    $.get("menu.html", function (data) {
-      $(".menu-html").append(data);
-    });
-  })
 
   try {
     // Hamburger Menu

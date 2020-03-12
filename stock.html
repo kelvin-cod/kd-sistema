@@ -278,7 +278,7 @@
       </div>
     </aside>
     END MENU SIDEBAR-->
-    <div  class="menu-html"> </div>
+    <div class="menu-html"> </div>
     <!-- PAGE CONTAINER-->
     <div class="page-container">
       <!-- HEADER DESKTOP-->
@@ -410,7 +410,7 @@
                   <div class="account-item clearfix js-item-menu">
 
                     <div class="image">
-                      <img src="./images/icon/avatar-01.jpg"  alt="Avatar" />
+                      <img src="./images/icon/avatar-01.jpg" alt="Avatar" />
                     </div>
                     <div class="content">
                       <a class="js-acc-btn text-white usuario_nome" href="#" id="usuario_nome"></a>
@@ -455,248 +455,246 @@
         </div>
       </header>
       <!-- HEADER DESKTOP-->
+      <div class="modal fade" style="margin-top: 190px;" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-black">
+              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Novo Produto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
+                <div>
+                  <div>
+                    <label for="">Descrição</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" id="Descricao" name="" aria-label="Recipient's "
+                        aria-describedby="my-addon">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="des">Descrição</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Valor</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" name="" id="Valor" aria-label="Recipient's "
+                        aria-describedby="my-addon">
+                      <div class="input-group-append">
+                        <span class="input-group-text">Valor(R$)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Categoria</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="categoria">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
 
+                        <div class="input-group-append">
+                          <span class="input-group-text">Categoria</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Fornecedor</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="fornecedor">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
+
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="forn">Fornecedor</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-primary" id="submit" name="submit">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="atualizarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-black">
+              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Atualizar Produto</h5>
+              <button type="button" class="close " style="color: aliceblue;" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
+                <div>
+                  <div>
+                    <label for="">Descrição</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" id="DescricaoA" name="">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="des">Descrição</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Valor</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" name="" id="ValorA">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">Valor(R$)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Categoria</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="categoriaum">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
+
+                        <div class="input-group-append">
+                          <span class="input-group-text">Categoria</span>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Fornecedor</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="fornecedorum">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
+
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="forn">Fornecedor</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modalFornecedor" tabindex="-1" role="dialog"
+        aria-labelledby="fornecedorModal aria-hidden=" true>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-black" style="color: aliceblue;">
+              <h5 class="modal-title text-white" id="fornecedorModal"> Novo Fornecedor</h5>
+              <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
+                <div>
+                  <div>
+                    <label for="">Descrição</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" id="DescricaoA" name="">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="des">Descrição</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Valor</label>
+                    <div class="input-group">
+                      <input class="form-control" type="text" name="" id="ValorA">
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">Valor(R$)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Categoria</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="categoriaum">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
+
+                        <div class="input-group-append">
+                          <span class="input-group-text">Categoria</span>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div>
+                    <label for="">Fornecedor</label>
+                    <div class="input-group">
+                      <select class="form-control" name="" id="fornecedorum">
+                        <option value=""></option>
+                      </select>
+                      <div class="form-group">
+
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="forn">Fornecedor</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- MAIN CONTENT-->
       <div class="main-content">
         <div class="section__content section__content--p30">
-      
-          <div class="container-fluid "  style="background-color: rgb(211, 211, 211);">
-            <div class="mb-4">
-              <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
-            </div>
-          
-            <div class="modal fade" style="margin-top: 190px;" id="exampleModalCenter" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header bg-black">
-                    <h5 class="modal-title text-white" id="exampleModalCenterTitle">Novo Produto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
-                      <div>
-                        <div>
-                          <label for="">Descrição</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" id="Descricao" name="" aria-label="Recipient's "
-                              aria-describedby="my-addon">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="des">Descrição</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Valor</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" name="" id="Valor" aria-label="Recipient's "
-                              aria-describedby="my-addon">
-                            <div class="input-group-append">
-                              <span class="input-group-text">Valor(R$)</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Categoria</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="categoria">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
 
-                              <div class="input-group-append">
-                                <span class="input-group-text">Categoria</span>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Fornecedor</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="fornecedor">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
-
-                              <div class="input-group-append">
-                                <span class="input-group-text" id="forn">Fornecedor</span>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
+          <div class="container-fluid " style="background-color: rgb(211, 211, 211); ">
 
 
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Salvar</button>
-                  </div>
-                </div>
+
+            <div class="" style="border: black 1px solid;">
+              <div class="mb-5">
+                <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
               </div>
-            </div>
-
-            <div class="modal fade" id="atualizarModal" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header bg-black">
-                    <h5 class="modal-title text-white" id="exampleModalCenterTitle">Atualizar Produto</h5>
-                    <button type="button" class="close " style="color: aliceblue;" data-dismiss="modal"
-                      aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put"
-                      id="formProduto">
-                      <div>
-                        <div>
-                          <label for="">Descrição</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" id="DescricaoA" name="">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="des">Descrição</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Valor</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" name="" id="ValorA">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="my-addon">Valor(R$)</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Categoria</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="categoriaum">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
-
-                              <div class="input-group-append">
-                                <span class="input-group-text">Categoria</span>
-
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Fornecedor</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="fornecedorum">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
-
-                              <div class="input-group-append">
-                                <span class="input-group-text" id="forn">Fornecedor</span>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-
-
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal fade" id="modalFornecedor" tabindex="-1" role="dialog"
-              aria-labelledby="fornecedorModal aria-hidden=" true>
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header bg-black" style="color: aliceblue;">
-                    <h5 class="modal-title text-white" id="fornecedorModal"> Novo Fornecedor</h5>
-                    <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put"
-                      id="formProduto">
-                      <div>
-                        <div>
-                          <label for="">Descrição</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" id="DescricaoA" name="">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="des">Descrição</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Valor</label>
-                          <div class="input-group">
-                            <input class="form-control" type="text" name="" id="ValorA">
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="my-addon">Valor(R$)</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Categoria</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="categoriaum">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
-
-                              <div class="input-group-append">
-                                <span class="input-group-text">Categoria</span>
-
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                        <div>
-                          <label for="">Fornecedor</label>
-                          <div class="input-group">
-                            <select class="form-control" name="" id="fornecedorum">
-                              <option value=""></option>
-                            </select>
-                            <div class="form-group">
-
-                              <div class="input-group-append">
-                                <span class="input-group-text" id="forn">Fornecedor</span>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-
-
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="">
               <!-- STATISTIC-->
               <section>
 
-                <div class="row mb-4 d-flex justify-content-between">
+                <div class="row mb-5  d-flex justify-content-between mr-3 ml-3">
 
                   <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
                     <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
@@ -721,38 +719,39 @@
 
                 </div>
 
-              </section>
-              <!-- END STATISTIC-->
-              <!--
+
+                <!-- END STATISTIC-->
+                <!--
               <nav class="navbar navbar-expand-lg navbar-light bg-black">
                 <a class="navbar-brand text-white">Estoque</a>
                 
               </nav>
 -->
 
-              <!--  <button class="btn btn-primary" type="button" onclick="fazerRequisicao()">Text</button>-->
-              <div class="row">
-                <div class="bg-light table-responsive">
+                <!--  <button class="btn btn-primary" type="button" onclick="fazerRequisicao()">Text</button>-->
+                <div class="row mr-2 ml-2">
+                  <div class="bg-light table-responsive">
 
-                  <table class="table table-hover">
-                    <thead>
-                      <tr class="bg-black text-white">
-                        <th scope="col">#</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Quant.</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Forncedor</th>
-                        <th scope="col">Editar</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tabelaProduto">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr class="bg-black text-white text-center">
+                          <th scope="col">#</th>
+                          <th scope="col">Descrição</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Quant.</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Forncedor</th>
+                          <th scope="col">Editar</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tabelaProduto" class="text-center">
 
 
-                    </tbody>
-                  </table>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+              </section>
             </div>
             <!-- END DATA TABLE-->
 
@@ -804,7 +803,7 @@
 
   <script src="js/allpages.js"> </script>
   <script src="js/estoque.js"></script>
-  
+
 </body>
 
 </html>
