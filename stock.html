@@ -8,6 +8,7 @@
   <meta name="description" content="au theme template" />
   <meta name="author" content="Kelvin/Diogo" />
   <meta name="keywords" content="au theme template" />
+  <base href="/login.html" target="_blank">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <!-- Title Page-->
   <title>Estoque</title>
@@ -32,6 +33,13 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all" />
+  <style>
+    .footer {
+      margin-top: 300px;
+      width: 100%;
+
+    }
+  </style>
   <!-- Jquery JS-->
   <script src="vendor/jquery-3.2.1.min.js"></script>
   <script src="https://www.w3schools.com/lib/w3data.js"></script>
@@ -455,19 +463,131 @@
         </div>
       </header>
       <!-- HEADER DESKTOP-->
-      <div class="modal fade" style="margin-top: 190px;" id="exampleModalCenter" tabindex="-1" role="dialog"
+
+      <!-- MAIN CONTENT-->
+      <div class="main-content">
+        <div class="section__content section__content--p30">
+
+          <div class="container-fluid " style="background-color: rgb(211, 211, 211); ">
+
+
+
+            <div class="" style="border: black 1px solid;">
+              <div class="mb-5">
+                <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
+              </div>
+              <!-- STATISTIC-->
+              <section>
+
+                <div class="row mb-5  d-flex justify-content-between mr-3 ml-3">
+
+                  <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
+                    <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
+                      data-target="#exampleModalCenter">Produto</button>
+
+                    <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
+                      data-target="#modalFornecedor">
+                      Fornecedor
+                    </button>
+
+                  </div>
+
+                  <div class="col-md-5 d-flex justify-content-between font-weight-bold">
+                    <button class="btn btn-warning  mesmo-tamanho font-weight-bold" type="button">Categoria</button>
+                    <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">Lanche</button>
+                  </div>
+
+
+
+
+
+
+                </div>
+
+
+                <!-- END STATISTIC-->
+                <!--
+              <nav class="navbar navbar-expand-lg navbar-light bg-black">
+                <a class="navbar-brand text-white">Estoque</a>
+                
+              </nav>
+-->
+
+                <!--  <button class="btn btn-primary" type="button" onclick="fazerRequisicao()">Text</button>-->
+                <div class="row pr-3 pl-3">
+                  <div class="bg-light table-responsive">
+
+                    <table class="table table-hover">
+                      <thead>
+                        <tr class="bg-black text-white text-center">
+                          <th scope="col">#</th>
+                          <th scope="col">Descrição</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Quant.</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Forncedor</th>
+                          <th scope="col">Editar</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tabelaProduto" class="text-center">
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- END DATA TABLE-->
+
+            <footer class="footer navbar-fixed-bottom">
+              <div class="row mt-5 bg-black">
+                <div class="col-md-12 ">
+                  <div class="copyright ">
+                    <p>
+                      Copyright © 2020 KD. All rights reserved. <br>
+                      <span class="text-info">KD</span>
+                      <span class="text-info">S</span>istema
+                      <span class="text-info">G</span>erenciador
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </footer>
+
+
+
+          </div>
+        </div>
+      </div>
+      <!-- END MAIN CONTENT-->
+
+      <!--Modal-->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header bg-black">
               <h5 class="modal-title text-white" id="exampleModalCenterTitle">Novo Produto</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
                 <div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="my-input">Text</label>
+                      <input id="my-input" class="form-control" type="text" name="">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="my-input">Text</label>
+                      <input id="my-input" class="form-control" type="text" name="">
+                    </div>
+
+                  </div>
                   <div>
                     <label for="">Descrição</label>
                     <div class="input-group">
@@ -488,6 +608,7 @@
                       </div>
                     </div>
                   </div>
+
                   <div>
                     <label for="">Categoria</label>
                     <div class="input-group">
@@ -523,9 +644,9 @@
 
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-primary" id="submit" name="submit">Salvar</button>
+            <div class="modal-footer text-center row justify-content-center ">
+              <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-info font-weight-bold ml-5" id="submit" name="submit">Salvar</button>
             </div>
           </div>
         </div>
@@ -544,7 +665,7 @@
             <div class="modal-body">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
                 <div>
-                  <div>
+                             <div>
                     <label for="">Descrição</label>
                     <div class="input-group">
                       <input class="form-control" type="text" id="DescricaoA" name="">
@@ -679,105 +800,6 @@
           </div>
         </div>
       </div>
-      <!-- MAIN CONTENT-->
-      <div class="main-content">
-        <div class="section__content section__content--p30">
-
-          <div class="container-fluid " style="background-color: rgb(211, 211, 211); ">
-
-
-
-            <div class="" style="border: black 1px solid;">
-              <div class="mb-5">
-                <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
-              </div>
-              <!-- STATISTIC-->
-              <section>
-
-                <div class="row mb-5  d-flex justify-content-between mr-3 ml-3">
-
-                  <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
-                    <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
-                      data-target="#exampleModalCenter">Produto</button>
-
-                    <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
-                      data-target="#modalFornecedor">
-                      Fornecedor
-                    </button>
-
-                  </div>
-
-                  <div class="col-md-5 d-flex justify-content-between font-weight-bold">
-                    <button class="btn btn-warning  mesmo-tamanho font-weight-bold" type="button">Categoria</button>
-                    <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">Lanche</button>
-                  </div>
-
-
-
-
-
-
-                </div>
-
-
-                <!-- END STATISTIC-->
-                <!--
-              <nav class="navbar navbar-expand-lg navbar-light bg-black">
-                <a class="navbar-brand text-white">Estoque</a>
-                
-              </nav>
--->
-
-                <!--  <button class="btn btn-primary" type="button" onclick="fazerRequisicao()">Text</button>-->
-                <div class="row mr-2 ml-2">
-                  <div class="bg-light table-responsive">
-
-                    <table class="table table-hover">
-                      <thead>
-                        <tr class="bg-black text-white text-center">
-                          <th scope="col">#</th>
-                          <th scope="col">Descrição</th>
-                          <th scope="col">Valor</th>
-                          <th scope="col">Quant.</th>
-                          <th scope="col">Categoria</th>
-                          <th scope="col">Forncedor</th>
-                          <th scope="col">Editar</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tabelaProduto" class="text-center">
-
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <!-- END DATA TABLE-->
-
-            <footer class="footer navbar-fixed-bottom">
-              <div class="row mt-5 bg-black">
-                <div class="col-md-12 ">
-                  <div class="copyright ">
-                    <p>
-                      Copyright © 2020 KD. All rights reserved. <br>
-                      <span class="text-info">KD</span>
-                      <span class="text-info">S</span>istema
-                      <span class="text-info">G</span>erenciador
-
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </footer>
-
-
-
-          </div>
-        </div>
-      </div>
-      <!-- END MAIN CONTENT-->
       <!-- END PAGE CONTAINER-->
     </div>
   </div>
