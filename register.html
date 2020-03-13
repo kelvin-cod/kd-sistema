@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <!-- Required meta tags-->
@@ -36,21 +36,22 @@
 
 </head>
 
-<body class="animsition">
+<body class="animsition" style="height: 1000px;">
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
-                    <div class=" bg-white pt-2 ">
+                    <div class=" bg-white pt-2 " style="border: gray 1px solid;">
                         <h2 class="text-info  text-center mb-2">CADASTRO</h2>
                         <div class="login-logo  bg-black">
                             <a href="#">
                                 <img src="./images/kd_sistema_blue.png" alt="KD Sistema">
                             </a>
                         </div>
-                        <div class="login-form ml-3 mr-3 login-content">
+                        <div class="login-form ml-3 mr-3 login-content "
+                            style="background-color: rgb(230, 230, 230) !important; ">
                             <form action="" method="post" id="createUser">
-                                <div class="form-group">
+                                <div class="form-group pt-1">
                                     <label>Usuario</label>
                                     <input class="au-input au-input--full" type="text" name="nome"
                                         placeholder="nome de usuario" required="true" id="nome">
@@ -99,7 +100,7 @@
                             <div class="register-link pb-3">
                                 <p>
                                     Já tem Conta ?
-                                    <a href="login.html">Logar</a>
+                                    <a href="login.html" class="text-info">Logar</a>
                                 </p>
                             </div>
                         </div>
@@ -147,7 +148,7 @@
             obj.password = $("#password").val();
             obj.email_recuperacao = $("#email_recuperacao ").val();
 
-            console.log(obj)
+           
             // var post_url = "http://localhost:3000/user/create";
 
             var post_url = "https://kd-gerenciador.herokuapp.com/user/create";

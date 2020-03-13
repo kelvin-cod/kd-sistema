@@ -33,13 +33,8 @@
 
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all" />
-  <style>
-    .footer {
-      margin-top: 300px;
-      width: 100%;
+  <link href="css/stock.css" rel="stylesheet" media="all" />
 
-    }
-  </style>
   <!-- Jquery JS-->
   <script src="vendor/jquery-3.2.1.min.js"></script>
   <script src="https://www.w3schools.com/lib/w3data.js"></script>
@@ -483,7 +478,7 @@
 
                   <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
                     <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
-                      data-target="#exampleModalCenter">Produto</button>
+                      data-target="#exampleModalCenter"> <i class="fas fa-plus"></i> Produto</button>
 
                     <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
                       data-target="#modalFornecedor">
@@ -567,78 +562,74 @@
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="modal-content border-cinza">
             <div class="modal-header bg-black">
               <h5 class="modal-title text-white" id="exampleModalCenterTitle">Novo Produto</h5>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
-                <div>
-                  <div class="row">
+                <div class="bg-cinza mt-1">
+                  <div class="row  ml-1 mr-1 pt-1 ">
                     <div class="form-group col-md-6">
-                      <label for="my-input">Text</label>
-                      <input id="my-input" class="form-control" type="text" name="">
+                      <label for="my-input">Descrição</label>
+                      <input id="Descricao " class="form-control" type="text" name="" required>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="my-input">Text</label>
-                      <input id="my-input" class="form-control" type="text" name="">
+                      <label for="my-input">Validade</label>
+                      <input id="Validade" class="form-control" type="date" name="" required>
                     </div>
 
                   </div>
-                  <div>
-                    <label for="">Descrição</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" id="Descricao" name="" aria-label="Recipient's "
-                        aria-describedby="my-addon">
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="des">Descrição</span>
-                      </div>
+                  <div class="row ml-1 mr-1">
+                    <div class="form-group col-md-5">
+                      <label for="my-input">Valor Compra</label>
+                      <input id="Valor_compra" class="form-control" type="text" name="" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="my-input">Valor Venda</label>
+                      <input id="Valor_venda" class="form-control" type="number" name="">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="my-input">Unidade</label>
+                      <select class="form-control" name="unidade" id="Unidade_medida">
+                        <option value="UN">UN</option>
+                        <option value="Pct">Pct</option>
+                        <option value="Kg">Kg</option>
+                      </select>
                     </div>
                   </div>
-                  <div>
-                    <label for="">Valor</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" name="" id="Valor" aria-label="Recipient's "
-                        aria-describedby="my-addon">
-                      <div class="input-group-append">
-                        <span class="input-group-text">Valor(R$)</span>
-                      </div>
+                  <div class="row ml-1 mr-1">
+                    <div class="form-group col-md-6">
+                      <label for="my-input">Quantidade</label>
+                      <input id="Quantidade" class="form-control" type="number" name="">
                     </div>
-                  </div>
+                    <div class="form-group col-md-6">
+                      <label for="my-input">Tipo</label>
+                      <input id="Tipo" class="form-control" type="text" name="">
+                    </div>
 
-                  <div>
-                    <label for="">Categoria</label>
-                    <div class="input-group">
-                      <select class="form-control" name="" id="categoria">
+                  </div>
+                  <div class="row ml-1 mr-1 pb-1">
+                    <div class="form-group col-md-6">
+                      <label for="categoria">Categoria</label>
+                      <select class="form-control" name="categoria" id="categoria">
                         <option value=""></option>
                       </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text">Categoria</span>
-                        </div>
-                      </div>
-
                     </div>
-                  </div>
-                  <div>
-                    <label for="">Fornecedor</label>
-                    <div class="input-group">
+                    <div class="form-group col-md-6">
+                      <label for="my-input">Fornecedir</label>
                       <select class="form-control" name="" id="fornecedor">
                         <option value=""></option>
                       </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="forn">Fornecedor</span>
-                        </div>
-                      </div>
-
                     </div>
+
                   </div>
+
+
+
                 </div>
 
 
@@ -665,7 +656,7 @@
             <div class="modal-body">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
                 <div>
-                             <div>
+                  <div>
                     <label for="">Descrição</label>
                     <div class="input-group">
                       <input class="form-control" type="text" id="DescricaoA" name="">
