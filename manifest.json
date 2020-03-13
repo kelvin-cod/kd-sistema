@@ -1,0 +1,13 @@
+{
+    "lang": "pt-BR",
+    "name": "KD Sistema Gerenciador",
+    "short_name": "KD Sistema",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/login.html",
+    "icons": [
+
+    ]
+}
