@@ -15,7 +15,8 @@
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
 
-
+const RUNTIME = 'runtime';
+const PRECACHE = 'precache-v1';
 var CACHE_NAME = 'my-web-app-cache';
 var urlsToCache = [
     './',
