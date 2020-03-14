@@ -1,6 +1,6 @@
 var CACHE_NAME = 'my-web-app-cache';
 var urlsToCache = [
-  '/',
+  './',
   './css/theme.css',
   './js/allpages.js',
   './js/main.js'
