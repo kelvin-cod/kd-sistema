@@ -1,6 +1,14 @@
-navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
-  console.log('SW funcionando, registrado com o escopo: ', registration.scope);
-});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
 
 
 (function ($) {
