@@ -1,4 +1,20 @@
-/** Um service worker que não faz nada! */
-self.addEventListener('fetch', function (event) {
-    /** Um listener que não faz nada! */
+var CACHE_NAME = 'my-web-app-cache';
+var urlsToCache = [
+  '/',
+  './css/theme.css',
+  './js/allpages.js',
+  './js/main.js'
+];
+
+self.addEventListener('install', function(event) {
+  // event.waitUntil takes a promise to know how
+  // long the installation takes, and whether it 
+  // succeeded or not.
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
