@@ -1,3 +1,8 @@
+navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
+  console.log('SW funcionando, registrado com o escopo: ', registration.scope);
+});
+
+
 (function ($) {
     // includeHTML();
     $(document).ready(function () {
@@ -5,6 +10,8 @@
         $(".menu-html").append(data);
       });
     })
+
+    
   // USE STRICT
   "use strict";
 
