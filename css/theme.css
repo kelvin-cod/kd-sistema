@@ -4682,7 +4682,7 @@ section {
     justify-content: flex-end;
 }
 
-.table-data-feature .item {
+.table-data-feature .item{
     display: block;
     height: 30px;
     width: 30px;
@@ -4700,7 +4700,7 @@ section {
 
 .table-data-feature .item i {
     font-size: 20px;
-    color: #808080;
+    color: #000000;
     position: absolute;
     top: 50%;
     left: 50%;

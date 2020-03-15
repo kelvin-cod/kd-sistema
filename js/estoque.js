@@ -90,8 +90,8 @@ $("#submit").click(function () {
     obj.idFornecedor = parseInt($("#fornecedor").val());
     obj.idCategoria = parseInt($("#categoria").val());
 
-    console.log(obj)
-   // var post_url = "http://localhost:3000/produtos/criar";
+
+    // var post_url = "http://localhost:3000/produtos/criar";
     var post_url = "https://kd-gerenciador.herokuapp.com/produtos/criar";
     $.ajax({
         url: post_url,
@@ -122,7 +122,7 @@ function fazerRequisicao() {
 
 function fazerRequisicaoUM(id) {
 
-  //  var post_url = 'http://localhost:3000/produtos/listarum/' + id;
+    //  var post_url = 'http://localhost:3000/produtos/listarum/' + id;
     var post_url = 'https://kd-gerenciador.herokuapp.com/produtos/listarum/' + id;
 
     const obj = {
@@ -145,7 +145,7 @@ function fazerRequisicaoUM(id) {
 //var get_url = 'http://localhost:3000/categorias/listar';
 //var get_url_fornecedor = 'http://localhost:3000/produtos/fornecedor';
 var get_url_fornecedor = 'https://kd-gerenciador.herokuapp.com/produtos/fornecedor';
-var get_url='https://kd-gerenciador.herokuapp.com/categorias/listar';
+var get_url = 'https://kd-gerenciador.herokuapp.com/categorias/listar';
 $.ajax({
     url: get_url,
     type: 'GET',
@@ -191,8 +191,8 @@ $.ajax({
 
 /* funçao traz combo*/
 $.ajax({
-    url:'https://kd-gerenciador.herokuapp.com/produtos/listar',
-   // url: 'http://localhost:3000/produtos/listar',
+    url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
+    // url: 'http://localhost:3000/produtos/listar',
     type: 'GET',
     dataType: 'json', // added data type
 
@@ -242,7 +242,7 @@ var objexcluir = {
 
 
 function excluirSim() {
-   // var post_url = "http://localhost:3000/produtos/excluirum/" + objexcluir.idProduto;
+    // var post_url = "http://localhost:3000/produtos/excluirum/" + objexcluir.idProduto;
     var post_url = "https://kd-gerenciador.herokuapp.com/produtos/excluirum/" + objexcluir.idProduto;
     $.ajax({
         url: post_url,
@@ -290,7 +290,7 @@ $("#atualizar").click(function () {
     obj.idCategoria = parseInt($("#categoriaum").val());
 
     console.log(obj);
-   // var post_url = 'http://localhost:3000/produtos/atualizar/' + idProduto;
+    // var post_url = 'http://localhost:3000/produtos/atualizar/' + idProduto;
     var post_url = 'https://kd-gerenciador.herokuapp.com/produtos/atualizar/' + idProduto;
     $.ajax({
         url: post_url,
