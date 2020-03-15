@@ -14,6 +14,8 @@ var idProduto = 0;
 var Pedidos = [];
 var Quantidade_total = 0;
 var Total = 0;
+now = new Date;
+$("#Data_vendas").val(now.getDate() + " / " + now.getMonth() + " / " + now.getFullYear() );
 $.ajax({
     url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
     type: 'GET',
