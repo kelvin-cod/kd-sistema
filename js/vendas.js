@@ -20,7 +20,7 @@
 
     /************************************************************************************************************************* */
 
-    $("#Data_vendas").val(now.getDate() + " / " + now.getMonth() + " / " + now.getFullYear());
+    $("#Data_vendas").val(now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear());
 
     $.ajax({
         url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
@@ -100,7 +100,7 @@
         trHTML =
             '<tr><td>' + item.idProduto +
             '</td><td>' + item.Descricao +
-            '</td><td>' + item.Obs +
+            '</td><td id="tbl_obs_' + item.idProduto + '">' + item.Obs +
             '</td><td>' + parseFloat(item.Valor_venda).toFixed(2) +
             '</td><td id="tbl_' + item.idProduto + '">' + item.Quantidade +
             '</td><td id="tbl_subtotal_' + item.idProduto + '">' + item.SubTotal +
@@ -120,50 +120,101 @@
 
             '</div></td>' +
             '<td> <div class="table-data-feature">' +
-            '<p class="item btn" id="bElim" data-toggle="tooltip" onclick="rowElim(this);" data-placement="top" title="Delete">' +
+            '<p class="item btn" id="bElim" data-toggle="tooltip" ' +
+            ' data-placement="top" title="Delete" onclick="excluir( ' + item.idProduto + ') ;rowElim(this);">' +
             '<i class="zmdi zmdi-delete"></i>' +
             '</p> </div></td>' +
             '</tr>';
         return $('#TabelaComanda').append(trHTML);
     }
-/*
-    $('#TabelaComanda').change(function () {
-        console.log('aloooooooo');
-        let posicao = 4;
-        let total = 0;
-        $('table tbody td').each(function (a, b) {
-            if (a == posicao) {
-                console.log($(b).text())
-                total += parseInt($(b).text());
-                posicao += 11;
-            }
-        });
-        console.log(total)
-    })
-*/
+    /*
+        $('#TabelaComanda').change(function () {
+            console.log('aloooooooo');
+            let posicao = 4;
+            let total = 0;
+            $('table tbody td').each(function (a, b) {
+                if (a == posicao) {
+                    console.log($(b).text())
+                    total += parseInt($(b).text());
+                    posicao += 11;
+                }
+            });
+            console.log(total)
+        })
+    */
     function editar(id) {
-        var quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
+
+        let quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
         let aux = 0;
         let nova_soma = 0;
+        let obs_Coluna = $(`#tbl_obs_${id}`).text();
+
         for (let i = 0; i < Pedidos.length; i++) {
             if (Pedidos[i].idProduto == parseInt(id)) {
 
+                if (quantidade_Coluna < 0) {
+                    $(`#tbl_${id}`).text(Pedidos[i].Quantidade);
+                    return alert("Quantidade inválida!");
+                }
                 if (Pedidos[i].Quantidade < quantidade_Coluna) {
-
+                    //quantidade
                     aux = parseInt(Pedidos[i].Quantidade);
                     Quantidade_total -= aux; // tira o valor da linha do total
                     Quantidade_total += quantidade_Coluna; // acrecenta o valor da lina no total
                     Pedidos[i].Quantidade = quantidade_Coluna; //insere o novo valor no obj pedido
+
+                    //soma coluna
                     nova_soma = Pedidos[i].Valor_venda * quantidade_Coluna;
-                    console.log( nova_soma )
+
+                    //valor total
+                    Total -= parseFloat(Pedidos[i].SubTotal); // tira o valor da linha do total
+                    Total += nova_soma; // acrecenta o valor da lina no total
+                    Pedidos[i].SubTotal = nova_soma;
+
+                    //atribuiçoes
+                    $("#Total_vendas").val(Total.toFixed(2));
                     $(`#tbl_subtotal_${id}`).text(nova_soma.toFixed(2));
                     $("#Quantidade_total").val(Quantidade_total);
-                } else {
+                } else if (Pedidos[i].Quantidade > quantidade_Coluna) {
+                    //Quantidade menor
+                    Quantidade_total -= parseInt(Pedidos[i].Quantidade);
+                    Quantidade_total += quantidade_Coluna;
+                    Pedidos[i].Quantidade = quantidade_Coluna;
+                    //soma linha menor
+                    nova_soma = Pedidos[i].Valor_venda * quantidade_Coluna;
+                    //Valor total
+                    Total -= parseFloat(Pedidos[i].SubTotal); // tira o valor da linha do total
+                    Total += nova_soma; // acrecenta o valor da lina no total
+                    Pedidos[i].SubTotal = nova_soma;
 
+                    $("#Quantidade_total").val(Quantidade_total);
+                    $("#Total_vendas").val(Total.toFixed(2));
+                    $(`#tbl_subtotal_${id}`).text(nova_soma.toFixed(2));
+                } else if (obs_Coluna != Pedidos[i].Obs) {
+                    Pedidos[i].Obs = obs_Coluna;
                 }
             }
 
         }
+    }
 
 
+    function excluir(id) {
+        let quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
+        let subtotal_Coluna = parseFloat($(`#tbl_subtotal_${id}`).text());
+
+        for (let i = 0; i < Pedidos.length; i++) {
+            if (Pedidos[i].idProduto == parseInt(id)) {
+                //retira da quantidade total o valor excluido
+                Quantidade_total -= quantidade_Coluna;
+
+                //retira do total o valor excluido
+                Total -= subtotal_Coluna;
+
+                //atribui os novos valores
+                $("#Quantidade_total").val(Quantidade_total);
+                $("#Total_vendas").val(Total.toFixed(2));
+            }
+
+        }
     }

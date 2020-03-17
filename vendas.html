@@ -109,8 +109,10 @@
                 </button>
               </form>
               <div class="header-button">
+            
                 <div class="noti-wrap">
-                  <div class="noti__item js-item-menu">
+                  <!--
+                     <div class="noti__item js-item-menu">
                     <i class="zmdi zmdi-comment-more"></i>
                     <span class="quantity">1</span>
                     <div class="mess-dropdown js-dropdown">
@@ -219,8 +221,13 @@
                         <a href="#">All notifications</a>
                       </div>
                     </div>
+                 
                   </div>
+                  -->
+                 
+                
                 </div>
+
                 <div class="account-wrap">
                   <div class="account-item clearfix js-item-menu">
                     <div class="image">
@@ -296,7 +303,7 @@
                               <th>R$ Unitário</th>
                               <th>Quantidade</th>
                               <th>SubTotal</th>
-                              <th></th>
+                              
                             </tr>
                           </div>
                           <div class="row justify-content-center  ">
@@ -305,14 +312,15 @@
                                 Finalizar Dia
                               </p>
                             </div>
-                            <div class="form-group col-md-2  offset-md-5  col-5 text-center">
-
-                              <input class="au-input au-input--full bg-white text-center " type="text" name="data"
-                                placeholder="Data" disabled id="Data_vendas">
+                            <div class="form-group col-md-2 offset-md-5 col-5 text-center">
+                              <label for="">Data</label>
+                              <input class="au-input au-input--full bg-white text-center top-balcao" type="text" name="data"
+                                placeholder="Data" disabled id="Data_vendas" style="border: 1px solid rgb(255, 115, 0);">
                             </div>
-                            <div class="form-group   text-center col-5 col-md-2">
-                              <input class="au-input au-input--full bg-white text-center  " type="number"
-                                name="numero_pedido" placeholder="00001" disabled>
+                            <div class="form-group text-center col-5 col-md-2 ">
+                              <label for=""> Pedido</label>
+                              <input class="au-input au-input--full bg-white text-center top-balcao" type="number"
+                                name="numero_pedido" value="0001" disabled style="border: 1px solid rgb(255, 115, 0);">
                             </div>
                           </div>
                         </thead>
@@ -405,22 +413,28 @@
                       </table>
                     </div>
 
-                    <div class="row justify-content-center mt-3 text-center mr-1">
+                    <div class="row justify-content-center mt-3 text-center ">
                       <div class="offset-md-7 col-md-2 col-5">
                         <label for="">Total Produtos</label>
                         <input class="au-input au-input--full bg-white  text-center font_vendas" type="text" name="total_produtos"
-                          placeholder="T. Produtos" disabled id="Quantidade_total" style="border: 1px green solid;">
+                          value="00" disabled id="Quantidade_total" style="border: 1px green solid;">
                       </div>
-                      <div class=" col-md-3 text-center col-5 ">
+                      <div class=" col-md-2 text-center col-5 ">
                         <label for="">Total da Venda</label>
                         <input class="au-input au-input--full bg-white  text-center font_vendas " type="text" name="total_geral"
-                          placeholder="Total Geral" disabled id="Total_vendas" style="border: 1px green solid;">
+                          value="0.00" disabled id="Total_vendas" style="border: 1px green solid;">
                       </div>
 
                     </div>
-                    <div class="form-group row justify-content-center text-center mt-4 ">
-                      <button type="button" class="btn btn-danger  col-5 mr-3 col-md-2">Cancelar Pedido</button>
-                      <button type="button" class="btn btn-success col-5 col-md-2">Concluir Pedido</button>
+                    <div class="form-group row justify-content-center text-center mt-5 ">
+                      <button type="button" class="btn btn-danger  col-5  col-md-2">
+                        <i class="fas fa-times"></i> 
+                        Cancelar Venda
+                      </button>
+                      <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 font-weight-bold">
+                        <i class="fas fa-check"></i>
+                        Concluir Venda
+                      </button>
 
                     </div>
 
