@@ -92,6 +92,7 @@
         $('#Quantidade_vendas').val(1);
         $("#Valor_vendas").val("");
         $("#Subtotal_vendas").val("");
+        $("#Obs_vendas").val("");
         $("#Total_vendas").val(Total.toFixed(2));
         $("#Quantidade_total").val(Quantidade_total);
     });
