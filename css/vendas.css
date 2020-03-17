@@ -45,17 +45,21 @@
     padding: 15px 40px;
     padding-right: 10px;
 }
-
+.font_vendas{
+    font-size: 20px;
+    color: crimson;
+    font: outline;
+    font-weight: bold;
+}
 .seta {
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-
 }
 
 .table-data2.table tbody {
-    background: rgb(255, 240, 211);
+    background: rgb(216, 255, 208);
 }
 
 .table-data__tool .table-data__tool-right1 {

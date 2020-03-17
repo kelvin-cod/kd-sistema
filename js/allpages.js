@@ -10,7 +10,7 @@ window.onload = function () {
     } else {
 
         user = JSON.parse(sessionStorage.getItem("user"));
-        console.log(user)
+       
         document.getElementById("usuario_nome").innerHTML = user.Nome;
         document.getElementsByClassName(".usuario_nome").innerHTML = user.Nome
     }
