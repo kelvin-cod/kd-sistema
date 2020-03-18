@@ -27,7 +27,6 @@
 .card-header1 {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
@@ -45,12 +44,14 @@
     padding: 15px 40px;
     padding-right: 10px;
 }
-.font_vendas{
+
+.font_vendas {
     font-size: 20px;
     color: crimson;
     font: outline;
     font-weight: bold;
 }
+
 .seta {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -58,8 +59,12 @@
     text-overflow: '';
 }
 
+select {
+    height: 45px !important;
+}
+
 .table-data2.table tbody {
-    background: rgb(216, 255, 208);
+    background: rgb(175, 255, 172);
 }
 
 .table-data__tool .table-data__tool-right1 {
@@ -78,10 +83,11 @@ input[type=radio1] {
     margin-left: 15px;
 }
 
-input{
-    font-size: 15px;
+input {
+    font-size: 16px;
 }
-.top-balcao{
-    font-size: 20px;
+
+.top-balcao {
+    font-size: 19px;
     color: rgb(0, 0, 0);
 }

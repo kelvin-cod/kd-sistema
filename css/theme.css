@@ -295,12 +295,12 @@ section {
     }
 }
 
-/*Page Objects*/
+/*Page Objects padding-bottom: 8vh;
+*/
 .page-wrapper {
     overflow: hidden;
     background: #e5e5e5;
-    padding-bottom: 8vh;
-
+   
 }
 
 @media (max-width: 991px) {
@@ -4604,7 +4604,7 @@ section {
 
 .table-data2.table tbody td {
     font-size: 14px;
-    color: #808080;
+    color: #000000;
     vertical-align: middle;
     padding: 25px 40px;
     padding-right: 10px;
@@ -4690,8 +4690,9 @@ section {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    background: #e5e5e5;
+    background: #ffffff;
     margin-right: 5px;
+    border: 1px black solid;
 }
 
 .table-data-feature .item:last-child {
