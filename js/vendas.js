@@ -19,6 +19,8 @@
     var trHTML = '';
 
     var Venda = {
+        idUsuario: 0,
+        idCliente: '',
         data_venda: '',
         pedido_venda: 0,
         cliente_venda: '',
@@ -29,7 +31,16 @@
     /************************************************************************************************************************* */
 
     $("#Data_vendas").val(now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear());
+    $.ajax({
+        url: 'https://kd-gerenciador.herokuapp.com/vendas/ultimo',
+        // url: 'http://localhost:3000/produtos/listar',
+        type: 'GET',
+        dataType: 'json', // added data type
 
+        success: function (response) {
+            $("#Numero_pedido").val(response[0].ultimo);
+        }
+    });
 
     $.ajax({
         url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
@@ -93,7 +104,7 @@
         Comanda.Quantidade = parseInt(quantidade);
         Comanda.SubTotal = soma;
         Pedidos.push(Comanda);
-        Venda.Pedidos.push(Comanda)
+        Venda.Pedidos.push(Comanda);
         Total += parseFloat(soma)
         Quantidade_total += parseInt(quantidade);
 
@@ -245,12 +256,34 @@
     })
 
     $("#Concluir_vendas").click(() => {
-        var var_name = $("input[name='exampleRadios']:checked").val();
+        let cliente = $("#Nome_cliente").val();
+        let numeroPedido = parseFloat($("#Numero_pedido").val());
+        let var_name = $("input[name='exampleRadios']:checked").val();
+        let user = JSON.parse(sessionStorage.getItem("user"));
+
+        if (cliente === "") {
+            Venda.idCliente = 1;
+            Venda.cliente_venda = "Cliente Padrao";
+        }
+
+        Venda.idUsuario = user.idUsuario;
         Venda.data_venda = $("#Data_vendas").val();
         Venda.cliente_venda = $("#Nome_cliente").val();
         Venda.tipo_venda = var_name;
+        Venda.pedido_venda = numeroPedido + 1
+        const post_url = "http://localhost:3000/vendas/concluir";
+
+        $.ajax({
+            url: post_url,
+            type: 'POST',
+            data: JSON.stringify(Venda)
+        }).done(function (response) { //
+            // $("#resposta").html(response);
+            // document.location.reload();
+            console.log(Venda)
+         
+        });
 
 
-        console.log(Venda)
-    
+
     })
