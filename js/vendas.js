@@ -1,5 +1,6 @@
     var Produtos = [];
     var Comanda = {
+        idComanda: 0,
         idProduto: 0,
         Descricao: "",
         Obs: "",
@@ -17,10 +18,18 @@
     now = new Date;
     var trHTML = '';
 
+    var Venda = {
+        data_venda: '',
+        pedido_venda: 0,
+        cliente_venda: '',
+        tipo_venda: '',
+        Pedidos: []
+    }
 
     /************************************************************************************************************************* */
 
     $("#Data_vendas").val(now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear());
+
 
     $.ajax({
         url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
@@ -67,12 +76,16 @@
         $("#Subtotal_vendas").val(soma);
     });
 
-
+    let cont = 0;
     $('#Add_item').click(function () {
 
         if ($('#Produto_vendas  :selected').text() == "") {
             return alert("Selecione um Item");
         }
+        Comanda.idComanda = cont;
+
+        cont++;
+
         Comanda.idProduto = parseInt(idProduto);
         Comanda.Descricao = $('#Produto_vendas  :selected').text();
         Comanda.Obs = $('#Obs_vendas').val();
@@ -80,6 +93,7 @@
         Comanda.Quantidade = parseInt(quantidade);
         Comanda.SubTotal = soma;
         Pedidos.push(Comanda);
+        Venda.Pedidos.push(Comanda)
         Total += parseFloat(soma)
         Quantidade_total += parseInt(quantidade);
 
@@ -99,7 +113,7 @@
 
     function salvar(item) {
         trHTML =
-            '<tr><td>' + item.idProduto +
+            '<tr id="tbl_tr_' + item.idComanda + '"><td>' + item.idProduto +
             '</td><td>' + item.Descricao +
             '</td><td id="tbl_obs_' + item.idProduto + '">' + item.Obs +
             '</td><td>' + parseFloat(item.Valor_venda).toFixed(2) +
@@ -122,27 +136,18 @@
             '</div></td>' +
             '<td> <div class="table-data-feature">' +
             '<p class="item btn" id="bElim" data-toggle="tooltip" ' +
-            ' data-placement="top" title="Delete" onclick="excluir( ' + item.idProduto + ') ;rowElim(this);">' +
+            ' data-placement="top" title="Delete" onclick="excluir( ' + item.idComanda + ', ' + item.idProduto + ');rowElim(this);">' +
             '<i class="zmdi zmdi-delete"></i>' +
             '</p> </div></td>' +
             '</tr>';
         return $('#TabelaComanda').append(trHTML);
     }
-    /*
-        $('#TabelaComanda').change(function () {
-            console.log('aloooooooo');
-            let posicao = 4;
-            let total = 0;
-            $('table tbody td').each(function (a, b) {
-                if (a == posicao) {
-                    console.log($(b).text())
-                    total += parseInt($(b).text());
-                    posicao += 11;
-                }
-            });
-            console.log(total)
-        })
-    */
+
+    $(Pedidos).change(function () {
+        console.log('aloooooooo');
+
+    })
+
     function editar(id) {
 
         let quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
@@ -195,32 +200,57 @@
                     Pedidos[i].Obs = obs_Coluna;
                 }
             }
-
         }
     }
 
 
-    function excluir(id) {
-        let quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
-        let subtotal_Coluna = parseFloat($(`#tbl_subtotal_${id}`).text());
+    function excluir(id, id_linha) {
+        let quantidade_Coluna = parseInt($(`#tbl_${id_linha}`).text());
+        let subtotal_Coluna = parseFloat($(`#tbl_subtotal_${id_linha}`).text());
 
         for (let i = 0; i < Pedidos.length; i++) {
-           
-            if (Pedidos[i].idProduto == parseInt(id)) {
+
+            if (Pedidos[i].idComanda == parseInt(id)) {
+
                 //retira da quantidade total o valor excluido
                 Quantidade_total -= quantidade_Coluna;
 
                 //retira do total o valor excluido
                 Total -= subtotal_Coluna;
-               
+
+                // remove do vetor o item excluido
                 Pedidos.splice(i, 1);
+
                 console.log(Pedidos)
                 // console.log(Pedidos)
                 //atribui os novos valores
                 $("#Quantidade_total").val(Quantidade_total);
                 $("#Total_vendas").val(Total.toFixed(2));
-
             }
 
         }
     }
+    //Função para desconto de vendas
+    $("#Desconto_vendas").change(() => {
+        let valor = parseFloat($("#Desconto_vendas").val());
+        let valor_total = $("#Total_vendas").val();
+        let desconto = valor_total - valor;
+
+        if (valor < 0 || isNaN(valor)) {
+            $("#Desconto_vendas").val(0)
+            return alert("Desconto Inválido")
+        } else {
+            return $("#Total_vendas").val(desconto.toFixed(2))
+        }
+    })
+
+    $("#Concluir_vendas").click(() => {
+        var var_name = $("input[name='exampleRadios']:checked").val();
+        Venda.data_venda = $("#Data_vendas").val();
+        Venda.cliente_venda = $("#Nome_cliente").val();
+        Venda.tipo_venda = var_name;
+
+
+        console.log(Venda)
+    
+    })

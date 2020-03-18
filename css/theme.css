@@ -295,12 +295,12 @@ section {
     }
 }
 
-/*Page Objects*/
+/*Page Objects padding-bottom: 8vh;
+*/
 .page-wrapper {
     overflow: hidden;
     background: #e5e5e5;
-    padding-bottom: 8vh;
-
+   
 }
 
 @media (max-width: 991px) {

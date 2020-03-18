@@ -64,7 +64,7 @@ select {
 }
 
 .table-data2.table tbody {
-    background: rgb(251, 255, 202);
+    background: rgb(175, 255, 172);
 }
 
 .table-data__tool .table-data__tool-right1 {
@@ -88,6 +88,6 @@ input {
 }
 
 .top-balcao {
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(0, 0, 0);
 }

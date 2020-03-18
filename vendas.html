@@ -290,7 +290,7 @@
                   <h2 class="text-center text-white ">Balcão de Vendas</h2>
 
                 </div>
-                <form action="" method="post">
+                <form action="" method="post" id="Form_vendas">
                   <div class="balcao-form pt-2" style="border: 1px solid grey;">
                     <div class="table-responsive table-responsive-data2">
                       <table class="table table-data2 ml-3 mt-4  bg-secondary table-hover" id="Tabela_vendas">
@@ -303,7 +303,6 @@
                               <th>R$ Unitário</th>
                               <th>Quantidade</th>
                               <th>SubTotal</th>
-
                             </tr>
                           </div>
                           <div class="row justify-content-center  ">
@@ -316,13 +315,13 @@
                               <label for="">Data</label>
                               <input class="au-input au-input--full bg-white text-center top-balcao" type="text"
                                 name="data" placeholder="Data" disabled id="Data_vendas"
-                                style="border: 1px solid rgb(255, 115, 0);">
+                                style="border: 1px solid rgb(0, 0, 0);">
                             </div>
                             <div class="form-group text-center col-5 col-md-2 ">
                               <label for=""> Pedido</label>
                               <input class="au-input au-input--full  text-center top-balcao" type="number"
                                 name="numero_pedido" value="0001" disabled
-                                style="border: 1px solid rgb(21, 255, 0); background-color: gold;">
+                                style="border: 1px solid rgb(0, 0, 0); background-color: gold;">
                             </div>
                           </div>
                         </thead>
@@ -333,7 +332,7 @@
                               <div class="form-group col-md-5">
                                 <label>Cliente</label>
                                 <input class="au-input au-input--full" type="text" name="cliente"
-                                  placeholder="Nome Cliente">
+                                  placeholder="Nome Cliente" id="Nome_cliente">
                               </div>
 
                               <div class="form-group col-md-2 text-center">
@@ -347,7 +346,7 @@
                                 <label for="">Tipo</label><br>
                                 <div class="form-check  form-check-inline  text-center">
                                   <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="1" checked>
+                                    value="Consumo" checked>
                                   <label class="form-check-label" for="exampleRadios1">
                                     Consumo
                                   </label>
@@ -355,7 +354,7 @@
 
                                 <div class="form-check form-check-inline">
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                    value="2">
+                                    value="Entrega">
                                   <label class="form-check-label" for="exampleRadios2">
                                     Entrega
                                   </label>
@@ -363,7 +362,7 @@
 
                                 <div class="form-check form-check-inline">
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                    value="3">
+                                    value="Levar">
                                   <label class="form-check-label" for="exampleRadios2">
                                     Levar
                                   </label>
@@ -384,7 +383,7 @@
 
                               </div>
 
-                              <div class="form-group col-md-2 text-center col-6">
+                              <div class="form-group col-md-2 col-6">
                                 <label>R$ Unitário</label>
 
                                 <select class="form-control bg-white  seta text-center au-input  au-input--full" name=""
@@ -397,7 +396,7 @@
                                 <input class="au-input au-input--full text-center" type="number" name="quantidade"
                                   id="Quantidade_vendas" placeholder="Qtd" value="1" min="1">
                               </div>
-                              <div class="form-group col-md-3 text-center">
+                              <div class="form-group col-md-2 text-center">
                                 <label>Sub Total</label>
                                 <input class="au-input au-input--full bg-white text-center" type="text" name="sub_total"
                                   disabled id="Subtotal_vendas" value="0.00">
@@ -430,8 +429,8 @@
                       -->
                       <div class="form-group offset-md-9 col-md-2 col-6 text-center">
                         <label>Desconto</label>
-                        <input class="au-input au-input--full text-center " type="text" name="desconto"
-                          id="Desconto_vendas" placeholder="0.00" style="border: 1px green solid;">
+                        <input class="au-input au-input--full text-center font_vendas" type="text" name="desconto"
+                          id="Desconto_vendas" placeholder="0.00" min="0" style="border: 1px green solid;">
                       </div>
                     </div>
                     <div class="row justify-content-center  text-center ">
@@ -452,11 +451,11 @@
                     <div class="form-group row justify-content-center text-center mt-5 ">
                       <button type="button" class="btn btn-danger  col-5  col-md-2">
                         <i class="fas fa-times"></i>
-                        Cancelar Venda
+                        Cancelar
                       </button>
-                      <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 font-weight-bold">
+                      <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 " id="Concluir_vendas">
                         <i class="fas fa-check"></i>
-                        Concluir Venda
+                        Concluir
                       </button>
 
                     </div>
