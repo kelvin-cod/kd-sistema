@@ -205,16 +205,21 @@
         let subtotal_Coluna = parseFloat($(`#tbl_subtotal_${id}`).text());
 
         for (let i = 0; i < Pedidos.length; i++) {
+           
             if (Pedidos[i].idProduto == parseInt(id)) {
                 //retira da quantidade total o valor excluido
                 Quantidade_total -= quantidade_Coluna;
 
                 //retira do total o valor excluido
                 Total -= subtotal_Coluna;
-
+               
+                Pedidos.splice(i, 1);
+                console.log(Pedidos)
+                // console.log(Pedidos)
                 //atribui os novos valores
                 $("#Quantidade_total").val(Quantidade_total);
                 $("#Total_vendas").val(Total.toFixed(2));
+
             }
 
         }

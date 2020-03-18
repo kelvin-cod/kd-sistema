@@ -109,7 +109,7 @@
                 </button>
               </form>
               <div class="header-button">
-            
+
                 <div class="noti-wrap">
                   <!--
                      <div class="noti__item js-item-menu">
@@ -224,8 +224,8 @@
                  
                   </div>
                   -->
-                 
-                
+
+
                 </div>
 
                 <div class="account-wrap">
@@ -303,7 +303,7 @@
                               <th>R$ Unitário</th>
                               <th>Quantidade</th>
                               <th>SubTotal</th>
-                              
+
                             </tr>
                           </div>
                           <div class="row justify-content-center  ">
@@ -314,13 +314,14 @@
                             </div>
                             <div class="form-group col-md-2 offset-md-5 col-5 text-center">
                               <label for="">Data</label>
-                              <input class="au-input au-input--full bg-white text-center top-balcao" type="text" name="data"
-                                placeholder="Data" disabled id="Data_vendas" style="border: 1px solid rgb(255, 115, 0);">
+                              <input class="au-input au-input--full bg-white text-center top-balcao" type="text"
+                                name="data" placeholder="Data" disabled id="Data_vendas"
+                                style="border: 1px solid rgb(255, 115, 0);">
                             </div>
                             <div class="form-group text-center col-5 col-md-2 ">
                               <label for=""> Pedido</label>
                               <input class="au-input au-input--full  text-center top-balcao" type="number"
-                                name="numero_pedido" value="0001" disabled 
+                                name="numero_pedido" value="0001" disabled
                                 style="border: 1px solid rgb(21, 255, 0); background-color: gold;">
                             </div>
                           </div>
@@ -328,17 +329,14 @@
 
                         <div class="section__content section__content--p30">
                           <div class="container-fluid">
-
-
                             <div class="row">
-
                               <div class="form-group col-md-5">
                                 <label>Cliente</label>
                                 <input class="au-input au-input--full" type="text" name="cliente"
                                   placeholder="Nome Cliente">
                               </div>
 
-                              <div class="form-group col-md-2">
+                              <div class="form-group col-md-2 text-center">
                                 <label for="">Novo Item</label>
                                 <p class="au-btn au-btn-icon text-white bg-success text-center" id="Add_item">
                                   <i class="zmdi zmdi-plus"></i>item
@@ -348,7 +346,7 @@
                               <div class=" text-center col-12 col-md-5 ">
                                 <label for="">Tipo</label><br>
                                 <div class="form-check  form-check-inline  text-center">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                  <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1"
                                     value="1" checked>
                                   <label class="form-check-label" for="exampleRadios1">
                                     Consumo
@@ -364,7 +362,7 @@
                                 </div>
 
                                 <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
                                     value="3">
                                   <label class="form-check-label" for="exampleRadios2">
                                     Levar
@@ -386,13 +384,11 @@
 
                               </div>
 
-
-
                               <div class="form-group col-md-2 text-center col-6">
                                 <label>R$ Unitário</label>
 
-                                <select class="form-control bg-white  seta text-center" name="" id="Valor_vendas"
-                                  disabled>
+                                <select class="form-control bg-white  seta text-center au-input  au-input--full" name=""
+                                  id="Valor_vendas" disabled>
                                   <option value=""></option>
                                 </select>
                               </div>
@@ -404,7 +400,7 @@
                               <div class="form-group col-md-3 text-center">
                                 <label>Sub Total</label>
                                 <input class="au-input au-input--full bg-white text-center" type="text" name="sub_total"
-                                  disabled id="Subtotal_vendas">
+                                  disabled id="Subtotal_vendas" value="0.00">
                               </div>
 
                               <!--Tabela-->
@@ -414,22 +410,48 @@
                       </table>
                     </div>
 
-                    <div class="row justify-content-center mt-3 text-center ">
-                      <div class="offset-md-7 col-md-2 col-5">
+                    <div class="row justify-content-center text-center mt-3">
+                      <!--
+                      <div class="offset-md-7 col-md-2 ">
+                        <label for="" class="text-center">Pagamento</label>
+                        <div class="form-check ml-2">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="radio_pagamentos" id="radio_pagamento1" value="1" checked>
+                            Dinheiro
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="radio_pagamentos" id="radio_pagamento1" value="2">
+                            Cartão
+                          </label>
+                        </div>
+                      </div>
+                      -->
+                      <div class="form-group offset-md-9 col-md-2 col-6 text-center">
+                        <label>Desconto</label>
+                        <input class="au-input au-input--full text-center " type="text" name="desconto"
+                          id="Desconto_vendas" placeholder="0.00" style="border: 1px green solid;">
+                      </div>
+                    </div>
+                    <div class="row justify-content-center  text-center ">
+                      <div class="form-group offset-md-7 col-md-2 col-5">
                         <label for="">Total Produtos</label>
-                        <input class="au-input au-input--full bg-white  text-center font_vendas" type="text" name="total_produtos"
-                          value="00" disabled id="Quantidade_total" style="border: 1px green solid;">
+                        <input class="au-input au-input--full bg-white  text-center font_vendas" type="text"
+                          name="total_produtos" value="00" disabled id="Quantidade_total"
+                          style="border: 1px green solid;">
                       </div>
                       <div class=" col-md-2 text-center col-5 ">
                         <label for="">Total Venda</label>
-                        <input class="au-input au-input--full bg-white  text-center font_vendas " type="text" name="total_geral"
-                          value="0.00" disabled id="Total_vendas" style="border: 1px green solid;">
+                        <input class="form-group au-input au-input--full bg-white  text-center font_vendas " type="text"
+                          name="total_geral" value="0.00" disabled id="Total_vendas" style="border: 1px green solid;">
                       </div>
 
                     </div>
+
                     <div class="form-group row justify-content-center text-center mt-5 ">
                       <button type="button" class="btn btn-danger  col-5  col-md-2">
-                        <i class="fas fa-times"></i> 
+                        <i class="fas fa-times"></i>
                         Cancelar Venda
                       </button>
                       <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 font-weight-bold">
@@ -472,6 +494,7 @@
   </div>
 
   <!-- Bootstrap JS-->
+
   <script src="vendor/bootstrap-4.1/popper.min.js"></script>
   <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
   <!-- Vendor JS       -->
@@ -495,12 +518,10 @@
       columnsEd: "2,4"
 
     });
-
-
   </script>
+
   <!-- Main JS-->
   <script src="js/main.js"></script>
-
 </body>
 
 </html>
