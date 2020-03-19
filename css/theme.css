@@ -307,7 +307,7 @@ section {
     .page-wrapper {
         overflow: auto;
         background: #e5e5e5;
-        padding-bottom: 12vh;
+     
         width: 100%;
     }
 }
@@ -352,7 +352,7 @@ section {
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
-        padding-bottom: 100px;
+       
     }
 }
 
