@@ -20,9 +20,11 @@
 
     var Venda = {
         idUsuario: 0,
-        idCliente: '',
+        idCliente: 0,
         data_venda: '',
+        desconto: 0,
         pedido_venda: 0,
+        total_venda: 0,
         cliente_venda: '',
         tipo_venda: '',
         Pedidos: []
@@ -104,7 +106,9 @@
         Comanda.Quantidade = parseInt(quantidade);
         Comanda.SubTotal = soma;
         Pedidos.push(Comanda);
+
         Venda.Pedidos.push(Comanda);
+
         Total += parseFloat(soma)
         Quantidade_total += parseInt(quantidade);
 
@@ -231,7 +235,7 @@
 
                 // remove do vetor o item excluido
                 Pedidos.splice(i, 1);
-
+                Venda.Pedidos.splice(i, 1);
                 console.log(Pedidos)
                 // console.log(Pedidos)
                 //atribui os novos valores
@@ -246,6 +250,7 @@
         let valor = parseFloat($("#Desconto_vendas").val());
         let valor_total = $("#Total_vendas").val();
         let desconto = valor_total - valor;
+        Venda.desconto = desconto;
 
         if (valor < 0 || isNaN(valor)) {
             $("#Desconto_vendas").val(0)
@@ -257,33 +262,48 @@
 
     $("#Concluir_vendas").click(() => {
         let cliente = $("#Nome_cliente").val();
-        let numeroPedido = parseFloat($("#Numero_pedido").val());
-        let var_name = $("input[name='exampleRadios']:checked").val();
-        let user = JSON.parse(sessionStorage.getItem("user"));
-
+        Venda.cliente_venda = $("#Nome_cliente").val();
         if (cliente === "") {
             Venda.idCliente = 1;
             Venda.cliente_venda = "Cliente Padrao";
         }
+        if (Pedidos.length == 0) {
+            return alert("Ação inválida!!");
+        } else {
 
-        Venda.idUsuario = user.idUsuario;
-        Venda.data_venda = $("#Data_vendas").val();
-        Venda.cliente_venda = $("#Nome_cliente").val();
-        Venda.tipo_venda = var_name;
-        Venda.pedido_venda = numeroPedido + 1
-        const post_url = "http://localhost:3000/vendas/concluir";
+            let numeroPedido = parseFloat($("#Numero_pedido").val());
+            let var_name = $("input[name='exampleRadios']:checked").val();
+            let user = JSON.parse(sessionStorage.getItem("user"));
+            let total_venda = $("#Total_vendas").val();
+
+            Venda.idUsuario = user.idUsuario;
+            Venda.data_venda = $("#Data_vendas").val();
+
+            Venda.tipo_venda = var_name;
+            Venda.pedido_venda = numeroPedido + 1;
+            Venda.total_venda = parseFloat(total_venda);
+
+            $('#Modal').modal('show');
+
+        }
+    });
+
+    $("#modal-btn-sim").click(() => {
+        const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir";
+        var gif = '<img src="https://gifimage.net/wp-content/uploads/2017/10/carregando-gif-animado-9.gif" >'
+        $("#gif").append(gif)
 
         $.ajax({
             url: post_url,
             type: 'POST',
-            data: JSON.stringify(Venda)
+            data: Venda,
+            dataType: 'json',
+            complete: function () {
+                location.reload();
+            }
+
         }).done(function (response) { //
-            // $("#resposta").html(response);
-            // document.location.reload();
-            console.log(Venda)
-         
+
+            location.reload();
         });
-
-
-
     })

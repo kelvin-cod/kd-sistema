@@ -461,7 +461,8 @@
                         <i class="fas fa-times"></i>
                         Cancelar
                       </button>
-                      <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 " id="Concluir_vendas">
+                      <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 btn-confirm"
+                        id="Concluir_vendas" data-toggle="modal" >
                         <i class="fas fa-check"></i>
                         Concluir
                       </button>
@@ -469,9 +470,10 @@
                     </div>
 
                   </div>
+                  <div class="alert" role="alert" id="result"></div>
                 </form>
 
-                <!-- END DATA TABLE -->
+                <!-- END DATA TABLEdata-target="#Modal" -->
 
               </div>
             </div>
@@ -491,6 +493,31 @@
               </div>
 
             </footer>
+            <!--MODAL-->
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+              id="Modal">
+              <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header bg-black" style="color: aliceblue;">
+                    <h5 class="modal-title text-white" > Confirmar Venda</h5>
+                    <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="gif" id="gif"></div>
+                  <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger"  id="modal-btn-nao" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-success" id="modal-btn-sim">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <!--FIM MODAL-->
           </div>
         </div>
       </div>
