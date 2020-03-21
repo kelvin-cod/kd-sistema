@@ -41,246 +41,20 @@
 
 <body class="animsition">
   <div class="page-wrapper">
-    <!-- HEADER MOBILE-->
-    <header class="header-mobile d-block d-lg-none">
-      <div class="header-mobile__bar bg-black">
-        <div class="container-fluid ">
-          <div class="header-mobile-inner">
-            <a class="logo" href="index.html">
-              <img src="./images/kd_sistema_blue.png" alt="KD Gerenciador" style="width: 200px; height: auto;" />
-            </a>
-            <button class="hamburger hamburger--slider" type="button">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <nav class="navbar-mobile text-white">
-        <div class="container-fluid">
-          <ul class="navbar-mobile__list list-unstyled">
-            <li class="has-sub">
-              <a href="index.html" class=" text-white">
-                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-            </li>
-            <li>
-              <a href="stock.html" class=" text-white"> <i class="fas fa-box"></i>Estoque</a>
-            </li>
-            <li n>
-              <a href="vendas.html" class=" text-white"><i class="fas fa-money-bill-alt"></i>Vendas
-              </a>
-            </li>
-            <li>
-              <a href="chart.html" class=" text-white"> <i class="fas fa-chart-bar"></i>Gráficos</a>
-            </li>
-            <li>
-              <a href="table.html" class=" text-white"> <i class="fas fa-table"></i>Tabelas</a>
-            </li>
-            <li>
-              <a href="form.html" class=" text-white">
-                <i class="far fa-check-square"></i>Formulários</a>
-            </li>
-            <li>
-              <a href="calendar.html" class=" text-white">
-                <i class="fas fa-calendar-alt"></i>Calendario</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- END HEADER MOBILE-->
 
+    <!-- HEADER MOBILE-->
+    <div class="navbar-mobile-html"></div>
+    <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
     <div class="menu-html"></div>
+    <!-- END MENU SIDEBAR-->
+
     <!-- PAGE CONTAINER-->
     <div class="page-container">
+
       <!-- HEADER DESKTOP-->
-      <header class="header-desktop">
-        <div class="section__content section__content--p30">
-          <div class="container-fluid">
-            <div class="header-wrap">
-              <form class="form-header" action="" method="POST">
-                <input class="au-input au-input--xl" type="text" name="search"
-                  placeholder="Search for datas &amp; reports..." />
-                <button class="au-btn--submit" type="submit">
-                  <i class="zmdi zmdi-search"></i>
-                </button>
-              </form>
-              <div class="col-md-2 bg-success">
-                <p class="text-white text-center">Balcão Aberto</p>
-
-              </div>
-              <div class="header-button">
-
-                <div class="noti-wrap">
-
-                  <!--
-                     <div class="noti__item js-item-menu">
-                    <i class="zmdi zmdi-comment-more"></i>
-                    <span class="quantity">1</span>
-                    <div class="mess-dropdown js-dropdown">
-                      <div class="mess__title">
-                        <p>You have 2 news message</p>
-                      </div>
-                      <div class="mess__item">
-                        <div class="image img-cir img-40">
-                          <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
-                        </div>
-                        <div class="content">
-                          <h6>Michelle Moreno</h6>
-                          <p>Have sent a photo</p>
-                          <span class="time">3 min ago</span>
-                        </div>
-                      </div>
-                      <div class="mess__item">
-                        <div class="image img-cir img-40">
-                          <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
-                        </div>
-                        <div class="content">
-                          <h6>Diane Myers</h6>
-                          <p>You are now connected on message</p>
-                          <span class="time">Yesterday</span>
-                        </div>
-                      </div>
-                      <div class="mess__footer">
-                        <a href="#">View all messages</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="noti__item js-item-menu">
-                    <i class="zmdi zmdi-email"></i>
-                    <span class="quantity">1</span>
-                    <div class="email-dropdown js-dropdown">
-                      <div class="email__title">
-                        <p>You have 3 New Emails</p>
-                      </div>
-                      <div class="email__item">
-                        <div class="image img-cir img-40">
-                          <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-                        </div>
-                        <div class="content">
-                          <p>Meeting about new dashboard...</p>
-                          <span>Cynthia Harvey, 3 min ago</span>
-                        </div>
-                      </div>
-                      <div class="email__item">
-                        <div class="image img-cir img-40">
-                          <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-                        </div>
-                        <div class="content">
-                          <p>Meeting about new dashboard...</p>
-                          <span>Cynthia Harvey, Yesterday</span>
-                        </div>
-                      </div>
-                      <div class="email__item">
-                        <div class="image img-cir img-40">
-                          <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-                        </div>
-                        <div class="content">
-                          <p>Meeting about new dashboard...</p>
-                          <span>Cynthia Harvey, April 12,,2018</span>
-                        </div>
-                      </div>
-                      <div class="email__footer">
-                        <a href="#">See all emails</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="noti__item js-item-menu">
-                    <i class="zmdi zmdi-notifications"></i>
-                    <span class="quantity">3</span>
-                    <div class="notifi-dropdown js-dropdown">
-                      <div class="notifi__title">
-                        <p>You have 3 Notifications</p>
-                      </div>
-                      <div class="notifi__item">
-                        <div class="bg-c1 img-cir img-40">
-                          <i class="zmdi zmdi-email-open"></i>
-                        </div>
-                        <div class="content">
-                          <p>You got a email notification</p>
-                          <span class="date">April 12, 2018 06:50</span>
-                        </div>
-                      </div>
-                      <div class="notifi__item">
-                        <div class="bg-c2 img-cir img-40">
-                          <i class="zmdi zmdi-account-box"></i>
-                        </div>
-                        <div class="content">
-                          <p>Your account has been blocked</p>
-                          <span class="date">April 12, 2018 06:50</span>
-                        </div>
-                      </div>
-                      <div class="notifi__item">
-                        <div class="bg-c3 img-cir img-40">
-                          <i class="zmdi zmdi-file-text"></i>
-                        </div>
-                        <div class="content">
-                          <p>You got a new file</p>
-                          <span class="date">April 12, 2018 06:50</span>
-                        </div>
-                      </div>
-                      <div class="notifi__footer">
-                        <a href="#">All notifications</a>
-                      </div>
-                    </div>
-                 
-                  </div>
-
-                  -->
-
-
-                </div>
-
-                <div class="account-wrap">
-                  <div class="account-item clearfix js-item-menu">
-                    <div class="image">
-                      <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                    </div>
-                    <div class="content">
-                      <a class="js-acc-btn text-white usuario_nome" href="#" id="usuario_nome"></a>
-                    </div>
-                    <div class="account-dropdown js-dropdown">
-                      <div class="info clearfix">
-                        <div class="image">
-                          <a href="#">
-                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                          </a>
-                        </div>
-                        <div class="content">
-                          <h5 class="name">
-                            <a href="#">john doe</a>
-                          </h5>
-                          <span class="email">johndoe@example.com</span>
-                        </div>
-                      </div>
-                      <div class="account-dropdown__body">
-                        <div class="account-dropdown__item">
-                          <a href="#">
-                            <i class="zmdi zmdi-account"></i>Account</a>
-                        </div>
-                        <div class="account-dropdown__item">
-                          <a href="#">
-                            <i class="zmdi zmdi-settings"></i>Setting</a>
-                        </div>
-                        <div class="account-dropdown__item">
-                          <a href="#">
-                            <i class="zmdi zmdi-money-box"></i>Billing</a>
-                        </div>
-                      </div>
-                      <div class="account-dropdown__footer">
-                        <a href="#"> <i class="zmdi zmdi-power"></i>Logout</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <div class="navbar-desktop-html"></div>
       <!-- HEADER DESKTOP-->
 
       <!-- MAIN CONTENT-->
@@ -290,16 +64,16 @@
             <div class="row">
               <div class="col-md-12">
                 <!-- DATA TABLE -->
-                <!-- <h3 class="title-5 m-b-35">Balcão de Vendas</h3> -->
                 <div class="login-logo1 card-header1 bg-info text-center " style="border: 1px solid grey;">
 
                   <h2 class="text-center text-white ">Balcão de Vendas</h2>
 
                 </div>
-                <form action="" method="post" id="Form_vendas">
+                <form  method="post" id="Form_vendas">
                   <div class="balcao-form" style="border: 1px solid grey;">
                     <div class="table-responsive table-responsive-data2">
-                      <table class="table table-data2 ml-3 mt-4  bg-secondary table-hover" id="Tabela_vendas">
+                      <table class="table table-data2 ml-3 mt-4 table-bordered  bg-secondary table-hover"
+                        id="Tabela_vendas">
                         <thead>
                           <div class="row ">
                             <tr class="text-center text-white">
@@ -312,9 +86,9 @@
                             </tr>
                           </div>
                           <div class="row justify-content-center  ">
-                            <div class=" col-md-2 mt-3 ">
+                            <div class=" col-md-2 mt-3 ml-3 col-12 text-center ">
 
-                              <p class="btn btn-secondary align-middle ">
+                              <p class="btn btn-secondary align-middle " id="fecharBalcao">
                                 Fechar Balcão
                               </p>
                             </div>
@@ -462,7 +236,7 @@
                         Cancelar
                       </button>
                       <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 btn-confirm"
-                        id="Concluir_vendas" data-toggle="modal" >
+                        id="Concluir_vendas" data-toggle="modal">
                         <i class="fas fa-check"></i>
                         Concluir
                       </button>
@@ -499,7 +273,7 @@
               <div class="modal-dialog modal-sm modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header bg-black" style="color: aliceblue;">
-                    <h5 class="modal-title text-white" > Confirmar Venda</h5>
+                    <h5 class="modal-title text-white"> Confirmar Venda</h5>
                     <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -507,7 +281,7 @@
 
                   <div class="gif" id="gif"></div>
                   <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-danger"  id="modal-btn-nao" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-danger" id="modal-btn-nao" data-dismiss="modal">Não</button>
                     <button type="button" class="btn btn-success" id="modal-btn-sim">Sim</button>
                   </div>
                 </div>

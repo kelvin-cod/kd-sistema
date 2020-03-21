@@ -40,7 +40,8 @@
         dataType: 'json', // added data type
 
         success: function (response) {
-            $("#Numero_pedido").val(response[0].ultimo);
+            let aux = parseInt(response[0].ultimo) +1;
+            $("#Numero_pedido").val(aux);
         }
     });
 
@@ -78,6 +79,10 @@
 
         $("#Subtotal_vendas").val(soma)
     });
+$("#fecharBalcao").click(() => {
+    localStorage.removeItem("venda");
+    location.reload()
+})
 
 
 
@@ -108,6 +113,7 @@
         Pedidos.push(Comanda);
 
         Venda.Pedidos.push(Comanda);
+        localStorage.setItem("venda", Venda)
 
         Total += parseFloat(soma)
         Quantidade_total += parseInt(quantidade);

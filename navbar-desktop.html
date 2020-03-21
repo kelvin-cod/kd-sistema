@@ -1,0 +1,107 @@
+<header class="header-desktop">
+  <div class="section__content section__content--p30">
+    <div class="container-fluid">
+      <div class="header-wrap ">
+        <form class="form-header" action="" method="POST">
+          <input class="au-input au-input--xl " type="text" name="search"
+            placeholder="Search for datas &amp; reports..." />
+          <button class="au-btn--submit " type="submit">
+            <i class="zmdi zmdi-search"></i>
+          </button>
+        </form>
+        <div class="col-md-2 mt-1"id="balcaoVendas" >
+        
+
+        </div>
+        <div class="header-button">
+
+          <div class="noti-wrap">
+
+          </div>
+
+          <div class="account-wrap ">
+            <div class="account-item clearfix js-item-menu">
+              <div class="image">
+                <img src="images/icon/avatar-01.jpg" alt="" />
+              </div>
+              <div class="content">
+                <a class="js-acc-btn text-white" href="#" id="usuario_nome"></a>
+              </div>
+              <div class="account-dropdown js-dropdown" style="border:1px solid black">
+                <div class="info clearfix " style="background-color: rgb(204, 204, 204);">
+                  <div class="image">
+                    <a href="#">
+                      <img src="images/icon/avatar-01.jpg" alt="" />
+                    </a>
+                  </div>
+                  <div class="content">
+                    <h5 class="name">
+                      <a class="usuario_nome" name="usuario_nome"></a>
+                    </h5>
+                    <span class="usuario_email" name="usuario_email"></span>
+                  </div>
+                </div>
+                <div class="account-dropdown__body">
+                  <div class="account-dropdown__item">
+                    <a href="#">
+                      <i class="zmdi zmdi-account"></i>Conta</a>
+                  </div>
+                  <!--
+                    <div class="account-dropdown__item">
+                      <a href="#">
+                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                    </div>
+                    <div class="account-dropdown__item">
+                      <a href="#">
+                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                    </div>
+                  </div>
+                  -->
+                  <div class="account-dropdown__footer">
+                    <a href="#" id="logout"> <i class="zmdi zmdi-power"></i>Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+<script>
+  // Dropdown 
+  try {
+    var menu = $('.js-item-menu');
+    var sub_menu_is_showed = -1;
+
+    for (var i = 0; i < menu.length; i++) {
+      $(menu[i]).on('click', function (e) {
+        e.preventDefault();
+        $('.js-right-sidebar').removeClass("show-sidebar");
+        if (jQuery.inArray(this, menu) == sub_menu_is_showed) {
+          $(this).toggleClass('show-dropdown');
+          sub_menu_is_showed = -1;
+        } else {
+          for (var i = 0; i < menu.length; i++) {
+            $(menu[i]).removeClass("show-dropdown");
+          }
+          $(this).toggleClass('show-dropdown');
+          sub_menu_is_showed = jQuery.inArray(this, menu);
+        }
+      });
+    }
+    $(".js-item-menu, .js-dropdown").click(function (event) {
+      event.stopPropagation();
+    });
+
+    $("body,html").on("click", function () {
+      for (var i = 0; i < menu.length; i++) {
+        menu[i].classList.remove("show-dropdown");
+      }
+      sub_menu_is_showed = -1;
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+</script>

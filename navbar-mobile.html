@@ -1,0 +1,74 @@
+<header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar bg-black">
+        <div class="container-fluid ">
+            <div class="header-mobile-inner">
+                <a class="logo pl-5" href="index.html">
+                    <img src="./images/kd_sistema_blue.png" alt="KD Gerenciador" style="width: 200px; height: auto;" />
+                </a>
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-mobile text-white">
+        <div class="container-fluid">
+            <ul class="navbar-mobile__list list-unstyled">
+                <li class="has-sub">
+                    <a href="index.html" class=" text-white">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="vendas.html" class="text-white">
+
+                        <i class="fas fa-money-bill-alt"></i>Vendas
+                    </a>
+                </li>
+                <li>
+                    <a href="estoque.html" class=" text-white"> <i class="fas fa-box"></i>Estoque</a>
+                </li>
+                <li>
+                    <a href="cliente.html" class=" text-white"> <i class="fas fa-user"></i>Clientes</a>
+                </li>
+                <li>
+                    <a href="chart.html" class=" text-white">
+                        <i class="fas fa-chart-bar"></i>
+                        Gráficos
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html" class=" text-white"> <i class="fas fa-table"></i>Tabelas</a>
+                </li>
+                <li>
+                    <a href="form.html" class=" text-white">
+                        <i class="far fa-check-square"></i>Formulários</a>
+                </li>
+                <li>
+                    <a href="calendar.html" class=" text-white">
+                        <i class="fas fa-calendar-alt"></i>Calendario</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<script>
+    try {
+        // Hamburger Menu
+        $('.hamburger').on('click', function () {
+            $(this).toggleClass('is-active');
+            $('.navbar-mobile').slideToggle('500');
+        });
+        $('.navbar-mobile__list li.has-dropdown > a').on('click', function () {
+            var dropdown = $(this).siblings('ul.navbar-mobile__dropdown');
+            $(this).toggleClass('active');
+            $(dropdown).slideToggle('500');
+            return false;
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+</script>
