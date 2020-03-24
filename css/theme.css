@@ -283,8 +283,8 @@ section {
 }
 
 .container {
-    background-image: url("../images/three-box.png") !important;
-    background: fixed;
+    background-image: url("../images/Background.png") !important;
+ 
 }
 
 /* ----- Page Wrapper----- */
@@ -344,7 +344,7 @@ section {
     padding-top: 116px;
     min-height: 100vh;
     background-color: #d3d3d3;
-    background-image: url("../images/three-box.png") !important;
+    background-image: url("../images/Background.png") !important;
     background: fixed;
 }
 
@@ -372,7 +372,7 @@ section {
 
 .login-logo {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .login-checkbox {
@@ -393,7 +393,7 @@ section {
 }
 
 .login-checkbox>label>a {
-    color: #ff2e44;
+    color: #ffffff;
 }
 
 @media (max-width: 991px) {
@@ -433,7 +433,7 @@ section {
 }
 
 .register-link>p>a {
-    color: #1000e9;
+    color: #ffffff;
 }
 
 .fontawesome-list-wrap {
@@ -494,11 +494,11 @@ section {
 }
 
 .au-btn--blue2 {
-    background: #00aced;
+    background: #00ff40;
 }
 
 .au-btn--blue2:hover {
-    background: #00a2e3;
+    background: #02ff02;
 }
 
 .au-btn--block {
@@ -4803,8 +4803,8 @@ section {
 /* ----- Footer ----- */
 .copyright {
     text-align: center;
-    padding: 60px 0;
-    padding-top: 30px;
+    padding: 40px 0;
+    padding-top: 40px;
     width: 100%;
 }
 

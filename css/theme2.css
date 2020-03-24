@@ -283,7 +283,7 @@ section {
 }
 
 .container {
-    background-image: url("../images/three-box.png") !important;
+    background-image: url("../images/Background.png") !important;
     background: fixed;
 }
 
@@ -345,7 +345,7 @@ section {
     padding-top: 116px;
     min-height: 100vh;
     background-color: #d3d3d3;
-    background-image: url("../images/three-box.png") !important;
+    background-image: url("../images/Background.png") !important;
     background: fixed;
 }
 

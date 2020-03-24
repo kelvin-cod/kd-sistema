@@ -69,7 +69,7 @@
                   <h2 class="text-center text-white ">Balcão de Vendas</h2>
 
                 </div>
-                <form  method="post" id="Form_vendas">
+                <form method="post" id="Form_vendas">
                   <div class="balcao-form" style="border: 1px solid grey;">
                     <div class="table-responsive table-responsive-data2">
                       <table class="table table-data2 ml-3 mt-4 table-bordered  bg-secondary table-hover"
@@ -159,10 +159,25 @@
                                 <select class="form-control" name="Produto" id="Produto_vendas">
                                   <option value=""></option>
                                 </select>
+
                                 <input class="au-input au-input--full" type="text" name="observacao"
                                   placeholder="Obs deste Produto " id="Obs_vendas">
 
+                                  <div class="form-group mt-1 adicional" id="Adicional" style="display: none;">
+                                    <label>Adicional</label>
+                                    <select class="form-control" name="" id="Adicional_vendas">
+                                      <option value=""></option>
+                                    </select>
+                                  </div>
+
                               </div>
+                            
+
+                                <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
+                             
+
+                            
+
 
                               <div class="form-group col-md-2 col-6">
                                 <label>R$ Unitário</label>
@@ -171,16 +186,26 @@
                                   id="Valor_vendas" disabled>
                                   <option value=""></option>
                                 </select>
+                                <div class="form-group  adicional mt-5" style="display: none;">
+                                  <label>R$ Adicional</label>
+
+                                  <select class="form-control bg-white  seta text-center au-input  au-input--full"
+                                    name="" disabled>
+                                    <option value=""></option>
+                                  </select>
+                                </div>
+
+
                               </div>
                               <div class="form-group col-md-2 col-6 text-center">
                                 <label>Quantidade</label>
-                                <input class="au-input au-input--full text-center" type="number" name="quantidade"
+                                <input class="au-input au-input--full text-center font-weight-bold" type="number" name="quantidade"
                                   id="Quantidade_vendas" placeholder="Qtd" value="1" min="1">
                               </div>
-                              <div class="form-group col-md-2 text-center">
+                              <div class="form-group col-md-2 ">
                                 <label>Sub Total</label>
-                                <input class="au-input au-input--full bg-white text-center" type="text" name="sub_total"
-                                  disabled id="Subtotal_vendas" value="0.00">
+                                <input class="au-input au-input--full bg-white text-center font-weight-bold" type="text"
+                                  name="sub_total" disabled id="Subtotal_vendas" value="0.00">
                               </div>
 
                               <!--Tabela-->
@@ -271,15 +296,17 @@
             <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
               id="Modal">
               <div class="modal-dialog modal-sm modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content ">
                   <div class="modal-header bg-black" style="color: aliceblue;">
-                    <h5 class="modal-title text-white"> Confirmar Venda</h5>
+                    <h5 class="modal-title text-white"> Confirmar Venda ?</h5>
                     <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
+                  <div class="modal-body m-5">
+                    <div class="gif" id="gif"></div>
+                  </div>
 
-                  <div class="gif" id="gif"></div>
                   <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-danger" id="modal-btn-nao" data-dismiss="modal">Não</button>
                     <button type="button" class="btn btn-success" id="modal-btn-sim">Sim</button>

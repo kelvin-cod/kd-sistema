@@ -31,6 +31,11 @@
     }
 
     /************************************************************************************************************************* */
+    Array.prototype.duplicates = function () {
+        return this.filter(function (x, y, k) {
+            return y !== k.lastIndexOf(x);
+        });
+    }
 
     $("#Data_vendas").val(now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear());
     $.ajax({
@@ -40,7 +45,7 @@
         dataType: 'json', // added data type
 
         success: function (response) {
-            let aux = parseInt(response[0].ultimo) +1;
+            let aux = parseInt(response[0].ultimo) + 1;
             $("#Numero_pedido").val(aux);
         }
     });
@@ -50,9 +55,10 @@
         type: 'GET',
         dataType: 'json', // added data type
     }).done(function (response) { //
-
-        var selectbox = $('#Produto_vendas');
+        let vet_categoria = [];
+        // let selectbox = $('#Produto_vendas');
         var selectbox2 = $('#Valor_vendas');
+        var selectbox3 = $('#Adicional_vendas');
         //selectbox.find('option').remove();
         response = response.sort(function compare(a, b) {
             if (a.Descricao < b.Descricao) return -1;
@@ -60,32 +66,74 @@
             return 0;
         })
 
-        Produtos = response
+        Produtos = response; //popula array de produtos
         $.each(response, function (i, d) {
-            $('<option>').val(d.idProduto).text(d.Descricao).appendTo(selectbox);
-            $('<option>').val(d.idProduto).text(d.Valor_Venda).appendTo(selectbox2);
+            vet_categoria.push(d.categoria)
+        });
+        const novoArray = [...new Set(vet_categoria)]; //remove categorias repetidas
+
+        var $optgroup; // cria as o grupo de opçoes
+
+        $.each(novoArray, function (i, optgroups) { // para cada valor no vetor joga em um grupo
+
+            $optgroup = $('<optgroup>', {
+                label: novoArray[i],
+                id: i
+            });
+
+            $optgroup.appendTo('#Produto_vendas'); // atribuui
+            $.each(response, function (j, d) {
+                if (d.categoria == novoArray[i]) {
+                    $('<option>').val(d.idProduto).text(d.Descricao).appendTo($optgroup);
+                }
+                if (d.Descricao == "Ovo") {
+                    $('<option>').val(d.idProduto).text(d.Descricao).appendTo(selectbox3);
+                }
+
+                $('<option>').val(d.idProduto).text(d.Valor_Venda).appendTo(selectbox2);
+            });
         });
 
+        $.each(response, function (i, d) {
+
+            if (d.Descricao == "Ovo") {
+                $('<option>').val(d.idProduto).text(d.Descricao).appendTo(selectbox3);
+            }
+
+
+        });
     });
 
+
+    /**----------------------------------------------------------------------------------------------------- */
 
     $('#Produto_vendas').change(function () {
         idProduto = ($(this).val());
+
         $("#Valor_vendas").val(($(this).val()));
+
         quantidade = parseFloat($("#Quantidade_vendas").val());
         valor = parseFloat($("#Valor_vendas :selected").text());
 
-        soma = (quantidade * valor).toFixed(2)
+        soma = (quantidade * valor).toFixed(2);
 
-        $("#Subtotal_vendas").val(soma)
+        $("#Subtotal_vendas").val(soma);
+
+        var selected = $("option:selected", this);
+
+        if (selected.parent()[0].label == "Lanche") {
+            $(".adicional").css("display", "block");
+        }
+
     });
-$("#fecharBalcao").click(() => {
-    localStorage.removeItem("venda");
-    location.reload()
-})
 
+    /**----------------------------------------------------------------------------------------------------- */
+    $("#fecharBalcao").click(() => {
+        localStorage.removeItem("venda");
+        location.reload()
+    })
 
-
+    /**----------------------------------------------------------------------------------------------------- */
     $('#Quantidade_vendas').change(function () {
 
         quantidade = $("#Quantidade_vendas").val();
@@ -93,7 +141,7 @@ $("#fecharBalcao").click(() => {
         soma = (quantidade * valor).toFixed(2);
         $("#Subtotal_vendas").val(soma);
     });
-
+    /**----------------------------------------------------------------------------------------------------- */
     let cont = 0;
     $('#Add_item').click(function () {
 
@@ -131,7 +179,7 @@ $("#fecharBalcao").click(() => {
         $("#Total_vendas").val(Total.toFixed(2));
         $("#Quantidade_total").val(Quantidade_total);
     });
-
+    /**----------------------------------------------------------------------------------------------------- */
     function salvar(item) {
         trHTML =
             '<tr id="tbl_tr_' + item.idComanda + '"><td>' + item.idProduto +
@@ -163,12 +211,12 @@ $("#fecharBalcao").click(() => {
             '</tr>';
         return $('#TabelaComanda').append(trHTML);
     }
-
+    /**----------------------------------------------------------------------------------------------------- */
     $(Pedidos).change(function () {
         console.log('aloooooooo');
 
     })
-
+    /**----------------------------------------------------------------------------------------------------- */
     function editar(id) {
 
         let quantidade_Coluna = parseInt($(`#tbl_${id}`).text());
@@ -223,7 +271,7 @@ $("#fecharBalcao").click(() => {
             }
         }
     }
-
+    /**----------------------------------------------------------------------------------------------------- */
 
     function excluir(id, id_linha) {
         let quantidade_Coluna = parseInt($(`#tbl_${id_linha}`).text());
@@ -251,6 +299,7 @@ $("#fecharBalcao").click(() => {
 
         }
     }
+    /**----------------------------------------------------------------------------------------------------- */
     //Função para desconto de vendas
     $("#Desconto_vendas").change(() => {
         let valor = parseFloat($("#Desconto_vendas").val());
@@ -265,7 +314,7 @@ $("#fecharBalcao").click(() => {
             return $("#Total_vendas").val(desconto.toFixed(2))
         }
     })
-
+    /**----------------------------------------------------------------------------------------------------- */
     $("#Concluir_vendas").click(() => {
         let cliente = $("#Nome_cliente").val();
         Venda.cliente_venda = $("#Nome_cliente").val();
@@ -293,10 +342,10 @@ $("#fecharBalcao").click(() => {
 
         }
     });
-
+    /**----------------------------------------------------------------------------------------------------- */
     $("#modal-btn-sim").click(() => {
         const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir";
-        var gif = '<img src="https://gifimage.net/wp-content/uploads/2017/10/carregando-gif-animado-9.gif" >'
+        var gif = '<img src="../images/carregando-gif-animado-9.gif" >'
         $("#gif").append(gif)
 
         $.ajax({
@@ -308,8 +357,5 @@ $("#fecharBalcao").click(() => {
                 location.reload();
             }
 
-        }).done(function (response) { //
-
-            location.reload();
-        });
+        })
     })
