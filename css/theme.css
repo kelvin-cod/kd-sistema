@@ -284,7 +284,26 @@ section {
 
 .container {
     background-image: url("../images/Background.png") !important;
- 
+
+}
+
+.container-fluid {
+    background-image: url("../images/Background.png") !important;
+
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.4);
+    /* IE */
+    -moz-transform: scale(1.4);
+    /* FF */
+    -webkit-transform: scale(1.4);
+    /* Safari and Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+    transform: scale(1.4);
+    padding: 10px;
 }
 
 /* ----- Page Wrapper----- */
@@ -300,7 +319,7 @@ section {
 .page-wrapper {
     overflow: hidden;
     background: #e5e5e5;
-   
+
 }
 
 @media (max-width: 991px) {
@@ -351,7 +370,7 @@ section {
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
-       
+
     }
 }
 
@@ -361,11 +380,11 @@ section {
 
 .page-content--bge5 {
     background: #e5e5e5;
-    height: 100vh;
+    height: 130vh;
 }
 
 .login-wrap {
-    max-width: 540px;
+    max-width: 600px;
     padding-top: 8vh;
     margin: 0 auto;
 }
@@ -4681,7 +4700,7 @@ section {
     justify-content: flex-end;
 }
 
-.table-data-feature .item{
+.table-data-feature .item {
     display: block;
     height: 30px;
     width: 30px;

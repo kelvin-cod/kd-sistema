@@ -7,11 +7,12 @@ window.onload = function () {
         $(window.document.location).attr('href', novaURL);
     } else {
         user = JSON.parse(sessionStorage.getItem("user"));
-
+        let imagem = '<img src="' + user.Foto + '" alt="" />'
         $("#usuario_nome").append(user.Nome);
         $(".usuario_nome").append(user.Nome);
 
         $(".usuario_email").append(user.Email);
+        $(".usuario_foto").append(imagem);
     }
 
     if (localStorage.venda == null) {
