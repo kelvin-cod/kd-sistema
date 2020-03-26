@@ -8,13 +8,14 @@ footer {
 
 }
 
-.border-cizna{
+.border-cinza {
     border: 1px solid grey;
 }
 
-.bg-abaixo{
+.bg-abaixo {
     background-color: rgb(255, 94, 94);
 }
-.bg-acima{
+
+.bg-acima {
     background-color: rgb(138, 245, 138);
 }

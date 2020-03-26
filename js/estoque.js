@@ -1,42 +1,17 @@
 var idProduto;
 var combofornecedorNovo;
 var combocategoriaNovo;
+var user = JSON.parse(sessionStorage.user); // pega user do session
+/**----------------------------------------------------------------- */
 $('#fornecedor').change(function () {
-    combofornecedorNovo = $(this).val();
-    console.log(combofornecedor)
+    combofornecedorNovo = $(this).val()
 });
 
 $('#categoria').change(function () {
     combocategoriaNovo = $(this).val();
 });
 
-$("#submit").click(function () {
-    var obj = {
-        Descricao: '',
-        Valor: '',
-        idFornecedor: '',
-        idCategoria: ''
-    }
-
-    obj.Descricao = $("#Descricao").val();
-    obj.Valor = $("#Valor").val();
-    obj.idFornecedor = parseInt($("#fornecedor").val());
-    obj.idCategoria = parseInt($("#categoria").val());
-
-
-    // var post_url = "http://localhost:3000/produtos/criar";
-    var post_url = "https://kd-gerenciador.herokuapp.com/produtos/criar";
-    $.ajax({
-        url: post_url,
-        type: 'POST',
-        data: obj
-    }).done(function (response) { //
-
-        document.location.reload();
-
-    });
-});
-
+/**----------------------------------------------------------------- */
 
 function fazerRequisicaoUM(id) {
 
@@ -134,9 +109,9 @@ $.ajax({
 
         tblFornecedor +=
             '<tr><td>' + item.idFornecedor +
-            '</td><td>' + item.nomeFornecedor + '</td>'+
+            '</td><td>' + item.nomeFornecedor + '</td>' +
             '<td>' + item.Fantasia + '</td>' +
-          
+
             '<td>' + item.Celular + '</td>' +
             '<td>' + item.Telefone + '</td>' +
             '<td>' + item.Email_Representante + '</td>' +
@@ -261,17 +236,29 @@ $('#categoriaum').change(function () {
 
 $("#atualizar").click(function () {
     var obj = {
-        idProduto: '',
         Descricao: '',
-        Valor: '',
-        idFornecedor: 0,
-        idCategoria: 0
+        Valor_compra: '',
+        Valor_venda: '',
+        Unidade_Medida: '',
+        Quantidade: '',
+        Tipo: '',
+        Validade: '',
+        idUsuario: '',
+        idFornecedor: '',
+        idCategoria: ''
     }
+
     obj.idProduto = idProduto;
-    obj.Descricao = $("#DescricaoA").val();
-    obj.Valor = $("#ValorA").val();
-    obj.idFornecedor = parseInt($("#fornecedorum").val());
-    obj.idCategoria = parseInt($("#categoriaum").val());
+    obj.Descricao = $("#Descricao").val();
+    obj.Valor_compra = parseFloat($("#Valor_compra").val());
+    obj.Valor_venda = parseFloat($("#Valor_venda").val());
+    obj.Quantidade = parseInt($("#Quantidade").val());
+    obj.Tipo = $("#Tipo").val();
+    obj.Validade = $("#Validade").val();
+    obj.Unidade_Medida = $("#Unidade_medida").val();
+    obj.idUsuario = user.idUsuario;
+    obj.idFornecedor = parseInt($("#fornecedor").val());
+    obj.idCategoria = parseInt($("#categoria").val());
 
     console.log(obj);
     // var post_url = 'http://localhost:3000/produtos/atualizar/' + idProduto;
@@ -283,6 +270,56 @@ $("#atualizar").click(function () {
     }).done(function (response) { //
         // $("#resposta").html(response);
         document.location.reload();
+
+    });
+});
+
+
+/**----------------------------------------------------------------------------------/ */
+
+$("#produto_modal").click(() => {
+    $('#modal_Fornecedor').modal('show');
+})
+
+/*--------------ENVIAR MODAL PRODUTO */
+
+
+$("#enviar_Produto").click(function () {
+
+    var obj = {
+        Descricao: '',
+        Valor_compra: '',
+        Valor_venda: '',
+        Unidade_Medida: '',
+        Quantidade: '',
+        Tipo: '',
+        Validade: '',
+        idUsuario: '',
+        idFornecedor: '',
+        idCategoria: ''
+    }
+
+    obj.Descricao = $("#Descricao").val();
+    obj.Valor_compra = parseFloat($("#Valor_compra").val());
+    obj.Valor_venda = parseFloat($("#Valor_venda").val());
+    obj.Quantidade = parseInt($("#Quantidade").val());
+    obj.Tipo = $("#Tipo").val();
+    obj.Validade = $("#Validade").val();
+    obj.Unidade_Medida = $("#Unidade_medida").val();
+    obj.idUsuario = user.idUsuario;
+    obj.idFornecedor = parseInt($("#fornecedor").val());
+    obj.idCategoria = parseInt($("#categoria").val());
+    console.log(obj);
+
+    // var post_url = "http://localhost:3000/produtos/criar";
+    var post_url = "https://kd-gerenciador.herokuapp.com/produtos/criar";
+    $.ajax({
+        url: post_url,
+        type: 'POST',
+        data: obj
+    }).done(function (response) { //
+
+        //  document.location.reload();
 
     });
 });

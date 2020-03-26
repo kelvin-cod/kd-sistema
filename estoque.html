@@ -9,7 +9,7 @@
   <meta name="author" content="Kelvin/Diogo" />
   <meta name="keywords" content="kd theme template" />
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="manifest" href="/manifest.json" />
   <!-- Title Page-->
   <title>Estoque</title>
@@ -79,8 +79,8 @@
                   style="border-bottom:black solid 3px">
 
                   <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
-                    <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
-                      data-target="#exampleModalCenter"> <i class="fas fa-plus"></i> Produto</button>
+                    <button class="btn btn-success  mesmo-tamanho font-weight-bold" id="produto_modal" type="button">
+                      <i class="fas fa-plus"></i> Produto</button>
 
                     <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
                       data-target="#modalFornecedor">
@@ -147,7 +147,7 @@
                       <thead>
                         <tr class="bg-info text-white text-center">
                           <th scope="col">ID</th>
-                          <th scope="col">Represen.</th>                         
+                          <th scope="col">Represen.</th>
                           <th scope="col">Fantasia</th>
                           <th scope="col">Celular</th>
                           <th scope="col">Telefone</th>
@@ -250,41 +250,41 @@
       <!-- END MAIN CONTENT-->
 
       <!--Modal-->
-      <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade bd-example-modal-lg" id="modal_Fornecedor" tabindex="-1" role="dialog"
+        aria-labelledby="modal_Fornecedor" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
           <div class="modal-content border-cinza">
             <div class="modal-header bg-success">
-              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Produto</h5>
+              <h4 class="modal-title text-white text-center" id="exampleModalCenterTitle">Produto</h4>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body ">
+            <div class="modal-body border-cinza ">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
-                <div class="bg-burguer-center mt-1">
+                <div class="bg-burguer-center mt-1 inputs ">
                   <div class="row  ml-1 mr-1 pt-1 ">
-                    <div class="form-group col-md-6">
-                      <label for="my-input">Descrição</label>
-                      <input id="Descricao " class="form-control" type="text" name="" required>
+                    <div class="form-group col-md-8">
+                      <label for="descricao">Descrição</label>
+                      <input id="Descricao" class="form-control" type="text" name="descricao" required>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="my-input">Validade</label>
-                      <input id="Validade" class="form-control" type="date" name="" required>
+                    <div class="form-group col-md-4">
+                      <label for="validade">Validade</label>
+                      <input id="Validade" class="form-control" type="date" name="validade" required>
                     </div>
 
                   </div>
                   <div class="row ml-1 mr-1">
                     <div class="form-group col-md-5">
-                      <label for="my-input">Valor Compra</label>
-                      <input id="Valor_compra" class="form-control" type="text" name="" required>
+                      <label for="Valor_compra">Valor Compra</label>
+                      <input id="Valor_compra" class="form-control" type="number" name="Valor_compra" required>
                     </div>
                     <div class="form-group col-md-4">
-                      <label for="my-input">Valor Venda</label>
-                      <input id="Valor_venda" class="form-control" type="number" name="">
+                      <label for="Valor_venda">Valor Venda</label>
+                      <input id="Valor_venda" class="form-control" type="number" name="Valor_venda">
                     </div>
                     <div class="form-group col-md-3">
-                      <label for="my-input">Unidade</label>
+                      <label for="Unidade_medida">Unidade</label>
                       <select class="form-control" name="unidade" id="Unidade_medida">
                         <option value="UN">UN</option>
                         <option value="Pct">Pct</option>
@@ -294,12 +294,12 @@
                   </div>
                   <div class="row ml-1 mr-1">
                     <div class="form-group col-md-6">
-                      <label for="my-input">Quantidade</label>
-                      <input id="Quantidade" class="form-control" type="number" name="">
+                      <label for="Quantidade">Quantidade</label>
+                      <input id="Quantidade" class="form-control" type="number" name="Quantidade">
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="my-input">Tipo</label>
-                      <input id="Tipo" class="form-control" type="text" name="">
+                      <label for="Tipo">Tipo</label>
+                      <input id="Tipo" class="form-control" type="text" name="Tipo">
                     </div>
 
                   </div>
@@ -311,24 +311,27 @@
                       </select>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="my-input">Fornecedir</label>
-                      <select class="form-control" name="" id="fornecedor">
+                      <label for="fornecedor">Fornecedor</label>
+                      <select class="form-control" name="fornecedor" id="fornecedor">
                         <option value=""></option>
                       </select>
                     </div>
 
                   </div>
-
-
-
                 </div>
-
-
               </form>
             </div>
-            <div class="modal-footer text-center row justify-content-center ">
-              <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-info font-weight-bold ml-5" id="submit" name="submit">Salvar</button>
+            <div class="modal-footer text-center row justify-content-center  pb-1">
+              <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
+                <i class="fas fa-times"></i> Fechar
+              </button>
+              <div>
+                <button type="submit" class="btn btn-success font-weight-bold ml-5" 
+                id="enviar_Produto" name="submit">
+                  <i class="fas fa-check"></i> Enviar
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
