@@ -108,11 +108,11 @@
                         </thead>
 
                         <div class="section__content section__content--p30">
-                          <div class="container-fluid">
+                          <div class="container-fluid bg-burguer">
                             <div class="row">
                               <div class="form-group col-md-5">
                                 <label>Cliente</label>
-                                <input class="au-input au-input--full" type="text" name="cliente"
+                                <input class="au-input au-input--full border-input " type="text" name="cliente"
                                   placeholder="Nome Cliente" id="Nome_cliente">
                               </div>
 
@@ -156,33 +156,34 @@
                                 <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
 
                                 <label>Produto</label>
-                                <select class="form-control" name="Produto" id="Produto_vendas">
+                                <select class="form-control border-input " name="Produto" id="Produto_vendas">
                                   <option value=""></option>
                                 </select>
 
                                 <input class="au-input au-input--full" type="text" name="observacao"
                                   placeholder="Obs deste Produto " id="Obs_vendas">
 
-                                  <div class="form-group mt-1 adicional" id="Adicional" style="display: none;">
-                                    <label>Adicional</label>
-                                    <select class="form-control" name="" id="Adicional_vendas">
-                                      <option value=""></option>
-                                    </select>
-                                  </div>
+                                <div class="form-group mt-1 adicional" id="Adicional" style="display: none;">
+                                  <label>Adicional</label>
+                                  <select class="form-control" name="" id="Adicional_vendas">
+                                    <option value=""></option>
+                                  </select>
+                                </div>
 
                               </div>
-                            
 
-                                <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
-                             
 
-                            
+                              <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
+
+
+
 
 
                               <div class="form-group col-md-2 col-6">
-                                <label>R$ Unitário</label>
+                                <label for="Valor_vendas">R$ Unitário</label>
 
-                                <select class="form-control bg-white  seta text-center au-input  au-input--full" name=""
+                                <select class="form-control bg-white 
+                                 seta text-center au-input  au-input--full border-input " name="Valor_vendas"
                                   id="Valor_vendas" disabled>
                                   <option value=""></option>
                                 </select>
@@ -199,13 +200,17 @@
                               </div>
                               <div class="form-group col-md-2 col-6 text-center">
                                 <label>Quantidade</label>
-                                <input class="au-input au-input--full text-center font-weight-bold" type="number" name="quantidade"
-                                  id="Quantidade_vendas" placeholder="Qtd" value="1" min="1">
+                                <input class="au-input au-input--full text-center 
+                                font-weight-bold border-input " type="number" name="quantidade" id="Quantidade_vendas"
+                                  placeholder="Qtd" value="1" min="1">
                               </div>
                               <div class="form-group col-md-2 ">
                                 <label>Sub Total</label>
-                                <input class="au-input au-input--full bg-white text-center font-weight-bold" type="text"
-                                  name="sub_total" disabled id="Subtotal_vendas" value="0.00">
+                                <input class="au-input au-input--full bg-white 
+                                text-center font-weight-bold border-input " 
+                                type="text"
+                                 name="sub_total" disabled
+                                  id="Subtotal_vendas" value="0.00">
                               </div>
 
                               <!--Tabela-->
@@ -243,7 +248,7 @@
                         <div class="form-group offset-md-7 col-md-2 col-5">
                           <label for="">Total Produtos</label>
                           <input class="au-input au-input--full bg-white  text-center font_vendas" type="text"
-                            name="total_produtos" value="00" disabled id="Quantidade_total"
+                            name="total_produtos" value="0" disabled id="Quantidade_total"
                             style="border: 1px green solid;">
                         </div>
                         <div class=" col-md-2 text-center col-5 ">

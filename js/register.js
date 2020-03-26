@@ -28,16 +28,38 @@ function encodeImgtoBase64(element) {
 
 }
 
-$("#fot").change(function () {
+$("#submit").click(function () {
+    var obj = {
+        nome: '',
+        email: '',
+        password: '',
+        email_recuperacao: '',
+        foto: ''
+    }
+    let aux = $("#foto")[0].files[0];;
 
-    let aux = encodeImgtoBase64(this)
+
+    obj.nome = $("#nome").val();
+    obj.email = $("#email").val();
+    obj.password = $("#password").val();
+    obj.email_recuperacao = $("#email_recuperacao").val();
+    obj.foto = result;
+    // var post_url = "http://localhost:3000/user/create";
+
+    // let img_url = "https://api.imgbb.com/1/upload?key=cc6802445a8fe48713fbbf176fa47179";
+
+    var post_url = "https://kd-gerenciador.herokuapp.com/user/create";
 
 
-    console.log(aux)
 
-    /*
-        var file = $("#foto")[0].files[0];
-        var blob = $(file).imageBlob().blob();
-        console.log(blob);
-        */
+    $.ajax({
+        url: post_url,
+        type: 'POST',
+        data: obj
+    }).done(function (response) { //
+
+        //document.location.reload();
+        window.location.href = "login.html";
+
+    });
 });

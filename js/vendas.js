@@ -35,9 +35,11 @@
         return this.filter(function (x, y, k) {
             return y !== k.lastIndexOf(x);
         });
-    }
+    } // remover duplicatas
+    let mes = now.getMonth() + 1// arrumar bug de mes
+    
+    $("#Data_vendas").val(now.getDate() + "/" + mes + "/" + now.getFullYear());
 
-    $("#Data_vendas").val(now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear());
     $.ajax({
         url: 'https://kd-gerenciador.herokuapp.com/vendas/ultimo',
         // url: 'http://localhost:3000/produtos/listar',

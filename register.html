@@ -5,9 +5,9 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
+    <meta name="description" content="kd theme template">
     <meta name="author" content="KD devs" />
-    <meta name="keywords" content="au theme template">
+    <meta name="keywords" content="kdtheme template">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
 
@@ -34,6 +34,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/register.css" rel="stylesheet" media="all">
     <link rel="apple-touch-icon" href="./images/icons/icon-57x57.png" />
 
 </head>
@@ -41,7 +42,7 @@
 <body class="animsition" style="height: 1000px;">
     <div class="page-wrapper">
         <div class="page-content--bge5">
-            <div class="container-fluid">
+            <div class="container-fluid container-fluid-burguer">
                 <div class="login-wrap">
                     <div class=" bg-white pt-2 " style="border: gray 1px solid;;">
                         <h2 class="text-info  text-center mb-2">CADASTRO</h2>
@@ -50,55 +51,68 @@
                                 <img src="./images/kd_sistema_blue.png" alt="KD Sistema">
                             </a>
                         </div>
-                        <div class="login-form ml-3 mr-3 login-content bg-info text-white font-weight-bold ">
+                        <div class="login-form ml-3 mr-3 login-content font-weight-bold bg-burguer">
                             <form action="" method="post" id="createUser">
                                 <div class="form-group pt-2">
                                     <label>Usuario</label>
-                                    <input class="au-input au-input--full" type="text" name="nome"
+                                    <input class="au-input au-input--full border-input" type="text" name="nome"
                                         placeholder="nome de usuario" required="true" id="nome">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input class="au-input au-input--full" type="email" name="email"
+                                    <input class="au-input au-input--full border-input" type="email" name="email"
                                         placeholder="exemplo@email.com" required id="email">
                                 </div>
                                 <div class="form-group">
                                     <label>Email de Recuperação</label>
-                                    <input class="au-input au-input--full" type="email" name="email_recuperacao"
-                                        id="email_recuperacao" placeholder="exemplo@outroemail.com" required>
+                                    <input class="au-input au-input--full border-input" type="email"
+                                        name="email_recuperacao" id="email_recuperacao"
+                                        placeholder="exemplo@outroemail.com" required>
                                 </div>
                                 <div class="row">
                                     <div class=" col-md-6 form-group">
                                         <label>Senha</label>
-                                        <input class="au-input au-input--full" type="password" name="password"
-                                            autocomplete="new-password" placeholder="Senha" required id="password">
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label>Confirme a Senha</label>
-                                        <input class="au-input au-input--full" type="password" name="password"
-                                            autocomplete="new-password" placeholder="Confirme a Senha" required>
-                                    </div>
-                                    <div class="row ">
-                                        <div class=" col-md-6 ml-3">
-                                            <label for="">Imagem</label>
-                                            <img class="img" id="image" src="http://placehold.it/220x220" alt="Picture">
-                                            <input class="btn" name="imagem" id="foto" type="file"
-                                                onchange="encodeImgtoBase64(this)" />
-
+                                        <input class="au-input au-input--full border-input" type="password"
+                                            name="password" autocomplete="new-password" placeholder="Senha" required
+                                            id="password">
+                                        <div class="pt-2  form-group">
+                                            <label>Confirme a Senha</label>
+                                            <input class="au-input au-input--full border-input" type="password"
+                                                name="password" autocomplete="new-password"
+                                                placeholder="Confirme a Senha" required>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="">Imagem</label>
+                                            <label class=" btn btn-info" for='foto'>
+                                                Selecionar um arquivo &#187;
+                                            </label>
+                                            <input class="" name="foto" id="foto" type="file"
+                                                onchange="encodeImgtoBase64(this)" />
+                                        </div>
                                     </div>
-                                    <a id="convertImg" href=""></a>
+
+                                    <div class=" col-md-6 img">
+                                        <label for="">Preview</label>
+                                        <figure >
+                                            <label for="" disabled>
+                                            <img class="img-thumbnail border-input " id="image"
+                                                src="./images/user.png" alt="Picture" disabled>
+                                            </label>
+                                        </figure>
+
+                                    </div>
 
                                 </div>
-
+                                <!--
                                 <div class="login-checkbox">
                                     <label>
                                         <input type="checkbox" name="aggree">Aceita os termos de uso?
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block bg-white btn m-b-20" type="button" id="submit">
-                                    <p class="text-dark font-weight-bold">Cadastrar</p>
+                                -->
+                                <button class="au-btn au-btn--block bg-success btn m-b-20" type="button" id="submit">
+                                    <p class="text-white font-weight-bold">Cadastrar</p>
                                 </button>
 
                                 <!--
@@ -112,10 +126,10 @@
                                 -->
                             </form>
                             <div class="register-link pb-3">
-                                <p>
+                                <h5>
                                     Já tem Conta ?
-                                    <a href="login.html" class="text-dark"> Logar</a>
-                                </p>
+                                    <a href="login.html" class="text-info"> Logar</a>
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -148,43 +162,6 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
     <script src="./js/register.js"></script>
-    <script>
-        $("#submit").click(function () {
-            var obj = {
-                nome: '',
-                email: '',
-                password: '',
-                email_recuperacao: '',
-                foto: ''
-            }
-            let aux = $("#foto")[0].files[0];;
-
-
-            obj.nome = $("#nome").val();
-            obj.email = $("#email").val();
-            obj.password = $("#password").val();
-            obj.email_recuperacao = $("#email_recuperacao").val();
-            obj.foto = result;
-            // var post_url = "http://localhost:3000/user/create";
-
-            // let img_url = "https://api.imgbb.com/1/upload?key=cc6802445a8fe48713fbbf176fa47179";
-
-            var post_url = "https://kd-gerenciador.herokuapp.com/user/create";
-
-
-
-            $.ajax({
-                url: post_url,
-                type: 'POST',
-                data: obj
-            }).done(function (response) { //
-
-                //document.location.reload();
-                window.location.href = "login.html";
-         
-            });
-        });
-    </script>
 
 </body>
 

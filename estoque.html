@@ -69,13 +69,14 @@
 
 
             <div class="" style="border: black 1px solid;">
-              <div class="mb-5">
+              <div class="">
                 <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
               </div>
               <!-- STATISTIC-->
               <section>
 
-                <div class="row mb-5  d-flex justify-content-between mr-3 ml-3">
+                <div class="row mb-4 d-flex justify-content-between mr-3 ml-3 pb-4 pt-4"
+                  style="border-bottom:black solid 3px">
 
                   <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
                     <button class="btn btn-success  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
@@ -83,39 +84,128 @@
 
                     <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
                       data-target="#modalFornecedor">
-                      Fornecedor
+                      <i class="fas fa-plus"></i> Fornecedor
                     </button>
 
                   </div>
 
                   <div class="col-md-5 d-flex justify-content-between font-weight-bold">
-                    <button class="btn btn-warning  mesmo-tamanho font-weight-bold" type="button">Categoria</button>
-                    <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">Lanche</button>
+
+
+                    <a href="#tabelaCategoria">
+                      <button class="btn btn-warning  mesmo-tamanho font-weight-bold" type="button">
+                        <i class="fas fa-plus"></i>
+                        Categoria</button>
+                    </a>
+                    <a href="#tabelalanche">
+                      <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">
+                        <i class="fas fa-plus"></i> Lanche
+                      </button>
+                    </a>
                   </div>
-
-
-
-
-
-
                 </div>
 
 
                 <!-- END STATISTIC-->
-                <!--
-              <nav class="navbar navbar-expand-lg navbar-light bg-black">
-                <a class="navbar-brand text-white">Estoque</a>
-                
-              </nav>
--->
 
-                <!--  <button class="btn btn-primary" type="button" onclick="fazerRequisicao()">Text</button>-->
-                <div class="row pr-3 pl-3">
+                <h2 class="text-center mb-1 ">Produtos</h2>
+                <div class="row pr-3 pl-3 ">
+
+                  <div class="bg-light bg-burguer-center table-responsive">
+
+                    <table class="table table-hover">
+                      <thead>
+                        <tr class="bg-success text-white text-center align-middle">
+                          <th scope="col">#</th>
+                          <th scope="col">Descrição</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Quant.</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Forncedor</th>
+                          <th scope="col">Medida</th>
+                          <th scope="col">Editar</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tabelaProduto" class="text-center font-weight-bold align-middle">
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!------------------------------------------------->
+                <br>
+                <h2 class="text-center mb-1 mt-3">Fornecedores
+                  <button class="btn btn-primary" type="button">Novo</button>
+                </h2>
+                <div class="row pr-3 pl-3 mt-4  ">
+
+                  <div class="bg-light table-responsive">
+
+                    <table class="table table-hover ">
+                      <thead>
+                        <tr class="bg-info text-white text-center">
+                          <th scope="col">ID</th>
+                          <th scope="col">Represen.</th>                         
+                          <th scope="col">Fantasia</th>
+                          <th scope="col">Celular</th>
+                          <th scope="col">Telefone</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Editar</th>
+                          <th scope="col">Excluir</th>
+
+                        </tr>
+                      </thead>
+                      <tbody id="tabelaFornecedor" class="text-center bg-burguer-center font-weight-bold">
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!---------------------------------------------->
+                <div id="cat">
+                  <div class="text-center mb-1 mt-3">
+                    <h2>Categorias
+                      <button class="btn btn-info" type="button">
+
+                        Novo</button>
+                    </h2>
+
+                  </div>
+                  <div class="row pr-3 pl-3 mt-4 ">
+
+                    <div class="bg-light table-responsive">
+
+                      <table class="table table-hover bg-burguer-center">
+                        <thead>
+                          <tr class="bg-warning text-dark text-center">
+                            <th scope="col">ID</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Excluir</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaCategoria" class="text-center font-weight-bold">
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!------------------------------------------------->
+                <h2 class="text-center mb-1 mt-3">Lanche</h2>
+                <div class="row pr-3 pl-3 mt-4 ">
+
                   <div class="bg-light table-responsive">
 
                     <table class="table table-hover">
                       <thead>
-                        <tr class="bg-black text-white text-center">
+                        <tr class="bg-primary text-white text-center">
                           <th scope="col">#</th>
                           <th scope="col">Descrição</th>
                           <th scope="col">Valor</th>
@@ -125,7 +215,7 @@
                           <th scope="col">Editar</th>
                         </tr>
                       </thead>
-                      <tbody id="tabelaProduto" class="text-center">
+                      <tbody id="tabelalanche" class="text-center">
 
 
                       </tbody>
@@ -160,19 +250,19 @@
       <!-- END MAIN CONTENT-->
 
       <!--Modal-->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
           <div class="modal-content border-cinza">
-            <div class="modal-header bg-black">
-              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Novo Produto</h5>
+            <div class="modal-header bg-success">
+              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Produto</h5>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body ">
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
-                <div class="bg-cinza mt-1">
+                <div class="bg-burguer-center mt-1">
                   <div class="row  ml-1 mr-1 pt-1 ">
                     <div class="form-group col-md-6">
                       <label for="my-input">Descrição</label>

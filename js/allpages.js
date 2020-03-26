@@ -1,5 +1,5 @@
 var novaURL = "login.html";
-
+var preview = "../images/user-white.jpg"
 window.onload = function () {
     var user = {};
     let aberto, fechado;
@@ -7,7 +7,13 @@ window.onload = function () {
         $(window.document.location).attr('href', novaURL);
     } else {
         user = JSON.parse(sessionStorage.getItem("user"));
-        let imagem = '<img src="' + user.Foto + '" alt="" />'
+
+        if (user.Foto == "") {
+            user.Foto = preview
+        }
+        let imagem = '<img src="' + user.Foto + '" alt="user Foto" />'
+
+
         $("#usuario_nome").append(user.Nome);
         $(".usuario_nome").append(user.Nome);
 
