@@ -34,8 +34,8 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
     <style>
-        .body {
-            height: 1200px;
+        .container-fluid {
+            height: 1000px;
         }
     </style>
 </head>
@@ -43,7 +43,7 @@
 <body class="animsition">
     <div class="page-wrapper">
         <div class="page-content--bge5">
-            <div class="container  pb-5">
+            <div class="container-fluid  pb-5 container-fluid-burguer">
 
                 <div class="login-wrap ">
                     <div class="bg-white" style="border: gray 1px solid;">
@@ -53,33 +53,31 @@
                                 <img src="./images/kd_sistema_blue.png" alt="KD Sistema">
                             </a>
                         </div>
-                        <div class="login-form ml-3 mr-3 login-content bg-info">
+                        <div class="login-form ml-3 mr-3 login-content bg-burguer">
                             <form action="" method="post">
-                                <div class="form-group pt-2 text-dark font-weight-bold">
+                                <div class="form-group pt-2  font-weight-bold">
                                     <label>Email </label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email"
-                                        id="email" required>
+                                    <input class="au-input au-input--full border-input border-input" type="email"
+                                        name="email" placeholder="Email" id="email" required autocomplete="email">
                                 </div>
-                                <div class="form-group font-weight-bold">
+                                <div class="form-group  font-weight-bold">
                                     <label>Senha</label>
-                                    <input class="au-input au-input--full" type="password" name="password"
-                                        placeholder="Senha" id="password" required>
+                                    <input class="au-input au-input--full border-input" type="password" name="password"
+                                        placeholder="Senha" id="password" autocomplete="current-password" required>
                                 </div>
-                                <div class="login-checkbox ">
-                                    <label>
-                                        <input class="bg-white " type="checkbox" name="remember"
-                                            id="form-password">Lembrar-me
+                                <div class="login-checkbox font-weight-bold ">
+                                    <label class="">
+                                        <input type="checkbox" name="remember" id="form-password">Lembrar-me
                                     </label>
-                                    <label class="text-white">
+                                    <label class="">
                                         <a href="#">Esqueceu a Senha?</a>
                                     </label>
                                 </div>
 
-                                <div class="mt-4">
-                                    <button class="au-btn au-btn--block btn bg-white m-b-20" type="button" id="login">
-                                        <b class="text-dark">
+                                <div class="mt-5">
+                                    <button class="au-btn au-btn--block btn bg-success m-b-20" type="button" id="login">
+                                        <b class="">
                                             Entrar</b>
-
                                     </button>
                                 </div>
 
@@ -96,7 +94,7 @@
                             <div class="register-link pb-5">
                                 <h6>
                                     Não tem uma conta?
-                                    <a href="register.html" class="text-white">Cadastre-se aqui</a>
+                                    <a href="register.html" class="">Cadastre-se aqui</a>
                                 </h6>
                             </div>
                         </div>

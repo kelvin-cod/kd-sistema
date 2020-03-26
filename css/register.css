@@ -1,0 +1,22 @@
+/* Esconde o input */
+input[type='file'] {
+    display: none
+}
+
+/* Aparência que terá o seletor de arquivo */
+.label_file {
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px 10px
+}
+
+.container-fluid {
+    height: 1100px !important;
+}
+
+.img {
+    pointer-events: none;
+}
