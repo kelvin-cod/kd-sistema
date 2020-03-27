@@ -283,8 +283,27 @@ section {
 }
 
 .container {
-    background-image: url("../images/three-box.png") !important;
-    background: fixed;
+    background-image: url("../images/Background.png") !important;
+
+}
+
+.container-fluid-burguer {
+    background-image: url("../images/Background.png") !important;
+
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.4);
+    /* IE */
+    -moz-transform: scale(1.4);
+    /* FF */
+    -webkit-transform: scale(1.4);
+    /* Safari and Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+    transform: scale(1.4);
+    padding: 10px;
 }
 
 /* ----- Page Wrapper----- */
@@ -300,15 +319,13 @@ section {
 .page-wrapper {
     overflow: hidden;
     background: #e5e5e5;
-   
+
 }
 
 @media (max-width: 991px) {
     .page-wrapper {
         overflow: auto;
-        background: #e5e5e5;
-     
-        width: 100%;
+        background: #e5e5e5;  
     }
 }
 
@@ -345,14 +362,13 @@ section {
     padding-top: 116px;
     min-height: 100vh;
     background-color: #d3d3d3;
-    background-image: url("../images/three-box.png") !important;
+    background-image: url("../images/Background.png") !important;
     background: fixed;
 }
 
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
-       
     }
 }
 
@@ -362,18 +378,36 @@ section {
 
 .page-content--bge5 {
     background: #e5e5e5;
-    height: 100vh;
+
+}
+.inputs input, select{
+    border: 1px solid rgb(5, 164, 212) !important;
+}
+/* height: 130vh;*/
+.border-input {
+    border: 1px solid rgb(5, 164, 212) !important;
 }
 
 .login-wrap {
-    max-width: 540px;
+    max-width: 600px;
     padding-top: 8vh;
     margin: 0 auto;
 }
 
+.bg-burguer {
+    background-image: url('../images/Background.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: top !important;
+}
+.bg-burguer-center {
+    background-image: url('../images/Background.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
 .login-logo {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .login-checkbox {
@@ -394,7 +428,7 @@ section {
 }
 
 .login-checkbox>label>a {
-    color: #ff2e44;
+    color: #ffffff;
 }
 
 @media (max-width: 991px) {
@@ -434,7 +468,7 @@ section {
 }
 
 .register-link>p>a {
-    color: #1000e9;
+    color: #ffffff;
 }
 
 .fontawesome-list-wrap {
@@ -495,11 +529,11 @@ section {
 }
 
 .au-btn--blue2 {
-    background: #00aced;
+    background: #00ff40;
 }
 
 .au-btn--blue2:hover {
-    background: #00a2e3;
+    background: #02ff02;
 }
 
 .au-btn--block {
@@ -835,7 +869,7 @@ section {
 }
 
 .au-input--xl {
-    min-width: 935px;
+    min-width: 900px;
 }
 
 @media (max-width: 1600px) {
@@ -846,7 +880,7 @@ section {
 
 @media (max-width: 991px) {
     .au-input--xl {
-        min-width: 350px;
+        min-width: 310px;
     }
 }
 
@@ -1344,7 +1378,7 @@ section {
 
 @media (max-width: 991px) {
     .header-button {
-        margin-top: 30px;
+        margin-top: 10px;
         width: 100%;
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
@@ -4682,7 +4716,7 @@ section {
     justify-content: flex-end;
 }
 
-.table-data-feature .item{
+.table-data-feature .item {
     display: block;
     height: 30px;
     width: 30px;
@@ -4804,8 +4838,8 @@ section {
 /* ----- Footer ----- */
 .copyright {
     text-align: center;
-    padding: 60px 0;
-    padding-top: 30px;
+    padding: 40px 0;
+    padding-top: 40px;
     width: 100%;
 }
 

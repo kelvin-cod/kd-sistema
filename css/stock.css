@@ -8,6 +8,26 @@ footer {
 
 }
 
-.border-cizna{
+.border-cinza {
     border: 1px solid grey;
+}
+
+.bg-abaixo {
+    color: red;
+    font-size: 20px;
+}
+
+.bg-acima {
+    color: rgb(0, 109, 0);
+    font-size: 20px;
+}
+
+.modal-body label {
+    font-weight: bold;
+}
+
+.modal-body input,
+select,
+option {
+    font-weight: 600;
 }
