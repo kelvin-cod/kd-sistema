@@ -248,7 +248,7 @@ section {
 
 @media (max-width: 411px) {
     .mesmo-tamanho {
-        width: 35%;
+        width: 50%;
         white-space: normal;
     }
 }
