@@ -2,6 +2,7 @@ var idProduto;
 var combofornecedorNovo;
 var combocategoriaNovo;
 var user = JSON.parse(sessionStorage.user); // pega user do session
+var objProdutos = {}
 /**----------------------------------------------------------------- */
 $('#fornecedor').change(function () {
     combofornecedorNovo = $(this).val()
@@ -92,7 +93,7 @@ $.ajax({
     url: get_url_fornecedor,
     type: 'GET',
 }).done(function (response) { //
-    console.log(response)
+
     let tblFornecedor;
     selectbox4.find('option').remove();
     selectbox5.find('option').remove();
@@ -117,7 +118,7 @@ $.ajax({
             '<td>' + item.Email_Representante + '</td>' +
             '<td>' +
             '<button type="button" onclick="teste(' + item.idFornecedor +
-            ')"  class="btn btn-info " data-toggle="modal" data-target="#atualizarModal">' +
+            ')"  class="btn btn-info " >' +
 
             '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M123.195,6.88c-0.86,0 -1.78719,0.38969 -2.4725,1.075l-89.44,89.44c-0.34937,0.34938 -0.645,0.60469 -0.645,1.29l-23.435,61.92c-0.68531,1.03469 -0.28219,2.40531 0.7525,3.44c0.68531,0.68531 1.33031,1.075 2.365,1.075c0.34938,0 0.71219,0.02688 1.3975,-0.3225l61.92,-23.435c0.34938,-0.34937 1.04813,-0.29562 1.3975,-0.645l5.4825,-5.4825l83.5275,-83.635c0.68531,-1.03469 1.075,-1.76031 1.075,-2.795c0,-1.03469 -0.38969,-1.67969 -1.075,-2.365l-38.485,-38.485c-0.68531,-0.68531 -1.505,-1.075 -2.365,-1.075zM38.1625,100.405c1.72,3.44 1.04813,7.22938 -0.3225,10.32c-0.68531,1.37063 0.02688,3.18469 1.3975,3.87c1.37063,1.03469 3.05031,0.68531 4.085,0c2.40531,-1.72 11.35469,-5.87219 15.48,-1.3975c4.12531,4.12531 0.7525,12.72531 -0.9675,15.48c-1.03469,1.03469 -1.03469,2.71438 0,4.085c1.03469,1.03469 2.39188,1.74688 3.7625,1.3975c4.47469,-1.37062 7.91469,-0.68531 10.32,0l-1.3975,1.3975l-38.27,14.2975l-9.89,-10.2125l14.405,-37.84z"></path></g></g></svg>' +
             '</button>' +
@@ -145,12 +146,16 @@ $.ajax({
         var trHTML = '';
         objCategoria = {};
 
+        /*Organiza o Arrya */
         response = response.sort(function compare(a, b) {
             if (a.idProduto < b.idProduto) return -1;
             if (a.idProduto > b.idProduto) return 1;
             return 0;
         })
 
+        objProdutos = response; // atribui o obje de resposta
+        //Popula a tabela com a respostas
+        console.log(objProdutos)
         $.each(response, function (i, item) {
             trHTML +=
                 '<tr><td>' + item.idProduto +
@@ -168,8 +173,8 @@ $.ajax({
                 '</td><td>' + item.Unidade_Medida + '</td>' +
 
                 '<td>' +
-                '<button type="button" onclick="teste(' + item.idProduto +
-                ')"  class="btn btn-info " data-toggle="modal" data-target="#atualizarModal">' +
+                '<button type="button" onclick="editarProduto(' + item.idProduto +
+                ')"  class="btn btn-info " >' +
 
                 '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M123.195,6.88c-0.86,0 -1.78719,0.38969 -2.4725,1.075l-89.44,89.44c-0.34937,0.34938 -0.645,0.60469 -0.645,1.29l-23.435,61.92c-0.68531,1.03469 -0.28219,2.40531 0.7525,3.44c0.68531,0.68531 1.33031,1.075 2.365,1.075c0.34938,0 0.71219,0.02688 1.3975,-0.3225l61.92,-23.435c0.34938,-0.34937 1.04813,-0.29562 1.3975,-0.645l5.4825,-5.4825l83.5275,-83.635c0.68531,-1.03469 1.075,-1.76031 1.075,-2.795c0,-1.03469 -0.38969,-1.67969 -1.075,-2.365l-38.485,-38.485c-0.68531,-0.68531 -1.505,-1.075 -2.365,-1.075zM38.1625,100.405c1.72,3.44 1.04813,7.22938 -0.3225,10.32c-0.68531,1.37063 0.02688,3.18469 1.3975,3.87c1.37063,1.03469 3.05031,0.68531 4.085,0c2.40531,-1.72 11.35469,-5.87219 15.48,-1.3975c4.12531,4.12531 0.7525,12.72531 -0.9675,15.48c-1.03469,1.03469 -1.03469,2.71438 0,4.085c1.03469,1.03469 2.39188,1.74688 3.7625,1.3975c4.47469,-1.37062 7.91469,-0.68531 10.32,0l-1.3975,1.3975l-38.27,14.2975l-9.89,-10.2125l14.405,-37.84z"></path></g></g></svg>' +
                 '</button>' +
@@ -195,6 +200,40 @@ function teste(id) {
     fazerRequisicaoUM(idProduto);
     return idProduto;
 }
+/**------------------------------------------------------------------------------------------------------------ */
+function editarProduto(_id) {
+    let produto;
+    $.each(objProdutos, function (i, item) {
+        if (item.idProduto == _id) {
+            produto = (item);
+        }
+    });
+
+
+    let data = new Date(produto.data_venda);
+
+
+    $("#Descricao").val(produto.Descricao);
+    $("#Valor_compra").val(parseFloat(produto.Valor_Compra).toFixed(2));
+    $("#Valor_venda").val(parseFloat(produto.Valor_Venda).toFixed(2));
+    $("#Quantidade").val(produto.Quantidade);
+    $("#Tipo").val(produto.Tipo);
+    $("#Validade").val(data.toLocaleString());
+    $('#fornecedor option[value= ' + produto.idFornecedor + ']').attr('selected', 'selected');
+    $('#categoria option[value= ' + produto.idCategoria + ' ]').attr('selected', 'selected');
+    $('#Unidade_medida option[value= "' + produto.Unidade_Medida + '" ]').attr('selected', 'selected');
+    /*
+   
+   
+ 
+      obj.idUsuario = user.idUsuario;
+    
+      */
+    $('#modal_Fornecedor').modal('show');
+
+}
+
+
 var objexcluir = {
     idProduto: ''
 };
@@ -260,7 +299,7 @@ $("#atualizar").click(function () {
     obj.idFornecedor = parseInt($("#fornecedor").val());
     obj.idCategoria = parseInt($("#categoria").val());
 
-    console.log(obj);
+
     // var post_url = 'http://localhost:3000/produtos/atualizar/' + idProduto;
     var post_url = 'https://kd-gerenciador.herokuapp.com/produtos/atualizar/' + idProduto;
     $.ajax({

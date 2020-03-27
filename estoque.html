@@ -264,15 +264,11 @@
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
                 <div class="bg-burguer-center mt-1 inputs ">
                   <div class="row  ml-1 mr-1 pt-1 ">
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-12">
                       <label for="descricao">Descrição</label>
                       <input id="Descricao" class="form-control" type="text" name="descricao" required>
                     </div>
-                    <div class="form-group col-md-4">
-                      <label for="validade">Validade</label>
-                      <input id="Validade" class="form-control" type="date" name="validade" required>
-                    </div>
-
+                
                   </div>
                   <div class="row ml-1 mr-1">
                     <div class="form-group col-md-5">
@@ -293,14 +289,19 @@
                     </div>
                   </div>
                   <div class="row ml-1 mr-1">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-3">
                       <label for="Quantidade">Quantidade</label>
                       <input id="Quantidade" class="form-control" type="number" name="Quantidade">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="Tipo">Tipo</label>
                       <input id="Tipo" class="form-control" type="text" name="Tipo">
                     </div>
+                    <div class="form-group col-md-5">
+                      <label for="validade">Validade</label>
+                      <input id="Validade" class="form-control" type="date" name="validade" required>
+                    </div>
+
 
                   </div>
                   <div class="row ml-1 mr-1 pb-1">
@@ -321,7 +322,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer text-center row justify-content-center  pb-1">
+            <div class="modal-footer text-center row justify-content-center  mb-2">
               <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
                 <i class="fas fa-times"></i> Fechar
               </button>
