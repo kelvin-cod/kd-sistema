@@ -13,9 +13,21 @@ footer {
 }
 
 .bg-abaixo {
-    background-color: rgb(255, 94, 94);
+    color: red;
+    font-size: 20px;
 }
 
 .bg-acima {
-    background-color: rgb(138, 245, 138);
+    color: rgb(0, 109, 0);
+    font-size: 20px;
+}
+
+.modal-body label {
+    font-weight: bold;
+}
+
+.modal-body input,
+select,
+option {
+    font-weight: 600;
 }

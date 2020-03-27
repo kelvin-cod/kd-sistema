@@ -124,6 +124,7 @@
                           <th scope="col">Forncedor</th>
                           <th scope="col">Medida</th>
                           <th scope="col">Editar</th>
+                          <th scope="col">Excluir</th>
                         </tr>
                       </thead>
                       <tbody id="tabelaProduto" class="text-center font-weight-bold align-middle">
@@ -217,7 +218,6 @@
                       </thead>
                       <tbody id="tabelalanche" class="text-center">
 
-
                       </tbody>
                     </table>
                   </div>
@@ -239,10 +239,7 @@
                   </div>
                 </div>
               </div>
-
             </footer>
-
-
 
           </div>
         </div>
@@ -250,11 +247,11 @@
       <!-- END MAIN CONTENT-->
 
       <!--Modal-->
-      <div class="modal fade bd-example-modal-lg" id="modal_Fornecedor" tabindex="-1" role="dialog"
-        aria-labelledby="modal_Fornecedor" aria-hidden="true">
+      <div class="modal fade bd-example-modal-lg" id="modal_Produto" tabindex="-1" role="dialog"
+        aria-labelledby="modal_Produto" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
           <div class="modal-content border-cinza">
-            <div class="modal-header bg-success">
+            <div class="modal-header bg-black">
               <h4 class="modal-title text-white text-center" id="exampleModalCenterTitle">Produto</h4>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -264,11 +261,15 @@
               <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
                 <div class="bg-burguer-center mt-1 inputs ">
                   <div class="row  ml-1 mr-1 pt-1 ">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-10">
                       <label for="descricao">Descrição</label>
                       <input id="Descricao" class="form-control" type="text" name="descricao" required>
                     </div>
-                
+                    <div class="form-group col-md-2">
+                      <label for="idProduto">ID</label>
+                      <input id="idProduto" class="form-control" type="text" name="idProduto" disabled>
+                    </div>
+
                   </div>
                   <div class="row ml-1 mr-1">
                     <div class="form-group col-md-5">
@@ -288,21 +289,22 @@
                       </select>
                     </div>
                   </div>
-                  <div class="row ml-1 mr-1">
+                  <div class="row ml-1 mr-1 justify-content-center">
                     <div class="form-group col-md-3">
                       <label for="Quantidade">Quantidade</label>
                       <input id="Quantidade" class="form-control" type="number" name="Quantidade">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                       <label for="Tipo">Tipo</label>
                       <input id="Tipo" class="form-control" type="text" name="Tipo">
                     </div>
+                    <!--
                     <div class="form-group col-md-5">
-                      <label for="validade">Validade</label>
-                      <input id="Validade" class="form-control" type="date" name="validade" required>
+                      <label for="Validade">Validade</label>
+                      <input id="Validade" class="form-control" type="date" name="Validade" required>
                     </div>
 
-
+-->
                   </div>
                   <div class="row ml-1 mr-1 pb-1">
                     <div class="form-group col-md-6">
@@ -326,11 +328,8 @@
               <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
                 <i class="fas fa-times"></i> Fechar
               </button>
-              <div>
-                <button type="submit" class="btn btn-success font-weight-bold ml-5" 
-                id="enviar_Produto" name="submit">
-                  <i class="fas fa-check"></i> Enviar
-                </button>
+              <div id="botaoEnviar">
+
               </div>
 
             </div>
@@ -486,6 +485,33 @@
           </div>
         </div>
       </div>
+
+
+      <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+        id="modalExcluir">
+        <div class="modal-dialog modal-sm modal-dialog-centered ">
+          <div class="modal-content border-cinza ">
+            <div class="modal-header bg-black" style="color: aliceblue;">
+              <h5 class="modal-title text-white"> Excluir</h5>
+              <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body m-4 ">
+            <div>
+              <h2 class="text-center">Deseja realmente Excluir?</h2>
+            </div>
+              <div class="gif" id="gif"></div>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger  font-weight-bold" id="modal-btn-nao" data-dismiss="modal">Não</button>
+              <button type="button" class="btn btn-success  font-weight-bold" id="modal-btn-sim">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- END PAGE CONTAINER-->
     </div>
   </div>
