@@ -1,8 +1,11 @@
 var novaURL = "login.html";
 var preview = "../images/user-white.jpg"
-window.onload = function () {
+
+
+function isloggedIn() {
     var user = {};
     let aberto, fechado;
+
     if (sessionStorage.user == null) {
         $(window.document.location).attr('href', novaURL);
     } else {
@@ -31,6 +34,12 @@ window.onload = function () {
     }
 
 }
+window.onload = isloggedIn();
+
+setTimeout(function () {
+    isloggedIn();
+}, 500);
+
 $("#logout").click(() => {
 
     let url = "login.html";
