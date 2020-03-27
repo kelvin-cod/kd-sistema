@@ -325,8 +325,7 @@ input[type=checkbox] {
 @media (max-width: 991px) {
     .page-wrapper {
         overflow: auto;
-        background: #e5e5e5;
-        width: 100%;
+        background: #e5e5e5;  
     }
 }
 
@@ -370,7 +369,6 @@ input[type=checkbox] {
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
-
     }
 }
 
