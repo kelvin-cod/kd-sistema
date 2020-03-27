@@ -90,13 +90,12 @@
                   </div>
 
                   <div class="col-md-5 d-flex justify-content-between font-weight-bold">
-
-
                     <a href="#tabelaCategoria">
-                      <button class="btn btn-warning  mesmo-tamanho font-weight-bold" type="button">
+                      <button class="btn btn-warning mesmo-tamanho font-weight-bold" id="categoria_modal" type="button">
                         <i class="fas fa-plus"></i>
                         Categoria</button>
                     </a>
+
                     <a href="#tabelalanche">
                       <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">
                         <i class="fas fa-plus"></i> Lanche
@@ -240,16 +239,15 @@
                 </div>
               </div>
             </footer>
-
           </div>
         </div>
       </div>
       <!-- END MAIN CONTENT-->
 
-      <!--Modal-->
+      <!--Modal PRODUTO-->
       <div class="modal fade bd-example-modal-lg" id="modal_Produto" tabindex="-1" role="dialog"
         aria-labelledby="modal_Produto" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content border-cinza">
             <div class="modal-header bg-black">
               <h4 class="modal-title text-white text-center" id="exampleModalCenterTitle">Produto</h4>
@@ -258,7 +256,7 @@
               </button>
             </div>
             <div class="modal-body border-cinza ">
-              <form action="https://kd-gerenciador.herokuapp.com/produtos/criar" method="post" id="formProduto">
+              <form action="" method="" id="formProduto">
                 <div class="bg-burguer-center mt-1 inputs ">
                   <div class="row  ml-1 mr-1 pt-1 ">
                     <div class="form-group col-md-10">
@@ -331,7 +329,6 @@
               <div id="botaoEnviar">
 
               </div>
-
             </div>
           </div>
         </div>
@@ -487,6 +484,53 @@
       </div>
 
 
+      <!--MODAL CATEGORIA-->
+      <div class="modal fade" id="modal_Categoria" tabindex="-1" role="dialog"
+        aria-labelledby="modal_Categoria" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-cinza  bg-burguer-center">
+            <div class="modal-header bg-black" style="color: aliceblue;">
+              <h4 class="modal-title text-white" id="fornecedorModal"> Categoria</h4>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mt-1 inputs">
+              <form method="" id="formCategoria">
+                <div class="row  ml-1 mr-1 ">
+                  <div class="form-group col-md-9">
+                    <label for="DescricaoCategoria">Descrição</label>
+                    <input id="DescricaoCategoria" class="form-control" type="text" name="DescricaoCategoria" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="idCategoria">ID</label>
+                    <input id="idCategoria" class="form-control" type="text" name="idCategoria" disabled>
+                  </div>
+                </div>
+
+                <div class="row ml-1 mr-1 justify-content-center ">
+                  <div class="form-group col-md-5 ">
+                    <label for="Estatus">Status</label>
+                    <select  class="form-control" name="Estatus" id="Estatus">
+                      <option value="Ativo">Ativo</option>
+                      <option value="Inativo">Inativo</option>
+                    </select>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer text-center row justify-content-center mb-2">
+              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal"> 
+                <i class="fas fa-times"></i> Fechar</button>
+                <div id="botaoEnviarCategoria">
+                   </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--MODAL EXCLUIR-->
       <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
         id="modalExcluir">
         <div class="modal-dialog modal-sm modal-dialog-centered ">
@@ -498,15 +542,16 @@
               </button>
             </div>
             <div class="modal-body m-4 ">
-            <div>
-              <h2 class="text-center">Deseja realmente Excluir?</h2>
-            </div>
+              <div>
+                <h2 class="text-center">Deseja realmente Excluir?</h2>
+              </div>
               <div class="gif" id="gif"></div>
             </div>
 
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-danger  font-weight-bold" id="modal-btn-nao" data-dismiss="modal">Não</button>
-              <button type="button" class="btn btn-success  font-weight-bold" id="modal-btn-sim">Sim</button>
+              <button type="button" class="btn btn-danger font-weight-bold" id="modal-btn-nao"
+                data-dismiss="modal">Não</button>
+              <button type="button" class="btn btn-success font-weight-bold" id="modal-btn-sim">Sim</button>
             </div>
           </div>
         </div>
