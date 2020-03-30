@@ -2,20 +2,24 @@ var novaURL = "login.html";
 var preview = "../images/user-white.jpg"
 
 
-function isloggedIn() {
+async function isloggedIn() {
     var user = {};
     let aberto, fechado;
 
-    if (sessionStorage.user == null) {
+    try {
+        user = await JSON.parse(sessionStorage.getItem("user"));
+    } catch (error) {
+        console.log(error)
+    }
+
+    if (user == null) {
         $(window.document.location).attr('href', novaURL);
     } else {
-        user = JSON.parse(sessionStorage.getItem("user"));
 
         if (user.Foto == "") {
             user.Foto = preview
         }
         let imagem = '<img src="' + user.Foto + '" alt="user Foto" />'
-
 
         $("#usuario_nome").append(user.Nome);
         $(".usuario_nome").append(user.Nome);
