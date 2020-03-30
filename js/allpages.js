@@ -37,7 +37,8 @@ async function isloggedIn() {
         $("#balcaoVendas").append(aberto)
     }
 
-}
+};
+
 window.onload = isloggedIn();
 
 setTimeout(function () {
