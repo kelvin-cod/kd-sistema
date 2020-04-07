@@ -1,8 +1,8 @@
 var novaURL = "login.html";
-var preview = "../images/user-white.jpg"
 
 
 async function isloggedIn() {
+    var preview = await "https://i.ibb.co/sPxMfwZ/user-white.jpg";
     var user = {};
     let aberto, fechado;
 
@@ -17,9 +17,10 @@ async function isloggedIn() {
     } else {
 
         if (user.Foto == "") {
-            user.Foto = preview
+            user.Foto = preview;
+            console.log(user)
         }
-        let imagem = '<img src="' + user.Foto + '" alt="user Foto" />'
+        let imagem = '<img src=' + user.Foto + ' alt="user Photo" />'
 
         $("#usuario_nome").append(user.Nome);
         $(".usuario_nome").append(user.Nome);
@@ -42,7 +43,7 @@ async function isloggedIn() {
 window.onload = isloggedIn();
 
 setTimeout(function () {
-    isloggedIn();
+   // isloggedIn();
 }, 500);
 
 $("#logout").click(() => {
