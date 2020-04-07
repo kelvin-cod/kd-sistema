@@ -18,7 +18,6 @@ async function isloggedIn() {
 
         if (user.Foto == "") {
             user.Foto = preview;
-            console.log(user)
         }
         let imagem = '<img src=' + user.Foto + ' alt="user Photo" />'
 
@@ -43,7 +42,7 @@ async function isloggedIn() {
 window.onload = isloggedIn();
 
 setTimeout(function () {
-   // isloggedIn();
+    isloggedIn();
 }, 500);
 
 $("#logout").click(() => {
