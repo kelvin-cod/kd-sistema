@@ -325,7 +325,7 @@ input[type=checkbox] {
 @media (max-width: 991px) {
     .page-wrapper {
         overflow: auto;
-        background: #e5e5e5;  
+        background: #e5e5e5;
     }
 }
 
@@ -380,9 +380,12 @@ input[type=checkbox] {
     background: #e5e5e5;
 
 }
-.inputs input, select{
+
+.inputs input,
+select {
     border: 1px solid rgb(5, 164, 212) !important;
 }
+
 /* height: 130vh;*/
 .border-input {
     border: 1px solid rgb(5, 164, 212) !important;
@@ -399,6 +402,7 @@ input[type=checkbox] {
     background-repeat: no-repeat !important;
     background-position: top !important;
 }
+
 .bg-burguer-center {
     background-image: url('../images/Background.png') !important;
     background-repeat: no-repeat !important;
@@ -899,10 +903,12 @@ input[type=checkbox] {
     }
 }
 
+/*
+
 .modal-backdrop {
     z-index: -1;
 }
-
+*/
 .au-btn--submit {
     position: relative;
     right: 0;

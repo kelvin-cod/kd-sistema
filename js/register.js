@@ -22,10 +22,6 @@ function encodeImgtoBase64(element) {
         console.log(result)
     }
     reader.readAsDataURL(img);
-
-  
-
-
 }
 
 $("#submit").click(function () {

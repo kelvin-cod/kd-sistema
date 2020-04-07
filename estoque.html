@@ -66,30 +66,21 @@
 
           <div class="container-fluid " style="background-color: rgb(211, 211, 211); ">
 
-
-
             <div class="" style="border: black 1px solid;">
-              <div class="">
-                <h2 class="bg-info text-white pl-2 pt-2 pb-2 text-center">Estoque</h2>
-              </div>
+
               <!-- STATISTIC-->
-              <section >
+              <section>
+                <!--
+                <div class="row mb-4 d-flex justify-content-around w-100 mr-3 ml-3 pb-4 pt-4 bg-dark ">
 
-                <div class="row mb-4 d-flex justify-content-between mr-3 ml-3 pb-4 pt-4"
-                  style="border-bottom:black solid 3px; position: fixed;" >
 
-                  <div class="col-md-5 d-flex justify-content-between botaomargin font-weight-bold ">
-                    <button class="btn btn-success  mesmo-tamanho font-weight-bold" id="produto_modal" type="button">
-                      <i class="fas fa-plus"></i> Produto</button>
-
-                    <button class="btn btn-info  mesmo-tamanho font-weight-bold" type="button" data-toggle="modal"
-                      data-target="#modalFornecedor">
-                      <i class="fas fa-plus"></i> Fornecedor
-                    </button>
+               
+                  <div class="col-md-5 d-flex botaomargin font-weight-bold ">
+                   
 
                   </div>
 
-                  <div class="col-md-5 d-flex justify-content-between font-weight-bold">
+                  <div class="col-md-5 d-flex  font-weight-bold">
                     <a href="#tabelaCategoria">
                       <button class="btn btn-warning mesmo-tamanho font-weight-bold" id="categoria_modal" type="button">
                         <i class="fas fa-plus"></i>
@@ -102,390 +93,335 @@
                       </button>
                     </a>
                   </div>
+               
                 </div>
+   -->
+                <div class=" mb-3">
+                  <h2 class="bg-info text-white pt-2 pb-2 text-center ">Estoque</h2>
+                  <div class="row justify-content-around mt-3 ">
+                    <button class="btn btn-success mesmo-tamanho font-weight-bold" id="produto_modal" type="button">
+                      <i class="fas fa-plus"></i> Produto</button>
 
+                    <button class="btn btn-info mesmo-tamanho font-weight-bold" type="button" id="fornecedor_modal">
+                      <i class="fas fa-plus"></i>
+                      Fornecedor
+                    </button>
 
+                    <button class="btn btn-warning mesmo-tamanho font-weight-bold" type="button" onclick="abrirModalCat()">
+                      <i class="fas fa-plus"></i>
+                      Categoria
+                    </button>
+
+                    <button class="btn btn-primary  mesmo-tamanho font-weight-bold" type="button">
+                      <i class="fas fa-plus"></i> Lanche
+                    </button>
+
+                  </div>
+                </div>
                 <!-- END STATISTIC-->
+                <div class="border-cinza">
 
-                <h2 class="text-center mb-1 ">Produtos</h2>
-                <div class="row pr-3 pl-3 ">
+                  <h2 class="text-center pb-1 ">Produtos</h2>
+                  <div class="row pr-3 pl-3 ">
 
-                  <div class="bg-light bg-burguer-center table-responsive">
+                    <div class="bg-light bg-burguer-center table-responsive">
 
-                    <table class="table table-hover">
-                      <thead>
-                        <tr class="bg-success text-white text-center align-middle">
-                          <th scope="col">#</th>
-                          <th scope="col">Descrição</th>
-                          <th scope="col">Valor</th>
-                          <th scope="col">Quant.</th>
-                          <th scope="col">Categoria</th>
-                          <th scope="col">Forncedor</th>
-                          <th scope="col">Medida</th>
-                          <th scope="col">Editar</th>
-                          <th scope="col">Excluir</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tabelaProduto" class="text-center font-weight-bold align-middle">
-
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-                <!------------------------------------------------->
-                <br>
-                <h2 class="text-center mb-1 mt-3">Fornecedores
-           
-                </h2>
-                <div class="row pr-3 pl-3 mt-4  ">
-
-                  <div class=" bg-light bg-burguer-center table-responsive">
-
-                    <table class="table table-hover ">
-                      <thead>
-                        <tr class="bg-info text-white text-center">
-                          <th scope="col">ID</th>
-                          <th scope="col">Represen.</th>
-                          <th scope="col">Fantasia</th>
-                          <th scope="col">Celular</th>
-                          <th scope="col">Telefone</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Editar</th>
-                          <th scope="col">Excluir</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tabelaFornecedor" class="text-center font-weight-bold">
-
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-                <!---------------------------------------------->
-                <div id="cat">
-                  <div class="text-center mb-1 mt-3">
-                    <h2>Categorias</h2>
-
-                  </div>
-                  <div class="row pr-3 pl-3 mt-4 ">
-
-                    <div class="bg-light table-responsive">
-
-                      <table class="table table-hover bg-burguer-center">
+                      <table class="table table-hover">
                         <thead>
-                          <tr class="bg-warning text-dark text-center">
-                            <th scope="col">ID</th>
+                          <tr class="bg-success text-white text-center align-middle">
+                            <th scope="col">#</th>
                             <th scope="col">Descrição</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Quant.</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Forncedor</th>
+                            <th scope="col">Medida</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Excluir</th>
                           </tr>
                         </thead>
-                        <tbody id="tabelaCategoria" class="text-center font-weight-bold">
+                        <tbody id="tabelaProduto" class="text-center font-weight-bold align-middle">
 
 
                         </tbody>
                       </table>
                     </div>
                   </div>
-                </div>
-                <!------------------------------------------------->
-                <h2 class="text-center mb-1 mt-3">Lanche</h2>
-                <div class="row pr-3 pl-3 mt-4 ">
 
-                  <div class="bg-light table-responsive">
+                  <!------------------------------------------------->
+                  <br>
+                  <h2 class="text-center mb-1 mt-3">Fornecedores
 
-                    <table class="table table-hover">
-                      <thead>
-                        <tr class="bg-primary text-white text-center">
-                          <th scope="col">#</th>
-                          <th scope="col">Descrição</th>
-                          <th scope="col">Valor</th>
-                          <th scope="col">Quant.</th>
-                          <th scope="col">Categoria</th>
-                          <th scope="col">Forncedor</th>
-                          <th scope="col">Editar</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tabelalanche" class="text-center">
+                  </h2>
+                  <div class="row pr-3 pl-3 mt-4  " id="tblFornecedor">
 
-                      </tbody>
-                    </table>
+                    <div class=" bg-light bg-burguer-center table-responsive">
+
+                      <table class="table table-hover ">
+                        <thead>
+                          <tr class="bg-info text-white text-center">
+                            <th scope="col">ID</th>
+                            <th scope="col">Represen.</th>
+                            <th scope="col">Fantasia</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Excluir</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaFornecedor" class="text-center font-weight-bold">
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!---------------------------------------------->
+                  <div id="cat">
+                    <div class="text-center mb-1 mt-3">
+                      <h2>Categorias</h2>
+
+                    </div>
+
+                    <div class="row pr-3 pl-3 mt-4 ">
+
+                      <div class="bg-light table-responsive">
+
+                        <table class="table table-hover bg-burguer-center">
+                          <thead>
+                            <tr class="bg-warning text-dark text-center">
+                              <th scope="col">ID</th>
+                              <th scope="col">Descrição</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Editar</th>
+                              <th scope="col">Excluir</th>
+                            </tr>
+                          </thead>
+                          <tbody id="tabelaCategoria" class="text-center font-weight-bold">
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!------------------------------------------------->
+                  <h2 class="text-center mb-1 mt-3">Lanche</h2>
+                  <div class="row pr-3 pl-3 mt-4 ">
+
+                    <div class="bg-light table-responsive">
+
+                      <table class="table table-hover">
+                        <thead>
+                          <tr class="bg-primary text-white text-center">
+                            <th scope="col">#</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Quant.</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Forncedor</th>
+                            <th scope="col">Editar</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelalanche" class="text-center">
+
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </section>
             </div>
-            <!-- END DATA TABLE-->
+          </div>
+          <!-- END DATA TABLE-->
 
-            <footer class="footer navbar-fixed-bottom">
-              <div class="row mt-5 bg-black">
-                <div class="col-md-12 ">
-                  <div class="copyright ">
-                    <p>
-                      Copyright © 2020 KD. All rights reserved. <br>
-                      <span class="text-info">KD</span>
-                      <span class="text-info">S</span>istema
-                      <span class="text-info">G</span>erenciador
-                    </p>
-                  </div>
+          <footer class="footer navbar-fixed-bottom">
+            <div class="row mt-5 bg-black">
+              <div class="col-md-12 ">
+                <div class="copyright ">
+                  <p>
+                    Copyright © 2020 KD. All rights reserved. <br>
+                    <span class="text-info">KD</span>
+                    <span class="text-info">S</span>istema
+                    <span class="text-info">G</span>erenciador
+                  </p>
                 </div>
               </div>
-            </footer>
-          </div>
-        </div>
-      </div>
-      <!-- END MAIN CONTENT-->
-
-      <!--Modal PRODUTO-->
-      <div class="modal fade bd-example-modal-lg" id="modal_Produto" tabindex="-1" role="dialog"
-        aria-labelledby="modal_Produto" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content border-cinza">
-            <div class="modal-header bg-black">
-              <h4 class="modal-title text-white text-center" id="exampleModalCenterTitle">Produto</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
-            <div class="modal-body border-cinza ">
-              <form action="" method="" id="formProduto">
-                <div class="bg-burguer-center mt-1 inputs ">
-                  <div class="row  ml-1 mr-1 pt-1 ">
-                    <div class="form-group col-md-10">
-                      <label for="descricao">Descrição</label>
-                      <input id="Descricao" class="form-control" type="text" name="descricao" required>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <label for="idProduto">ID</label>
-                      <input id="idProduto" class="form-control" type="text" name="idProduto" disabled>
-                    </div>
+          </footer>
+        </div>
 
-                  </div>
-                  <div class="row ml-1 mr-1">
-                    <div class="form-group col-md-5">
-                      <label for="Valor_compra">Valor Compra</label>
-                      <input id="Valor_compra" class="form-control" type="number" name="Valor_compra" required>
+
+        <!-- END MAIN CONTENT-->
+
+        <!--Modal PRODUTO-->
+        <div class="modal fade bd-example-modal-lg" id="modal_Produto" tabindex="-1" role="dialog"
+          aria-labelledby="modal_Produto" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content border-cinza">
+              <div class="modal-header bg-black">
+                <h4 class="modal-title text-white text-center" id="modalProduto">Produto</h4>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body border-cinza ">
+                <form action="" method="" id="formProduto">
+                  <div class="bg-burguer-center mt-1 inputs ">
+                    <div class="row  ml-1 mr-1 pt-1 ">
+                      <div class="form-group col-md-10">
+                        <label for="descricao">Descrição</label>
+                        <input id="Descricao" class="form-control" type="text" name="descricao" required>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="idProduto">ID</label>
+                        <input id="idProduto" class="form-control" type="text" name="idProduto" disabled>
+                      </div>
+
                     </div>
-                    <div class="form-group col-md-4">
-                      <label for="Valor_venda">Valor Venda</label>
-                      <input id="Valor_venda" class="form-control" type="number" name="Valor_venda">
+                    <div class="row ml-1 mr-1">
+                      <div class="form-group col-md-5">
+                        <label for="Valor_compra">Valor Compra</label>
+                        <input id="Valor_compra" class="form-control" type="number" name="Valor_compra" required>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="Valor_venda">Valor Venda</label>
+                        <input id="Valor_venda" class="form-control" type="number" name="Valor_venda">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="Unidade_medida">Unidade</label>
+                        <select class="form-control" name="unidade" id="Unidade_medida">
+                          <option value="UN">UN</option>
+                          <option value="Pct">Pct</option>
+                          <option value="Kg">Kg</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="form-group col-md-3">
-                      <label for="Unidade_medida">Unidade</label>
-                      <select class="form-control" name="unidade" id="Unidade_medida">
-                        <option value="UN">UN</option>
-                        <option value="Pct">Pct</option>
-                        <option value="Kg">Kg</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row ml-1 mr-1 justify-content-center">
-                    <div class="form-group col-md-3">
-                      <label for="Quantidade">Quantidade</label>
-                      <input id="Quantidade" class="form-control" type="number" name="Quantidade">
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="Tipo">Tipo</label>
-                      <input id="Tipo" class="form-control" type="text" name="Tipo">
-                    </div>
-                    <!--
+                    <div class="row ml-1 mr-1 justify-content-center">
+                      <div class="form-group col-md-3">
+                        <label for="Quantidade">Quantidade</label>
+                        <input id="Quantidade" class="form-control" type="number" name="Quantidade">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="Tipo">Tipo</label>
+                        <input id="Tipo" class="form-control" type="text" name="Tipo">
+                      </div>
+                      <!--
                     <div class="form-group col-md-5">
                       <label for="Validade">Validade</label>
                       <input id="Validade" class="form-control" type="date" name="Validade" required>
                     </div>
 
 -->
-                  </div>
-                  <div class="row ml-1 mr-1 pb-1">
-                    <div class="form-group col-md-6">
-                      <label for="categoria">Categoria</label>
-                      <select class="form-control" name="categoria" id="categoria">
-                        <option value=""></option>
-                      </select>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="fornecedor">Fornecedor</label>
-                      <select class="form-control" name="fornecedor" id="fornecedor">
-                        <option value=""></option>
-                      </select>
-                    </div>
+                    <div class="row ml-1 mr-1 pb-1">
+                      <div class="form-group col-md-6">
+                        <label for="categoria">Categoria</label>
+                        <select class="form-control" name="categoria" id="categoria">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="fornecedor">Fornecedor</label>
+                        <select class="form-control" name="fornecedor" id="fornecedor">
+                          <option value=""></option>
+                        </select>
+                      </div>
 
+                    </div>
                   </div>
+                </form>
+              </div>
+              <div class="modal-footer text-center row justify-content-center  mb-2">
+                <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
+                  <i class="fas fa-times"></i> Fechar
+                </button>
+                <div id="botaoEnviar">
+
                 </div>
-              </form>
-            </div>
-            <div class="modal-footer text-center row justify-content-center  mb-2">
-              <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
-                <i class="fas fa-times"></i> Fechar
-              </button>
-              <div id="botaoEnviar">
-
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="modal fade" id="atualizarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <!---MODAL FORNECEDOR-->
+        <div class="modal fade bd-example-modal-lg" id="modal_Fornecedor" tabindex="-1" role="dialog"
+          aria-labelledby="fornecedorModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header bg-black" style="color: aliceblue;">
+                <h4 class="modal-title text-white" id="fornecedorModal"> Fornecedor</h4>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="formFornecedor">
+                  <div class="bg-burguer-center mt-1 inputs ">
+                    <div class="row ml-1 mr-1 pt-1 ">
+                      <div class="form-group col-md-10">
+                        <label for="razaoSocial">Razão Social</label>
+                        <input id="razaoSocial" class="form-control" type="text" name="razaoSocial" required>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="idFornecedor">ID</label>
+                        <input id="idFornecedor" class="form-control" type="text" name="idFornecedo" disabled>
+                      </div>
+
+                    </div>
+                    <div class="row ml-1 mr-1">
+                      <div class="form-group col-md-6">
+                        <label for="fantasia">Fantasia</label>
+                        <input id="fantasia" class="form-control" type="text" name="fantasia" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="representante">Representante</label>
+                        <input id="representante" class="form-control" type="text" name="representante">
+                      </div>
+                    </div>
+                    <div class="row ml-1 mr-1 ">
+
+                      <div class="form-group col-md-3">
+                        <label for="celular">Celular</label>
+                        <input id="celular" class="form-control" type="text" name="celular"
+                          placeholder="(xx)xxxxx-xxxx">
+                        <small>*somente numeros</small>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" class="form-control" type="text" name="telefone"
+                          placeholder="(xx)xxxx-xxxx">
+                        <small>*somente numeros</small>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input id="email" class="form-control" type="text" name="email">
+                      </div>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer text-center row justify-content-center  mb-2">
+                <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
+                  <i class="fas fa-times"></i> Fechar
+                </button>
+                <div id="botaoEnviarFornecedor">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--MODAL CATEGORIA 
+      <div class="modal  fade" id="modal_Categoria" tabindex="-1" role="document" aria-labelledby="myMediumModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-black">
-              <h5 class="modal-title text-white" id="exampleModalCenterTitle">Atualizar Produto</h5>
-              <button type="button" class="close " style="color: aliceblue;" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
-                <div>
-                  <div>
-                    <label for="">Descrição</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" id="DescricaoA" name="">
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="des">Descrição</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Valor</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" name="" id="ValorA">
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="my-addon">Valor(R$)</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Categoria</label>
-                    <div class="input-group">
-                      <select class="form-control" name="" id="categoriaum">
-                        <option value=""></option>
-                      </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text">Categoria</span>
-
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Fornecedor</label>
-                    <div class="input-group">
-                      <select class="form-control" name="" id="fornecedorum">
-                        <option value=""></option>
-                      </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="forn">Fornecedor</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="modalFornecedor" tabindex="-1" role="dialog"
-        aria-labelledby="fornecedorModal aria-hidden=" true>
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-black" style="color: aliceblue;">
-              <h5 class="modal-title text-white" id="fornecedorModal"> Novo Fornecedor</h5>
-              <button type="button" class="close " data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="https://kd-gerenciador.herokuapp.com/produtos/atualizar" method="put" id="formProduto">
-                <div>
-                  <div>
-                    <label for="">Descrição</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" id="DescricaoA" name="">
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="des">Descrição</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Valor</label>
-                    <div class="input-group">
-                      <input class="form-control" type="text" name="" id="ValorA">
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="my-addon">Valor(R$)</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Categoria</label>
-                    <div class="input-group">
-                      <select class="form-control" name="" id="categoriaum">
-                        <option value=""></option>
-                      </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text">Categoria</span>
-
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div>
-                    <label for="">Fornecedor</label>
-                    <div class="input-group">
-                      <select class="form-control" name="" id="fornecedorum">
-                        <option value=""></option>
-                      </select>
-                      <div class="form-group">
-
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="forn">Fornecedor</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-info" id="atualizar" name="submit">Atualizar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!--MODAL CATEGORIA-->
-      <div class="modal fade" id="modal_Categoria" tabindex="-1" role="dialog"
-        aria-labelledby="modal_Categoria" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog  modal-dialog-centered " role="document">
           <div class="modal-content border-cinza  bg-burguer-center">
-            <div class="modal-header bg-black" style="color: aliceblue;">
-              <h4 class="modal-title text-white" id="fornecedorModal"> Categoria</h4>
+            <div class="modal-header bg-black">
+              <h4 class="modal-title text-white" id="categoriaModal"> Categoria</h4>
               <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -506,7 +442,7 @@
                 <div class="row ml-1 mr-1 justify-content-center ">
                   <div class="form-group col-md-5 ">
                     <label for="Estatus">Status</label>
-                    <select  class="form-control" name="Estatus" id="Estatus">
+                    <select class="form-control" name="Estatus" id="Estatus">
                       <option value="Ativo">Ativo</option>
                       <option value="Inativo">Inativo</option>
                     </select>
@@ -516,47 +452,98 @@
               </form>
             </div>
             <div class="modal-footer text-center row justify-content-center mb-2">
-              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal"> 
+              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
                 <i class="fas fa-times"></i> Fechar</button>
-                <div id="botaoEnviarCategoria">
-                   </div>
+
+              <div id="botaoEnviarCategoria"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!--MODAL EXCLUIR-->
-      <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
-        id="modalExcluir">
-        <div class="modal-dialog modal-sm modal-dialog-centered ">
-          <div class="modal-content border-cinza ">
-            <div class="modal-header bg-black" style="color: aliceblue;">
-              <h5 class="modal-title text-white"> Excluir</h5>
-              <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+-->
+        <!---MODAL LANCHE-->
+
+        <!--MODAL EXCLUIR-->
+        <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+          id="modalExcluir">
+          <div class="modal-dialog modal-sm modal-dialog-centered ">
+            <div class="modal-content border-cinza ">
+              <div class="modal-header bg-black" style="color: aliceblue;">
+                <h5 class="modal-title text-white"> Excluir</h5>
+                <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body m-4 ">
+                <div>
+                  <h2 class="text-center">Deseja realmente Excluir?</h2>
+                </div>
+                <div class="gif" id="gif"></div>
+              </div>
+
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger font-weight-bold" id="modal-btn-nao"
+                  data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-success font-weight-bold" id="modal-btn-sim">Sim</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="modal  fade" id="modal_Categoria" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered " role="document">
+          <div class="modal-content border-cinza  bg-burguer-center">
+            <div class="modal-header bg-black">
+              <h4 class="modal-title text-white" id="categoriaModal"> Categoria</h4>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body m-4 ">
-              <div>
-                <h2 class="text-center">Deseja realmente Excluir?</h2>
-              </div>
-              <div class="gif" id="gif"></div>
-            </div>
+            <div class="modal-body mt-1 inputs">
+              <form method="" id="formCategoria">
+                <div class="row  ml-1 mr-1 ">
+                  <div class="form-group col-md-9">
+                    <label for="DescricaoCategoria">Descrição</label>
+                    <input id="DescricaoCategoria" class="form-control" type="text" name="DescricaoCategoria" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="idCategoria">ID</label>
+                    <input id="idCategoria" class="form-control" type="text" name="idCategoria" disabled>
+                  </div>
+                </div>
 
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-danger font-weight-bold" id="modal-btn-nao"
-                data-dismiss="modal">Não</button>
-              <button type="button" class="btn btn-success font-weight-bold" id="modal-btn-sim">Sim</button>
+                <div class="row ml-1 mr-1 justify-content-center ">
+                  <div class="form-group col-md-5 ">
+                    <label for="Estatus">Status</label>
+                    <select class="form-control" name="Estatus" id="Estatus">
+                      <option value="Ativo">Ativo</option>
+                      <option value="Inativo">Inativo</option>
+                    </select>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer text-center row justify-content-center mb-2">
+              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
+                <i class="fas fa-times"></i> Fechar</button>
+
+              <div id="botaoEnviarCategoria"></div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- END PAGE CONTAINER-->
+
     </div>
+
   </div>
-
-
   <!-- Bootstrap JS-->
   <script src="./vendor/bootstrap-4.1/popper.min.js"></script>
   <script src="./vendor/bootstrap-4.1/bootstrap.min.js"></script>
