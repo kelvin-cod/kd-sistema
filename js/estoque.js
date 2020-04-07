@@ -69,7 +69,7 @@ $.ajax({
             '<td>' +
             '<button type="button" onclick="editarCategoria(' + item.idCategoria +
             ')"  class="btn btn-info " >' +
-            '<img src="/images/teste.svg" />' +
+            '<img src="../../images/teste.svg" />' +
             '</button>' +
             '</td>';
 
