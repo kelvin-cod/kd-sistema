@@ -107,7 +107,8 @@
                       Fornecedor
                     </button>
 
-                    <button class="btn btn-warning mesmo-tamanho font-weight-bold" type="button" onclick="abrirModalCat()">
+                    <button class="btn btn-warning mesmo-tamanho font-weight-bold" type="button"
+                      onclick="abrirModalCat()">
                       <i class="fas fa-plus"></i>
                       Categoria
                     </button>
@@ -150,24 +151,31 @@
 
                   <!------------------------------------------------->
                   <br>
-                  <h2 class="text-center mb-1 mt-3">Fornecedores
-
-                  </h2>
-                  <div class="row pr-3 pl-3 mt-4  " id="tblFornecedor">
+                  <div class="text-center">
+                    <h2 class=" mb-1 mt-3">Fornecedores</h2>
+                    <div class="form-group ">
+  
+                      <input type="checkbox" class="checkbox1" name="inativosFornecedores" id="inativosFornecedores"
+                        value="1">
+                      <label for="inativosFornecedores" class="mt-1 "> Mostrar Inativos</label>
+                    </div>
+                  </div>
+                
+                  <div class="row pr-3 pl-3" id="tblFornecedor">
 
                     <div class=" bg-light bg-burguer-center table-responsive">
 
                       <table class="table table-hover ">
+
                         <thead>
                           <tr class="bg-info text-white text-center">
                             <th scope="col">ID</th>
-                            <th scope="col">Represen.</th>
+                            <th scope="col">Representante</th>
                             <th scope="col">Fantasia</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Telefone</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
+                            <th scope="col">Email</th>                 
+                            <th scope="col">Editar</th>                        
                           </tr>
                         </thead>
                         <tbody id="tabelaFornecedor" class="text-center font-weight-bold">
@@ -179,24 +187,30 @@
                   </div>
 
                   <!---------------------------------------------->
-                  <div id="cat">
-                    <div class="text-center mb-1 mt-3">
+                  <div class="border-black">
+                    <div class="text-center  mt-4">
                       <h2>Categorias</h2>
+                      <div class="form-group ">
+
+                        <input type="checkbox" class="checkbox1" name="inativosCategoria" id="inativosCategoria"
+                          value="1">
+                        <label for="inativosCategoria" class="mt-1 "> Mostrar Inativos</label>
+                      </div>
 
                     </div>
 
-                    <div class="row pr-3 pl-3 mt-4 ">
+                    <div class="row pr-3 pl-3  ">
 
                       <div class="bg-light table-responsive">
 
-                        <table class="table table-hover bg-burguer-center">
+                        <table class="table table-hover bg-burguer-center table-fixed">
                           <thead>
                             <tr class="bg-warning text-dark text-center">
                               <th scope="col">ID</th>
                               <th scope="col">Descrição</th>
                               <th scope="col">Status</th>
                               <th scope="col">Editar</th>
-                              <th scope="col">Excluir</th>
+
                             </tr>
                           </thead>
                           <tbody id="tabelaCategoria" class="text-center font-weight-bold">
@@ -359,27 +373,46 @@
               </div>
               <div class="modal-body">
                 <form id="formFornecedor">
-                  <div class="bg-burguer-center mt-1 inputs ">
-                    <div class="row ml-1 mr-1 pt-1 ">
-                      <div class="form-group col-md-10">
-                        <label for="razaoSocial">Razão Social</label>
-                        <input id="razaoSocial" class="form-control" type="text" name="razaoSocial" required>
-                      </div>
-                      <div class="form-group col-md-2">
+                  <div class="bg-burguer-center inputs ">
+                    <div class="row ml-1 mr-1">
+                      <div class="form-group col-md-2 col-3">
                         <label for="idFornecedor">ID</label>
                         <input id="idFornecedor" class="form-control" type="text" name="idFornecedo" disabled>
                       </div>
 
+                      <div class="offset-md-9 col-md-1 offset-7 col-1" id="checkboxFornecedor">
+                        <div class="form-group text-center">
+                          <small for="excluirFornecedor" class=" "> Excluir</small>
+                          <button class="btn btn-danger" type="button" id="excluir_Fornecedor">
+                            <i class="fas fa-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ml-1 mr-1 pt-1 ">
+                      <div class="form-group col-md-9">
+                        <label for="razaoSocial">Razão Social</label>
+                        <input id="razaoSocial" class="form-control" type="text" name="razaoSocial" required>
+                      </div>
+                      <div class="form-group col-md-3">
+
+                        <label for="statusFornecedor">Status</label>
+                        <select class="form-control" name="statusFornecedor id=" statusFornecedor">
+                          <option value="Ativo">Ativo</option>
+                          <option value="Inativo">Inativo</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="row ml-1 mr-1">
                       <div class="form-group col-md-6">
-                        <label for="fantasia">Fantasia</label>
+                        <label for="fantasia">Nome Fantasia</label>
                         <input id="fantasia" class="form-control" type="text" name="fantasia" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="representante">Representante</label>
                         <input id="representante" class="form-control" type="text" name="representante">
                       </div>
+                    
                     </div>
                     <div class="row ml-1 mr-1 ">
 
@@ -415,133 +448,108 @@
           </div>
         </div>
 
-        <!--MODAL CATEGORIA 
-      <div class="modal  fade" id="modal_Categoria" tabindex="-1" role="document" aria-labelledby="myMediumModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered " role="document">
-          <div class="modal-content border-cinza  bg-burguer-center">
-            <div class="modal-header bg-black">
-              <h4 class="modal-title text-white" id="categoriaModal"> Categoria</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mt-1 inputs">
-              <form method="" id="formCategoria">
-                <div class="row  ml-1 mr-1 ">
-                  <div class="form-group col-md-9">
-                    <label for="DescricaoCategoria">Descrição</label>
-                    <input id="DescricaoCategoria" class="form-control" type="text" name="DescricaoCategoria" required>
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="idCategoria">ID</label>
-                    <input id="idCategoria" class="form-control" type="text" name="idCategoria" disabled>
-                  </div>
-                </div>
-
-                <div class="row ml-1 mr-1 justify-content-center ">
-                  <div class="form-group col-md-5 ">
-                    <label for="Estatus">Status</label>
-                    <select class="form-control" name="Estatus" id="Estatus">
-                      <option value="Ativo">Ativo</option>
-                      <option value="Inativo">Inativo</option>
-                    </select>
-                  </div>
-                </div>
-
-              </form>
-            </div>
-            <div class="modal-footer text-center row justify-content-center mb-2">
-              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
-                <i class="fas fa-times"></i> Fechar</button>
-
-              <div id="botaoEnviarCategoria"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
--->
         <!---MODAL LANCHE-->
 
-        <!--MODAL EXCLUIR-->
-        <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
-          id="modalExcluir">
-          <div class="modal-dialog modal-sm modal-dialog-centered ">
-            <div class="modal-content border-cinza ">
-              <div class="modal-header bg-black" style="color: aliceblue;">
-                <h5 class="modal-title text-white"> Excluir</h5>
-                <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body m-4 ">
-                <div>
-                  <h2 class="text-center">Deseja realmente Excluir?</h2>
-                </div>
-                <div class="gif" id="gif"></div>
-              </div>
-
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-danger font-weight-bold" id="modal-btn-nao"
-                  data-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-success font-weight-bold" id="modal-btn-sim">Sim</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
       </div>
-
-      <div class="modal  fade" id="modal_Categoria" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered " role="document">
-          <div class="modal-content border-cinza  bg-burguer-center">
-            <div class="modal-header bg-black">
-              <h4 class="modal-title text-white" id="categoriaModal"> Categoria</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mt-1 inputs">
-              <form method="" id="formCategoria">
-                <div class="row  ml-1 mr-1 ">
-                  <div class="form-group col-md-9">
-                    <label for="DescricaoCategoria">Descrição</label>
-                    <input id="DescricaoCategoria" class="form-control" type="text" name="DescricaoCategoria" required>
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="idCategoria">ID</label>
-                    <input id="idCategoria" class="form-control" type="text" name="idCategoria" disabled>
-                  </div>
-                </div>
-
-                <div class="row ml-1 mr-1 justify-content-center ">
-                  <div class="form-group col-md-5 ">
-                    <label for="Estatus">Status</label>
-                    <select class="form-control" name="Estatus" id="Estatus">
-                      <option value="Ativo">Ativo</option>
-                      <option value="Inativo">Inativo</option>
-                    </select>
-                  </div>
-                </div>
-
-              </form>
-            </div>
-            <div class="modal-footer text-center row justify-content-center mb-2">
-              <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
-                <i class="fas fa-times"></i> Fechar</button>
-
-              <div id="botaoEnviarCategoria"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- END PAGE CONTAINER-->
-
     </div>
+    <!---MODAL CATEGORIA-->
+    <div class="modal fade" id="modal_Categoria" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered " role="document">
+        <div class="modal-content border-cinza  bg-burguer-center">
+          <div class="modal-header bg-black">
+            <h4 class="modal-title text-white" id="categoriaModal"> Categoria</h4>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body inputs" id="modal_body_categoria">
+            <div class="row">
+              <div class="form-group col-md-3 ml-3 col-3">
+                <label for="idCategoria">ID</label>
+                <input id="idCategoria" class="form-control" type="text" name="idCategoria" disabled>
+              </div>
+              <div class="offset-md-7 col-md-1 col-1 offset-6" id="checkboxCategoria">
+                <div class="form-group text-center ">
+                  <small for="excluirCategoria" class=" "> Excluir</small>
+                  <button class="btn btn-danger" type="button" id="excluir_Categoria">
+                    <i class="fas fa-trash"></i></button>
+
+                </div>
+
+              </div>
+            </div>
+
+            <form method="" id="formCategoria">
+
+              <div class="row  ml-1 mr-1 ">
+                <div class="form-group col-md-12">
+                  <label for="DescricaoCategoria">Descrição</label>
+                  <input id="DescricaoCategoria" class="form-control" type="text" name="DescricaoCategoria" required>
+                </div>
+
+              </div>
+
+              <div class="row ml-1 mr-1 justify-content-center ">
+                <div class="form-group col-md-5 ">
+                  <label for="Estatus">Status</label>
+                  <select class="form-control" name="Estatus" id="Estatus">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
+                  </select>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+          <div class="modal-footer text-center row justify-content-center mb-2">
+
+            <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
+              <i class="fas fa-times"></i> Fechar</button>
+
+            <div id="botaoEnviarCategoria"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL EXCLUIR-->
+    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+      id="modalExcluir">
+      <div class="modal-dialog modal-sm modal-dialog-centered ">
+        <div class="modal-content border-cinza ">
+          <div class="modal-header bg-danger" style="color: aliceblue;">
+            <h5 class="modal-title text-white"> Excluir</h5>
+            <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body m-4 " id="modal_body_excluir">
+            <div>
+              <h2 class="text-center">Deseja Realmente Excluir?</h2>
+            </div>
+            <div class="gif" id="gif"></div>
+          </div>
+
+          <div class="modal-footer justify-content-between">
+
+            <button type="button" class="btn btn-danger font-weight-bold" id="modal-btn-nao" data-dismiss="modal"
+              value="0">Não
+            </button>
+            <div id="botao_excluir">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END PAGE CONTAINER-->
+
+  </div>
 
   </div>
   <!-- Bootstrap JS-->
