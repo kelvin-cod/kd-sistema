@@ -4,6 +4,7 @@ var combocategoriaNovo;
 var user = JSON.parse(sessionStorage.user); // pega user do session
 var objProdutos = {};
 var objCategoria = {};
+let idExcluirFornecedor;
 /**----------------------------------------------------------------- */
 $('#fornecedor').change(function () {
     combofornecedorNovo = $(this).val()
@@ -656,7 +657,7 @@ function editarFornecedor(_id) {
             data = (item);
         }
     });
-
+    idExcluirFornecedor = data.idFornecedor
     $("#razaoSocial").val(data.Razao);
     $("#representante").val(data.nomeFornecedor);
     $("#celular").val(data.Celular);
@@ -664,6 +665,7 @@ function editarFornecedor(_id) {
     $("#email").val(data.Email_Representante);
     $("#fantasia").val(data.Fantasia);
     $("#idFornecedor").val(data.idFornecedor);
+    $('#statusFornecedor option[value= ' + data.Estatus_Fornecedor + ']').attr('selected', 'selected');
 
     let botao = '<button type="button" class="btn btn-success font-weight-bold ml-5"' +
         ' onclick="atualizarFornecedor(' + _id + ')"  name="button">  ' +
@@ -704,8 +706,8 @@ function atualizarFornecedor(_id) {
         type: 'PUT',
         data: objFornecedor
     }).done(function (response) {
-      
-      document.location.reload();
+
+        document.location.reload();
     });
 };
 
@@ -718,4 +720,30 @@ $("#inativosFornecedores").click(() => {
         esconderInativos("tabelaFornecedor", "hide", 5);
     }
 
-})
+});
+
+$('#excluir_Fornecedor').click(() => {
+    $("#botao_excluir").html(""); //zera div
+
+    let botaoExcluir = '<button type="button" class="btn btn-success font-weight-bold" id="modal-btn-sim" onclick="excluirFornecedor()">Sim</button>';
+
+    $("#modalExcluir").modal('show'); //abre modal
+
+    $("#botao_excluir").append(botaoExcluir);
+});
+
+function excluirFornecedor() {
+   // let delete_url_fornecedor = "https://kd-gerenciador.herokuapp.com/fornecedores/excluir/";
+console.log('sdasd')
+    $.ajax({
+        url: `${delete_url_fornecedor + idExcluirFornecedor}`,
+        type: 'POST'
+
+    }).then(function (response) { //
+
+        document.location.reload();
+
+    }).catch(function (err) {
+        alert(err)
+    });
+}
