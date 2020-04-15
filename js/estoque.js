@@ -733,8 +733,8 @@ $('#excluir_Fornecedor').click(() => {
 });
 
 function excluirFornecedor() {
-   // let delete_url_fornecedor = "https://kd-gerenciador.herokuapp.com/fornecedores/excluir/";
-console.log('sdasd')
+    let delete_url_fornecedor = "https://kd-gerenciador.herokuapp.com/fornecedores/excluir/";
+
     $.ajax({
         url: `${delete_url_fornecedor + idExcluirFornecedor}`,
         type: 'POST'
