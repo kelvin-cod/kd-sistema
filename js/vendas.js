@@ -347,7 +347,7 @@
     /**----------------------------------------------------------------------------------------------------- */
     $("#modal-btn-sim").click(() => {
         const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir";
-        var gif = '<img src="../images/carregando-gif-animado-9.gif" >'
+        var gif = '<img src="images/carregando-gif-animado-9.gif" >'
         $("#gif").append(gif)
 
         $.ajax({

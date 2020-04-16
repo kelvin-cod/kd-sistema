@@ -1,31 +1,33 @@
 (function ($) {
-  // includeHTML();
-  $(document).ready(function () {
-    $.get("menu.html", function (data) {
-      $(".menu-html").append(data);
-    });
-    $.get("navbar-mobile.html", function (data) {
-      $(".navbar-mobile-html").append(data);
-    });
-    $.get("navbar-desktop.html", function (data) {
-      $(".navbar-desktop-html").append(data);
-    });
-  })
+
+
 })(jQuery);
 
+$(document).ready(function () {
+  $.get("menu.html", function (data) {
+    $(".menu-html").append(data);
+  });
+  $.get("navbar-mobile.html", function (data) {
+    $(".navbar-mobile-html").append(data);
+  });
+  $.get("navbar-desktop.html", function (data) {
+    $(".navbar-desktop-html").append(data);
+  });
+})
 
 // USE STRICT
 "use strict";
 
 try {
   //WidgetChart 1
+  /** 
   var ctx = document.getElementById("widgetChart1");
   if (ctx) {
     ctx.height = 130;
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'],
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'],
         type: 'line',
         datasets: [{
           data: [78, 81, 80, 45, 34, 12, 40],
@@ -82,7 +84,7 @@ try {
       }
     });
   }
-
+*/
 
   //WidgetChart 2
   var ctx = document.getElementById("widgetChart2");
