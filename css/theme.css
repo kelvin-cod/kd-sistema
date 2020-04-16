@@ -3251,9 +3251,9 @@ select {
 }
 
 .overview-item--c1 {
-    background-image: -moz-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
-    background-image: -webkit-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
-    background-image: -ms-linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
+    background-image: -moz-linear-gradient(90deg, #000000 0%, #2e89ff 100%);
+    background-image: -webkit-linear-gradient(90deg, #000000 0%, #167bff 100%);
+    background-image: -ms-linear-gradient(90deg, #3f5efb 0%, #066aff 100%);
 }
 
 .overview-item--c2 {
