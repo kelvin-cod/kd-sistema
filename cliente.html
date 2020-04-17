@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="au theme template" />
+  <meta name="author" content="Kelvin/Diogo" />
+  <meta name="keywords" content="au theme template" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+  <!-- Title Page-->
+  <title>Vendas</title>
+
+  <!-- Fontfaces CSS-->
+  <link href="css/font-face.css" rel="stylesheet" media="all" />
+  <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" />
+
+  <!-- Bootstrap CSS-->
+  <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" />
+
+  <!-- Vendor CSS-->
+  <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/wow/animate.css" rel="stylesheet" media="all" />
+  <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/slick/slick.css" rel="stylesheet" media="all" />
+  <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" />
+  <link rel="apple-touch-icon" href="./images/icons/icon-57x57.png" />
+  <!-- Main CSS-->
+  <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/vendas.css" rel="stylesheet" media="all" />
+  <link rel="stylesheet" href="./css/bootstrap.table-editor.css">
+  <!-- Jquery JS-->
+  <script src="vendor/jquery-3.2.1.min.js"></script>
+</head>
+
+<body class="animsition">
+  <div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar bg-black">
+        <div class="container-fluid ">
+          <div class="header-mobile-inner">
+            <a class="logo" href="index.html">
+              <img src="./images/kd_sistema_blue.png" alt="KD Gerenciador" style="width: 200px; height: auto;" />
+            </a>
+            <button class="hamburger hamburger--slider" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <!-- END HEADER MOBILE-->
+
+
+
+    <!-- HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+      <div class="section__content section__content--p30">
+        <div class="container-fluid " style="background-color: rgb(230, 230, 230);">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- DATA TABLE -->
+              <!-- <h3 class="title-5 m-b-35">Balcão de Vendas</h3> -->
+              <div class="login-logo1 card-header1 bg-info text-center " style="border: 1px solid grey;">
+
+                <h2 class="text-center text-white ">Cadastro Cliente</h2>
+
+              </div>
+              <form action="" method="post">
+                <div class="balcao-form pt-2" style="border: 1px solid grey;">
+                  <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2 ml-3 mt-4  bg-secondary table-hover" id="Tabela_vendas">
+                      <thead>
+
+
+                      </thead>
+
+                      <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+
+
+                          <div class="row">
+                            <div class="form-group col-md-6">
+                              <label>Cliente</label>
+                              <input class="au-input au-input--full" type="text" name="cliente"
+                                placeholder="Nome Cliente">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>E-mail</label>
+                              <input class="au-input au-input--full" type="text" name="email"
+                                placeholder="E-mail">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="form-group col-md-6">
+                              <label>Endereço</label>
+                              <input class="au-input au-input--full" type="text" name="rua"
+                                placeholder="Rua">
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label>Número</label>
+                              <input class="au-input au-input--full" type="number" name="numero"
+                                placeholder="Número">
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label>Complemento</label>
+                              <input class="au-input au-input--full" type="number" name="coplemento"
+                                placeholder="Complemento">
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label>CEP</label>
+                              <input class="au-input au-input--full" type="number" name="cep"
+                                placeholder="CEP">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="form-group col-md-6">
+                              <label>Bairro</label>
+                              <input class="au-input au-input--full" type="text" name="bairro"
+                                placeholder="Bairro">
+                            </div>
+                           
+                            <div class="form-group col-md-6">
+                              <label>Cidade</label>
+                              <input class="au-input au-input--full" type="number" name="cidade"
+                                placeholder="Cidade">
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="form-group col-md-3  col-6">
+                              <label>Celular</label>
+                              <input class="au-input au-input--full" type="text" name="Celular" placeholder="Celular">
+                            </div>
+
+                            <div class="form-group col-md-3  col-6">
+                              <label>Telefone</label>
+                              <input class="au-input au-input--full" type="text" name="Telefone" placeholder="Telefone">
+                            </div>
+
+
+                            <!--Tabela-->
+                            <tbody class="text-center text-dark font-weight-bold" id="TabelaComanda">
+
+                            </tbody>
+                    </table>
+                  </div>
+
+
+                  <div class="form-group row justify-content-center text-center mt-5 ">
+                    <button type="button" class="btn btn-danger  col-5  col-md-2">
+                      <i class="fas fa-times"></i>
+                      Excluir
+                    </button>
+                    <button type="button" class="btn btn-success offset-md-2 col-5 col-md-2 font-weight-bold">
+                      <i class="fas fa-check"></i>
+                      Salvar
+                    </button>
+
+                  </div>
+
+                </div>
+              </form>
+
+              <!-- END DATA TABLE -->
+
+            </div>
+          </div>
+          <footer class="footer navbar-fixed-bottom">
+            <div class="row mt-5 bg-black">
+              <div class="col-md-12 ">
+                <div class="copyright ">
+                  <p>
+                    Copyright © 2020 KD. All rights reserved. <br>
+                    <span class="text-info">KD</span>
+                    <span class="text-info">S</span>istema
+                    <span class="text-info">G</span>erenciador
+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MAIN CONTENT-->
+  <!-- END PAGE CONTAINER-->
+  </div>
+  </div>
+
+  <!-- Bootstrap JS-->
+  <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+  <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+  <!-- Vendor JS       -->
+  <script src="vendor/slick/slick.min.js"></script>
+  <script src="vendor/wow/wow.min.js"></script>
+  <script src="vendor/animsition/animsition.min.js"></script>
+  <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+  <script src="vendor/counter-up/jquery.counterup.min.js"></script>
+  <script src="vendor/circle-progress/circle-progress.min.js"></script>
+  <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+  <script src="vendor/select2/select2.min.js"></script>
+  <script src="js/allpages.js"> </script>
+  <script src="js/vendas.js"> </script>
+  <script src="./js/bootstrap.table-editor.js"></script>
+  <script src="./js/bootstable.js"></script>
+  <script type="text/javascript">
+    $('#Tabela_vendas').SetEditable({
+
+      columnsEd: "2,4"
+
+    });
+  </script>
+  <!-- Main JS-->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
