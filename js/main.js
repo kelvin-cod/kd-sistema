@@ -84,7 +84,7 @@ try {
       }
     });
   }
-*/
+
 
   //WidgetChart 2
   var ctx = document.getElementById("widgetChart2");
@@ -225,8 +225,9 @@ try {
       }
     });
   }
+*/
 
-
+/*
   //WidgetChart 4
   var ctx = document.getElementById("widgetChart4");
   if (ctx) {
@@ -261,7 +262,7 @@ try {
       }
     });
   }
-
+*/
   // Recent Report
   const brandProduct = 'rgba(0,181,233,0.8)'
   const brandService = 'rgba(0,173,95,0.8)'
