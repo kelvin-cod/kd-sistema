@@ -588,7 +588,7 @@ try {
 
 try {
   //WidgetChart 5
-  var ctx = document.getElementById("widgetChart5");
+  var ctx = document.getElementById("widgetChart55");
   if (ctx) {
     ctx.height = 220;
     var myChart = new Chart(ctx, {

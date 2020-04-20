@@ -3280,6 +3280,12 @@ select {
     background-image: -ms-linear-gradient(90deg, #000000 0%, #ff0000 100%);
 }
 
+.overview-item--c6{
+    background-image: -moz-linear-gradient(90deg, #000000 0%, #001d9c 100%);
+    background-image: -webkit-linear-gradient(90deg, #000000 0%, #002e83 100%);
+    background-image: -ms-linear-gradient(90deg, #000000 0%, #1e00a5 100%);
+}
+
 .overview-box .icon {
     display: inline-block;
     vertical-align: top;

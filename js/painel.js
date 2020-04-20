@@ -40,7 +40,7 @@ $.ajax({
 
   $('#painel_produtos').text(somarProdutos);
 
-  graficoLinhas(vetorDados, vetorBarra, 'widgetChart2');
+  graficoLinhas(vetorDados, vetorBarra, 'widgetChart2', 'Produtos');
 
 }).catch(function (err) {
   console.error(err)
@@ -85,37 +85,67 @@ $.ajax({
     somarTotalVendas += parseFloat(d.Total);
     vetorDados.push(d.Quantidade);
     vetorBarra.push(d.Mes);
-  });
+  })
 
-  $('#painel_vendas_total').text(somarTotalVendas);
   graficoLinhasSimples(vetorDados, retornaMes(vetorBarra), "widgetChart4", 'Vendas');
+  $('#painel_vendas_total').text(somarTotalVendas)
+
 }).catch(function (err) {
   console.error(err)
 });
+
+
 ///------------------------------------------------------------------------------------------------
 //total de vendas
-const get_vendas_total_url = "https://kd-gerenciador.herokuapp.com/painel/vendas/total";
+const get_estoque_pago_url = "https://kd-gerenciador.herokuapp.com/painel/estoque";
 
 $.ajax({
-  url: get_vendas_total_url,
+  url: get_estoque_pago_url,
   type: 'GET'
 }).then(function (response) { //
-  let somarTotalVendas = 0;
+  let somarPagoEstoque = 0;
   let vetorDados = [];
   let vetorBarra = [];
-console.log(response)
+
   $.each(response, function (i, d) {
-    somarTotalVendas += parseFloat(d.Total);
-    vetorDados.push(d.Quantidade);
-    vetorBarra.push(d.Mes);
+    somarPagoEstoque += d.ValorPago;
+    vetorDados.push(d.ValorPago.toFixed(2));
+    vetorBarra.push(d.Categoria);
   });
 
-  $('#painel_vendas_total').text(somarTotalVendas);
-  graficoLinhasSimples(vetorDados, retornaMes(vetorBarra), "widgetChart5", 'Estoque');
+  $('#painel_valor_pago').text(somarPagoEstoque.toFixed(2));
+
+  graficoLinhas(vetorDados, vetorBarra, "widgetChart5", 'Valor');
 }).catch(function (err) {
   console.error(err)
 });
 
+
+///------------------------------------------------------------------------------------------------
+//total a receber
+const get_estoque_receber_url = "https://kd-gerenciador.herokuapp.com/painel/estoque/receber";
+
+$.ajax({
+  url: get_estoque_receber_url,
+  type: 'GET'
+}).then(function (response) { //
+  let somarPagoEstoque = 0;
+  let vetorDados = [];
+  let vetorBarra = [];
+
+  $.each(response, function (i, d) {
+    somarPagoEstoque += d.ValorReceber;
+    vetorDados.push(d.ValorReceber.toFixed(2));
+    vetorBarra.push(d.Categoria);
+  });
+
+  $('#painel_valor_receber').text(somarPagoEstoque.toFixed(2));
+
+  graficoLinhas(vetorDados, vetorBarra, "widgetChart6", 'Valor');
+
+}).catch(function (err) {
+  console.error(err)
+});
 
 function graficoLinhasSimples(vetorDados, vetorLabels, idGrafico, tipoLabel) {
   try {
@@ -195,7 +225,7 @@ function graficoLinhasSimples(vetorDados, vetorLabels, idGrafico, tipoLabel) {
 
 };
 
-function graficoLinhas(vetorDados, vetorBarras, idGrafico) {
+function graficoLinhas(vetorDados, vetorBarras, idGrafico, label) {
 
   var ctx = document.getElementById(idGrafico);
   if (ctx) {
@@ -205,7 +235,7 @@ function graficoLinhas(vetorDados, vetorBarras, idGrafico) {
       data: {
         labels: vetorBarras, //atribui a quantidade de barras
         datasets: [{
-          label: "Produtos",
+          label: label, //popula a label
           data: vetorDados, //popula o grafico com dados
           borderColor: "transparent",
           borderWidth: "0",
@@ -329,4 +359,47 @@ function retornaMes(vetor) {
   }
 
   return vet;
+}
+
+function graficoBarras(vetorDados, vetorBarras, idGrafico, label) {
+  try {
+    //WidgetChart 5
+    var ctx = document.getElementById(idGrafico); //atribui no id do grafico
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: vetorBarras, //popula com barras
+          datasets: [{
+            label: label, //atribui nome das colunas
+            data: vetorDados, //popula com dados
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "#ccc",
+          }]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: false,
+              categoryPercentage: 1,
+              barPercentage: 0.50
+            }],
+            yAxes: [{
+              display: false
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
 }
