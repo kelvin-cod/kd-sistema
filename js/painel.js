@@ -6,15 +6,16 @@ $.ajax({
 }).then(function (response) { //
   let somaClientes = 0;
   let vet = [];
-  let arrayMes = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
+  let vetorBarra = [];
 
   $.each(response, function (i, d) {
     somaClientes += d.Quantidade;
     vet.push(d.Quantidade);
+    vetorBarra.push(d.Mes)
   });
 
   $('#painel_clientes').text(somaClientes);
-  graficoLinhasSimples(vet, arrayMes, "widgetChart1", 'Clientes');
+  graficoLinhasSimples(vet, retornaMes(vetorBarra), "widgetChart1", 'Clientes');
 
 }).catch(function (err) {
   console.error(err)
@@ -55,7 +56,6 @@ $.ajax({
   let somarVendas = 0;
   let vetorDados = [];
   let vetorBarra = [];
-  console.log(response);
 
   $.each(response, function (i, d) {
     somarVendas += d.Quantidade;
@@ -65,6 +65,53 @@ $.ajax({
 
   $('#painel_vendas').text(somarVendas);
   graficoLinhasSimples(vetorDados, vetorBarra, "widgetChart3", 'Pedidos');
+}).catch(function (err) {
+  console.error(err)
+});
+
+///------------------------------------------------------------------------------------------------
+//total de vendas
+const get_vendas_total_url = "https://kd-gerenciador.herokuapp.com/painel/vendas/total";
+
+$.ajax({
+  url: get_vendas_total_url,
+  type: 'GET'
+}).then(function (response) { //
+  let somarTotalVendas = 0;
+  let vetorDados = [];
+  let vetorBarra = [];
+
+  $.each(response, function (i, d) {
+    somarTotalVendas += parseFloat(d.Total);
+    vetorDados.push(d.Quantidade);
+    vetorBarra.push(d.Mes);
+  });
+
+  $('#painel_vendas_total').text(somarTotalVendas);
+  graficoLinhasSimples(vetorDados, retornaMes(vetorBarra), "widgetChart4", 'Vendas');
+}).catch(function (err) {
+  console.error(err)
+});
+///------------------------------------------------------------------------------------------------
+//total de vendas
+const get_vendas_total_url = "https://kd-gerenciador.herokuapp.com/painel/vendas/total";
+
+$.ajax({
+  url: get_vendas_total_url,
+  type: 'GET'
+}).then(function (response) { //
+  let somarTotalVendas = 0;
+  let vetorDados = [];
+  let vetorBarra = [];
+console.log(response)
+  $.each(response, function (i, d) {
+    somarTotalVendas += parseFloat(d.Total);
+    vetorDados.push(d.Quantidade);
+    vetorBarra.push(d.Mes);
+  });
+
+  $('#painel_vendas_total').text(somarTotalVendas);
+  graficoLinhasSimples(vetorDados, retornaMes(vetorBarra), "widgetChart5", 'Estoque');
 }).catch(function (err) {
   console.error(err)
 });
@@ -83,7 +130,7 @@ function graficoLinhasSimples(vetorDados, vetorLabels, idGrafico, tipoLabel) {
           type: 'line',
           datasets: [{
             data: vetorDados, //vetor de dados
-            label: tipoLabel,//tipo de label
+            label: tipoLabel, //tipo de label
             backgroundColor: 'transparent',
             borderColor: 'rgba(255,255,255,.55)',
           }, ]
@@ -220,4 +267,66 @@ function graficoLinhas(vetorDados, vetorBarras, idGrafico) {
       }
     });
   }
+};
+
+function retornaMes(vetor) {
+  let meses = [
+    "",
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro"
+  ];
+  let vet = []
+
+  for (let i = 0; i < meses.length; i++) {
+
+    if (vetor[i] == 1) {
+      vet.push(meses[1]);
+    }
+    if (vetor[i] == 2) {
+      vet.push(meses[2])
+    }
+    if (vetor[i] == 3) {
+      vet.push(meses[3])
+    }
+    if (vetor[i] == 4) {
+      vet.push(meses[4])
+    }
+    if (vetor[i] == 5) {
+      vet.push(meses[5])
+    }
+    if (vetor[i] == 6) {
+      vet.push(meses[6])
+    }
+    if (vetor[i] == 7) {
+      vet.push(meses[7])
+    }
+    if (vetor[i] == 8) {
+      vet.push(meses[8])
+    }
+    if (vetor[i] == 9) {
+      vet.push(meses[9])
+    }
+    if (vetor[i] == 10) {
+      vet.push(meses[10])
+    }
+    if (vetor[i] == 11) {
+      vet.push(meses[11])
+    }
+    if (vetor[i] == 12) {
+      vet.push(meses[12])
+    }
+
+  }
+
+  return vet;
 }
