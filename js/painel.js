@@ -159,7 +159,6 @@ $.ajax({
   let somarTotalEstoque = 0;
   let vetorDados = [];
   let vetorBarra = [];
-  console.log(response)
 
   $.each(response, function (i, d) {
     somarTotalEstoque += d.Estoque;
@@ -175,7 +174,6 @@ $.ajax({
   console.error(err)
 });
 
-
 ///------------------------------------------------------------------------------------------------
 //lucro
 const get_estoque_lucro_url = "https://kd-gerenciador.herokuapp.com/painel/estoque/lucro";
@@ -187,11 +185,10 @@ $.ajax({
   let somarTotalLucro = 0;
   let vetorDados = [];
   let vetorBarra = [];
-  console.log(response)
 
   $.each(response, function (i, d) {
     somarTotalLucro += d.Lucro;
-    vetorDados.push(d.Lucro.toFixed(2));
+    vetorDados.push(parseFloat(d.Lucro.toFixed(2)));
     vetorBarra.push(d.Categoria);
   });
 
@@ -203,12 +200,7 @@ $.ajax({
   console.error(err)
 });
 
-
-
-
-
-
-
+//--------------------------------------------------------------------------------------------------------
 
 function graficoLinhasSimples(vetorDados, vetorLabels, idGrafico, tipoLabel) {
   try {
@@ -362,6 +354,49 @@ function graficoLinhas(vetorDados, vetorBarras, idGrafico, label) {
   }
 };
 
+function graficoBarras(vetorDados, vetorBarras, idGrafico, label) {
+  try {
+    //WidgetChart 5
+    var ctx = document.getElementById(idGrafico); //atribui no id do grafico
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: vetorBarras, //popula com barras
+          datasets: [{
+            label: label, //atribui nome das colunas
+            data: vetorDados, //popula com dados
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "#ccc",
+          }]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: false,
+              categoryPercentage: 1,
+              barPercentage: 0.50
+            }],
+            yAxes: [{
+              display: false
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+};
+
 function retornaMes(vetor) {
   let meses = [
     "",
@@ -422,47 +457,4 @@ function retornaMes(vetor) {
   }
 
   return vet;
-}
-
-function graficoBarras(vetorDados, vetorBarras, idGrafico, label) {
-  try {
-    //WidgetChart 5
-    var ctx = document.getElementById(idGrafico); //atribui no id do grafico
-    if (ctx) {
-      ctx.height = 120;
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: vetorBarras, //popula com barras
-          datasets: [{
-            label: label, //atribui nome das colunas
-            data: vetorDados, //popula com dados
-            borderColor: "transparent",
-            borderWidth: "0",
-            backgroundColor: "#ccc",
-          }]
-        },
-        options: {
-          maintainAspectRatio: true,
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              display: false,
-              categoryPercentage: 1,
-              barPercentage: 0.50
-            }],
-            yAxes: [{
-              display: false
-            }]
-          }
-        }
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
-
-}
+};

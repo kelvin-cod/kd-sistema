@@ -1,15 +1,12 @@
-
 .altura-painel {
     height: 650px;
 }
 
-.overview-item--c2 {
-    background-image: -moz-linear-gradient(90deg, #030303 0%, #038b37 100%);
-    background-image: -webkit-linear-gradient(90deg, #000000 0%, #079c40 100%);
-    background-image: -ms-linear-gradient(90deg, #000000 0%, #25be60 100%);
-}
-.overview-item--c3 {
-    background-image: -moz-linear-gradient(90deg, #000000 0%, #ff6a00 100%);
-    background-image: -webkit-linear-gradient(90deg, #000000 0%, #ff6a00 100%);
-    background-image: -ms-linear-gradient(90deg, #000000 0%, #ff6a00 100%);
+
+@media (max-width: 980px) {
+
+    .altura-painel {
+        height: auto !important;
+    }
+
 }
