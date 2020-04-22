@@ -8,12 +8,12 @@
     <meta name="description" content="Sistema de Gerenciamento">
     <meta name="author" content="KD devs" />
     <meta name="keywords" content="kd theme template">
-     <!--  <meta http-equiv="Cache-Control" content="no-cache" />
+    <!--  <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
  <link rel="manifest" href="manifest.json" />-->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-   
+
     <!-- Title Page-->
     <title>Login</title>
 
@@ -77,8 +77,12 @@
                                         <a href="#">Esqueceu a Senha?</a>
                                     </label>
                                 </div>
-
-                                <div class="mt-5">
+                                <div class="text-center" id="imgLoad">
+                                    <img width="100"
+                                        src="https://pa1.narvii.com/6593/bfaad11dcedb659f56826e8883fe7cc15403fd85_00.gif"
+                                        alt="" srcset="">
+                                </div>
+                                <div class="mt-2">
                                     <button class="au-btn au-btn--block btn bg-success m-b-20" type="button" id="login">
                                         <b class="">
                                             Entrar</b>
@@ -133,8 +137,9 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
     <script>
+        $("#imgLoad").hide();
         $("#login").click(function () {
-
+            $("#imgLoad").show();
             var obj = {
                 email: '',
                 password: ''
@@ -143,32 +148,16 @@
             obj.email = $("#email").val();
             obj.password = $("#password").val();
 
-
             //var post_url = "http://localhost:3000/user/login";
 
-            var post_url = "https://kd-gerenciador.herokuapp.com/user/login";
-            /*
-            $.ajax({
-                url: post_url,
-                type: 'POST',
-                data: obj
-            }).done(
-                function (response) { //
-
-                    //document.location.reload();
-                    console.log(JSON.stringify(response[0]))
-                    sessionStorage.setItem("user", JSON.stringify(response[0]));
-                    window.location.href = "index.html";
-
-                });
-            */
+            let post_url = "https://kd-gerenciador.herokuapp.com/user/login";
 
             $.ajax({
                 url: post_url,
                 type: 'POST',
                 data: obj, // added data type
                 success: function (response) {
-                    console.log(JSON.stringify(response[0]))
+
                     sessionStorage.setItem("user", JSON.stringify(response[0]));
                     window.location.href = "index.html";
                 },

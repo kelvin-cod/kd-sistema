@@ -147,6 +147,69 @@ $.ajax({
   console.error(err)
 });
 
+
+///------------------------------------------------------------------------------------------------
+//estoque
+const get_estoque_listar_url = "https://kd-gerenciador.herokuapp.com/painel/estoque/listar";
+
+$.ajax({
+  url: get_estoque_listar_url,
+  type: 'GET'
+}).then(function (response) { //
+  let somarTotalEstoque = 0;
+  let vetorDados = [];
+  let vetorBarra = [];
+  console.log(response)
+
+  $.each(response, function (i, d) {
+    somarTotalEstoque += d.Estoque;
+    vetorDados.push(d.Estoque);
+    vetorBarra.push(d.Descricao);
+  });
+
+  $('#painel_estoque_listar').text(somarTotalEstoque);
+
+  graficoLinhasSimples(vetorDados, vetorBarra, "widgetChart7", 'Produto');
+
+}).catch(function (err) {
+  console.error(err)
+});
+
+
+///------------------------------------------------------------------------------------------------
+//lucro
+const get_estoque_lucro_url = "https://kd-gerenciador.herokuapp.com/painel/estoque/lucro";
+
+$.ajax({
+  url: get_estoque_lucro_url,
+  type: 'GET'
+}).then(function (response) { //
+  let somarTotalLucro = 0;
+  let vetorDados = [];
+  let vetorBarra = [];
+  console.log(response)
+
+  $.each(response, function (i, d) {
+    somarTotalLucro += d.Lucro;
+    vetorDados.push(d.Lucro.toFixed(2));
+    vetorBarra.push(d.Categoria);
+  });
+
+  $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2));
+
+  graficoLinhas(vetorDados, vetorBarra, "widgetChart8", 'Produtos');
+
+}).catch(function (err) {
+  console.error(err)
+});
+
+
+
+
+
+
+
+
 function graficoLinhasSimples(vetorDados, vetorLabels, idGrafico, tipoLabel) {
   try {
     //WidgetChart 1
