@@ -137,7 +137,7 @@ $.ajax({
 
     });
     objFornecedor = response;
-    console.log(objFornecedor)
+   
     //popula a tabela
     $.each(response, function (i, item) {
 
