@@ -2,7 +2,7 @@
 //protudos
 const get_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/listar";
 let objClientes = [];
-let user = JSON.parse(sessionStorage.user);
+var user = JSON.parse(sessionStorage.user);
 
 $.ajax({
     url: get_cliente_url,
@@ -13,14 +13,14 @@ $.ajax({
 
     $.each(response, function (i, item) {
 
-        let data = new Date(item.data_cadastro);
+
         tblCliente +=
             '<tr><td>' + item.idCliente +
             '</td><td>' + item.Nome + '</td>' +
             '<td>' + item.Celular + '</td>' +
             '<td>' + item.Telefone + '</td>' +
 
-            '<td>' + data.toLocaleString() + '</td>' +
+            '<td>' + item.Rua + '</td>' +
             '<td>' +
             '<button type="button" onclick="editarCliente(' + item.idCliente +
             ')"  class="btn btn-info " >' +
@@ -32,7 +32,12 @@ $.ajax({
             '</tr>';
 
     });
+    
     $('#tabelaCliente').append(tblCliente);
+    $('#tabelaCliente').css({
+        "height": "200px",
+      "overflow-x": "auto"
+    })
 
 }).catch(function (err) {
     console.error(err);
@@ -56,13 +61,14 @@ function enviarCliente() {
         bairro: '',
         cidade: '',
         endereco: '',
-        numero: '',
+        numero: 0,
         telefone: '',
         celular: '',
         uf: '',
         complemento: '',
-        idUsuario: null
+        idUsuario: 0
     };
+
     obj.nome = $("#nome").val();
     obj.email = $("#email").val();
     obj.cep = $("#cep").val();
@@ -74,11 +80,11 @@ function enviarCliente() {
     obj.celular = $("#celular").val();
     obj.uf = $("#uf").val();
     obj.complemento = $("#complemento").val();
-    obj.idUsuario = user.id;
+    obj.idUsuario = user.idUsuario;
 
-    // var post_url = "http://localhost:3000/produtos/criar";
-    var dpost_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/criar";
-    console.log(JSON.stringify(obj))
+    // let post_cliente_url = "http://localhost:3000/cliente/criar";
+    let post_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/criar";
+    console.log(obj)
     $.ajax({
         url: post_cliente_url,
         type: 'POST',

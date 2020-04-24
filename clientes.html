@@ -116,12 +116,11 @@
                               id="cidade">
                           </div>
                           <div class="form-group col-md-3">
-                            <label>UF</label>
-                            <input class="au-input au-input--full" type="text" name="Uf" placeholder="UF" id="uf">
+                            <label>Estado</label>
+                            <input class="au-input au-input--full" type="text" name="Uf" placeholder="Estado" id="uf">
                           </div>
-
-
                         </div>
+
                         <div class="row">
                           <div class="form-group col-md-3  col-6">
                             <label>Celular</label>
@@ -163,12 +162,12 @@
                 <div>
                   <h3 class="text-center mt-2 mb-3">Clientes</h3>
                   <div class="input-group col-12 col-md-6">
-                    <input class="form-control" type="text" name="">
+                    <input class="form-control input-search" type="text" alt="lista-clientes"  placeholder="Buscar Clientes ou Endereço" >
                     <div class="input-group-append">
-                      <button></button>
-                      <span class="input-group-text bg-black text-white btn" id="busca data">
+      
+                      <span class="input-group-text bg-black text-white  " id="busca data" >
                         <i class="fas fa-search mr-1"></i>
-                        Filtrar Clientes</span>
+                       </span>
                     </div>
                   </div>
 
@@ -176,17 +175,18 @@
                 <!-- DATA TABLE -->
 
                 <div class="bg-light table-responsive mt-2">
-                  <table class="table table-hover bg-burguer-center table-fixed  border-cinza">
+                  <table class="table table-hover bg-burguer-center table-fixed  border-cinza lista-clientes" id="tabelaCliente">
                     <thead class="bg-black text-white text-center">
                       <th scope="col">#</th>
                       <th scope="col">Nome</th>
                       <th scope="col">Celular</th>
                       <th scope="col">Telefone</th>
-                      <th scope="col">Cadastro</th>
+                      <th scope="col">Endereço</th>
                       <th scope="col">Editar</th>
                     </thead>
 
-                    <tbody id="tabelaCliente" class="text-center">
+                    <tbody id="tabelaCliente" class="text-center" style="height: 200px !important;
+                    overflow-y: auto;">
 
                     </tbody>
                   </table>
@@ -350,10 +350,11 @@
   <script src="js/clientes.js"></script>
   <script src="js/utils/jquery.mask.js"></script>
   <script src="js/utils/jquery.correios.min.js"></script>
+  <script src="js/utils/jquery.quick.search.js"></script>
   <script>
     $("#celular").mask("(00) 00000-0000");
     $("#telefone").mask("(00) 0000-0000");
-
+    $("#modalCelular").mask("(00) 0000-0000");
     /*função cep correios*/
     $("#cep").mask("00000-000");
     var typingTimer; //timer identifier
@@ -380,6 +381,26 @@
         $("#uf").val(response.uf);
       });
     }
+  </script>
+  <script>
+    $(function () {
+      $(".input-search").keyup(function () {
+        //pega o css da tabela 
+        var tabela = $(this).attr('alt');
+        if ($(this).val() != "") {
+          $("." + tabela + " tbody>tr").hide();
+          $("." + tabela + " td:contains-ci('" + $(this).val() + "')").parent("tr").show();
+        } else {
+          $("." + tabela + " tbody>tr").show();
+        }
+      });
+    });
+    $.extend($.expr[":"], {
+      "contains-ci": function (elem, i, match, array) {
+        return (elem.textContent || elem.innerText || $(elem).text() || "").toLowerCase().indexOf((match[3] || "")
+          .toLowerCase()) >= 0;
+      }
+    });
   </script>
 </body>
 
