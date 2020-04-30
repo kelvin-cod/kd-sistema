@@ -1,7 +1,5 @@
-
 try {
     var user = JSON.parse(sessionStorage.user);
-    console.log(user)
     $("#nome").val(user.Nome);
     $("#email").val(user.Email);
     $("#email_recuperacao").val(user.Email_recuperacao);
@@ -22,9 +20,10 @@ function readURL(input) {
     }
 }
 var result;
+
 function encodeImgtoBase64(element) {
     readURL(element);
-   
+
     var img = element.files[0];
 
     var reader = new FileReader();

@@ -82,6 +82,7 @@
                                         src="https://pa1.narvii.com/6593/bfaad11dcedb659f56826e8883fe7cc15403fd85_00.gif"
                                         alt="" srcset="">
                                 </div>
+                                <h4 class="text-center text-danger" id="errolog">Usuário ou senha Inválidos!</h4>
                                 <div class="mt-2">
                                     <button class="au-btn au-btn--block btn bg-success m-b-20" type="button" id="login">
                                         <b class="">
@@ -89,15 +90,6 @@
                                     </button>
                                 </div>
 
-                                <!--
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with
-                                            facebook</button>
-                                       <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
-                            -->
                             </form>
                             <div class="register-link pb-5">
                                 <h6>
@@ -106,6 +98,29 @@
                                 </h6>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MODAL-->
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+            id="errorModal">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content ">
+                    <div class="modal-header bg-black" style="color: aliceblue;">
+                        <h5 class="modal-title text-white">Error Login</h5>
+                        <button type="button" class="close text-white " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="text-white">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <h4 class="text-center">Email ou Senha Inválidos!</h4>
+                        <div class="gif" id="gif"></div>
+                    </div>
+
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+
                     </div>
                 </div>
             </div>
@@ -138,8 +153,11 @@
     <script src="js/main.js"></script>
     <script>
         $("#imgLoad").hide();
+        $('#errolog').hide();
+
         $("#login").click(function () {
-            $("#imgLoad").show();
+            $('#errolog').hide();
+
             var obj = {
                 email: '',
                 password: ''
@@ -148,22 +166,36 @@
             obj.email = $("#email").val();
             obj.password = $("#password").val();
 
-            //var post_url = "http://localhost:3000/user/login";
+            if (obj.email == "") {
+                return $("#errorModal").modal("show")
+            } else if (obj.password == "") {
+                return $("#errorModal").modal("show")
+            };
+            var post_url = "http://localhost:3000/user/login";
 
-            let post_url = "https://kd-gerenciador.herokuapp.com/user/login";
+            // let post_url = "https://kd-gerenciador.herokuapp.com/user/login";
+            $("#imgLoad").show();
 
             $.ajax({
-                url: post_url,
-                type: 'POST',
-                data: obj, // added data type
-                success: function (response) {
+                    url: post_url,
+                    type: 'POST',
+                    data: obj,
 
-                    sessionStorage.setItem("user", JSON.stringify(response[0]));
-                    window.location.href = "index.html";
-                },
+                }).done(function (response) {
+                    console.log(response)
 
-
-            });
+                    if (response) {
+                        sessionStorage.setItem("user", JSON.stringify(response));
+                        window.location.href = "index.html";
+                    }
+                })
+                .fail(function (response) {
+                    $("#imgLoad").hide();
+                  //  $('#errolog').html("");
+                    $('#errolog').text(response[0]);
+                    $('#errolog').show();
+                  
+                });
         });
     </script>
 </body>

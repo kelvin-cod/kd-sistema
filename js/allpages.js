@@ -1,6 +1,5 @@
 var novaURL = "login.html";
 
-
 async function isloggedIn() {
     var preview = await "https://i.ibb.co/sPxMfwZ/user-white.jpg";
     var user = {};
@@ -16,9 +15,10 @@ async function isloggedIn() {
         $(window.document.location).attr('href', novaURL);
     } else {
 
-        if (user.Foto == "") {
+        if (user.Foto == null) {
             user.Foto = preview;
         }
+        user.Foto = preview;
         let imagem = '<img src=' + user.Foto + ' alt="user Photo" />'
 
         $("#usuario_nome").append(user.Nome);

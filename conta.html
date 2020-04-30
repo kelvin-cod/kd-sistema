@@ -65,7 +65,7 @@
                             <div class=" bg-white  " style="border: gray 1px solid;;">
                                 <h2 class="bg-info text-center text-white p-2">Conta</h2>
                                 <div class="login-form ml-3 mr-3 login-content font-weight-bold bg-burguer">
-                                  
+
                                     <form action="" method="PUT" id="updateUser">
                                         <div class="form-group pt-2">
                                             <label>Usuario</label>
@@ -88,8 +88,8 @@
                                                 <label>Senha</label>
                                                 <input class="au-input au-input--full border-input" type="password"
                                                     name="password" autocomplete="new-password" placeholder="Senha"
-                                                    required id="password">
-                                        
+                                                    required id="password" minlength="4">
+
                                                 <div class="form-group">
                                                     <label for="">Imagem</label>
                                                     <label class=" btn btn-info" for='foto'>
@@ -112,27 +112,12 @@
                                             </div>
 
                                         </div>
-                                        <!--
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Aceita os termos de uso?
-                                    </label>
-                                </div>
-                                -->
+
                                         <button class="au-btn au-btn--block bg-success btn mb-4" type="button"
                                             id="submit">
                                             <p class="text-white font-weight-bold">Atualizar</p>
                                         </button>
 
-                                        <!--
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">Cadastro com
-                                            facebook</button>
-
-                                    </div>
-                                </div>
-                                -->
                                     </form>
 
                                 </div>
@@ -141,19 +126,19 @@
                     </div>
                     <footer class="footer navbar-fixed-bottom">
                         <div class="row mt-5 bg-black">
-                          <div class="col-md-12 ">
-                            <div class="copyright ">
-                              <p>
-                                Copyright © 2020 KD. All rights reserved. <br>
-                                <span class="text-info">KD</span>
-                                <span class="text-info">S</span>istema
-                                <span class="text-info">G</span>erenciador
-                              </p>
+                            <div class="col-md-12 ">
+                                <div class="copyright ">
+                                    <p>
+                                        Copyright © 2020 KD. All rights reserved. <br>
+                                        <span class="text-info">KD</span>
+                                        <span class="text-info">S</span>istema
+                                        <span class="text-info">G</span>erenciador
+                                    </p>
+                                </div>
                             </div>
-                          </div>
                         </div>
-          
-                      </footer>
+
+                    </footer>
                 </div>
             </div>
             <!--FIM MAIN CONTENT-->
@@ -184,6 +169,7 @@
 
     <script src="js/allpages.js"> </script>
     <script src="js/conta.js"> </script>
+
 </body>
 
 </html>
