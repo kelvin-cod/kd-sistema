@@ -7,6 +7,7 @@ async function isloggedIn() {
 
     try {
         user = await JSON.parse(sessionStorage.getItem("user"));
+        console.log(user)
     } catch (error) {
         console.log(error)
     }
@@ -18,7 +19,7 @@ async function isloggedIn() {
         if (user.Foto == null) {
             user.Foto = preview;
         }
-        user.Foto = preview;
+    
         let imagem = '<img src=' + user.Foto + ' alt="user Photo" />'
 
         $("#usuario_nome").append(user.Nome);
