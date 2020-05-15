@@ -42,20 +42,30 @@ $("#submit").click(function () {
     obj.email_recuperacao = $("#email_recuperacao").val();
     obj.foto = result;
 
-    var post_url = "http://localhost:3000/user/create";
+    // var post_url = "http://localhost:3000/user/upload/image";
 
     // let img_url = "https://api.imgbb.com/1/upload?key=cc6802445a8fe48713fbbf176fa47179";
 
-    // let post_url = "https://kd-gerenciador.herokuapp.com/user/create";
+    let post_url = "https://kd-gerenciador.herokuapp.com/user/create";
 
     $.ajax({
         url: post_url,
         type: 'POST',
         data: obj
     }).done(function (response) { //
-        console.log(response);
- 
-        //window.location.href = "login.html";
+        var teste44 = $("#email").val();
+        
+        window.location.href = "login.html";
+     
 
-    });
+    }).fail(function (response) {
+        console.log(response)
+
+    });;
 });
+
+$("#foto").change(() => {
+
+    readURL(this)
+
+})

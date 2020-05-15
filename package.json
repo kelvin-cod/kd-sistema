@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "npx-server": "0.0.42"
+    "npx-server": "0.0.42",
+    "server": "^1.0.27"
   }
 }
