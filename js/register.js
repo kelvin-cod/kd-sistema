@@ -54,9 +54,9 @@ $("#submit").click(function () {
         data: obj
     }).done(function (response) { //
         var teste44 = $("#email").val();
-        
+
         window.location.href = "login.html";
-     
+
 
     }).fail(function (response) {
         console.log(response)
