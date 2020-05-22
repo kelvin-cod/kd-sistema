@@ -117,9 +117,9 @@ $("#atualizar").click(() => {
         url: put_url + user.idUsuario,
         type: 'PUT',
         data: obj
-    }).done(async function (response) { //
+    }).done( function (response) { //
 
-        await getUser()
+       getUser()
          document.location.reload();
 
     }).fail(function (response) {
