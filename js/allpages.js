@@ -19,7 +19,7 @@ async function isloggedIn() {
             user.Foto = preview;
         }
     
-        let imagem = '<img src=' + user.Foto + ' alt="user Photo" />'
+        let imagem = '<img class="img-user" src=' + user.Foto + ' alt="user Photo" />'
 
         $("#usuario_nome").append(user.Nome);
         $(".usuario_nome").append(user.Nome);
