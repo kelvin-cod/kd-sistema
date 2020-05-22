@@ -71,7 +71,8 @@
                                 </div>
                                 <div class="login-checkbox font-weight-bold ">
                                     <label class="">
-                                        <input type="checkbox" name="remember" id="form-password">Lembrar-me
+                                        <input type="checkbox" name="remember" id="remember">
+                                        Lembrar-me
                                     </label>
                                     <label class="text-dark">
                                         <a href="#">Esqueceu a Senha?</a>
@@ -146,11 +147,11 @@
     <script src="vendor/circle-progress/circle-progress.min.js"></script>
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
+    <script src="vendor/select2/select2.min.js"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script src="js/utils/jquery.cookie.js"></script>
     <script>
         $("#imgLoad").hide();
         $('#errolog').hide();
@@ -171,9 +172,9 @@
             } else if (obj.password == "") {
                 return $("#errorModal").modal("show")
             };
-           // var post_url = "http://localhost:3000/user/login";
+            // var post_url = "http://localhost:3000/user/login";
 
-         let post_url = "https://kd-gerenciador.herokuapp.com/user/login";
+            let post_url = "https://kd-gerenciador.herokuapp.com/user/login";
             $("#imgLoad").show();
 
             $.ajax({
@@ -190,11 +191,51 @@
                 })
                 .fail(function (response) {
                     $("#imgLoad").hide();
-                  //  $('#errolog').html("");
+                    //  $('#errolog').html("");
                     $('#errolog').text(response[0]);
                     $('#errolog').show();
-                  
+
                 });
+        });
+
+
+        $(document).ready(function () {
+
+            var remember = $.cookie('remember');
+            if (remember == 'true') {
+                $('#remember' ).prop('checked', true);
+                var email = $.cookie('email');
+                var password = $.cookie('password');
+                // autofill the fields
+                $('#email').val(email);
+                $('#password').val(password);
+            }
+
+
+            $("#login").click(function () {
+                if ($('#remember').is(':checked')) {
+                  
+            
+                    var email = $('#email').val();
+                    var password = $('#password').val();
+
+                    // set cookies to expire in 14 days
+                    $.cookie('email', email, {
+                        expires: 14
+                    });
+                    $.cookie('password', password, {
+                        expires: 14
+                    });
+                    $.cookie('remember', true, {
+                        expires: 14
+                    });
+                } else {
+                    // reset cookies
+                    $.cookie('email', null);
+                    $.cookie('password', null);
+                    $.cookie('remember', null);
+                }
+            });
         });
     </script>
 </body>
