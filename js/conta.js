@@ -117,10 +117,15 @@ $("#atualizar").click(() => {
         url: put_url + user.idUsuario,
         type: 'PUT',
         data: obj
-    }).done( function (response) { //
+    }).done(function (response) { //
 
-       getUser()
-         document.location.reload();
+        getUser();
+
+        setTimeout(function () {
+            document.location.reload();
+        }, 500);
+        
+     
 
     }).fail(function (response) {
         console.log(response)
