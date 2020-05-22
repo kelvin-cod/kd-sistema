@@ -120,8 +120,7 @@ $("#atualizar").click(() => {
     }).done(async function (response) { //
 
         await getUser()
-
-        await document.location.reload();
+         document.location.reload();
 
     }).fail(function (response) {
         console.log(response)
