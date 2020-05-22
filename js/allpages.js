@@ -7,7 +7,6 @@ async function isloggedIn() {
 
     try {
         user = await JSON.parse(sessionStorage.getItem("user"));
-        console.log(user)
     } catch (error) {
         console.log(error)
     }

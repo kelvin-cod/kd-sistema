@@ -21,7 +21,7 @@ $.ajax({
   console.error(err)
 });
 //------------------------------------------------------------------------------------------------------
-//protudos
+//produtos
 const get_produtos_url = "https://kd-gerenciador.herokuapp.com/painel/produtos";
 
 $.ajax({
@@ -37,14 +37,16 @@ $.ajax({
     vetorDados.push(d.Quantidade);
     vetorBarra.push(d.Categoria);
   });
-
+  
+  //exbir a soma dos produtos
   $('#painel_produtos').text(somarProdutos);
 
+  //gerar o grafico com os dados
   graficoLinhas(vetorDados, vetorBarra, 'widgetChart2', 'Produtos');
-
 }).catch(function (err) {
   console.error(err)
 });
+
 ///------------------------------------------------------------------------------------------------
 //tipos de vendas
 const get_vendas_url = "https://kd-gerenciador.herokuapp.com/painel/vendas";

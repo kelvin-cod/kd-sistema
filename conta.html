@@ -86,11 +86,19 @@
                                         <div class="row">
                                             <div class=" col-md-6 form-group">
                                                 <label>Senha</label>
-                                                <input class="au-input au-input--full border-input" type="password"
-                                                    name="password" autocomplete="new-password" placeholder="Senha"
-                                                    required id="password" minlength="4">
+                                                <div class="input-group ">
+                                                    <input class="au-input au-input--full border-input form-control"
+                                                        type="password" name="password" autocomplete="new-password"
+                                                        placeholder="Senha" required id="password" minlength="4">
 
-                                                <div class="form-group">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-info olho" type="button" id="olho"> <i
+                                                                class="fas fa-eye  "></i></button>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group mt-2">
                                                     <label for="">Imagem</label>
                                                     <label class=" btn btn-info" for='foto'>
                                                         Selecionar um arquivo &#187;
@@ -114,7 +122,7 @@
                                         </div>
 
                                         <button class="au-btn au-btn--block bg-success btn mb-4" type="button"
-                                            id="submit">
+                                            id="atualizar">
                                             <p class="text-white font-weight-bold">Atualizar</p>
                                         </button>
 
