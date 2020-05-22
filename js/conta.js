@@ -40,7 +40,7 @@ function encodeImgtoBase64(element) {
 
 function getUser() {
 
-   let get_url = "https://kd-gerenciador.herokuapp.com/user/listar/";
+    let get_url = "https://kd-gerenciador.herokuapp.com/user/listar/";
     //let get_url = "http://localhost:3000/user/listar/";
 
     $.ajax({
@@ -117,10 +117,11 @@ $("#atualizar").click(() => {
         url: put_url + user.idUsuario,
         type: 'PUT',
         data: obj
-    }).done(function (response) { //
+    }).done(async function (response) { //
 
-        getUser()
-        document.location.reload();
+        await getUser()
+
+        await document.location.reload();
 
     }).fail(function (response) {
         console.log(response)
