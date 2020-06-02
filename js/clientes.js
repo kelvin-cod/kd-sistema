@@ -84,7 +84,7 @@ function enviarCliente() {
 
     // let post_cliente_url = "http://localhost:3000/cliente/criar";
     let post_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/criar";
-    console.log(obj)
+
     $.ajax({
         url: post_cliente_url,
         type: 'POST',
@@ -104,7 +104,7 @@ function editarCliente(id) {
             data = new Date(item.data_cadastro);
         }
     });
-    console.log(objClientes);
+
     $("#modalNomeCliente").val(cliente.Nome);
     $("#modalEmail").val(cliente.email_Cliente);
     $("#modalRua").val(cliente.Rua);

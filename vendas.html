@@ -112,8 +112,14 @@
                             <div class="row">
                               <div class="form-group col-md-5">
                                 <label>Cliente</label>
+                                <!--
                                 <input class="au-input au-input--full border-input " type="text" name="cliente"
-                                  placeholder="Nome Cliente" id="Nome_cliente">
+                                  placeholder="Nome Cliente" >
+-->
+                                <select class="form-control border-input " name="Produto" id="Nome_cliente">
+                                  <option value=""></option>
+                                </select>
+                           
                               </div>
 
                               <div class="form-group col-md-2 text-center">
@@ -172,13 +178,6 @@
 
                               </div>
 
-
-                              <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-left: 15px;"> -->
-
-
-
-
-
                               <div class="form-group col-md-2 col-6">
                                 <label for="Valor_vendas">R$ Unitário</label>
 
@@ -195,7 +194,6 @@
                                     <option value=""></option>
                                   </select>
                                 </div>
-
 
                               </div>
                               <div class="form-group col-md-2 col-6 text-center">
@@ -290,7 +288,7 @@
                     </button>
                   </div>
                   <div class="modal-body m-5">
-                    <h3 class="text-center">Confirmar Venda?</h3>
+                    <h3 class="text-center" id="confirmar">Confirmar Venda?</h3>
                     <div class="gif" id="gif"></div>
                   </div>
 
@@ -301,10 +299,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
             <!--FIM MODAL-->
           </div>
         </div>
@@ -330,9 +324,13 @@
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
   <script src="vendor/select2/select2.min.js"></script>
+  <script src="js/utils/jquery-ui.js"></script>
   <script src="js/allpages.js"> </script>
-  <script src="js/vendas.js"> </script>
+
+  <!-- Main JS-->
+  <script src="js/main.js"></script>
   <script src="./js/bootstrap.table-editor.js"></script>
+
   <script src="./js/bootstable.js"></script>
   <script type="text/javascript">
     $('#Tabela_vendas').SetEditable({
@@ -341,9 +339,7 @@
 
     });
   </script>
-
-  <!-- Main JS-->
-  <script src="js/main.js"></script>
+  <script src="js/vendas.js"> </script>
 </body>
 
 </html>

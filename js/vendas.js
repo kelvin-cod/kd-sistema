@@ -36,8 +36,8 @@
             return y !== k.lastIndexOf(x);
         });
     } // remover duplicatas
-    let mes = now.getMonth() + 1// arrumar bug de mes
-    
+    let mes = now.getMonth() + 1 // arrumar bug de mes
+
     $("#Data_vendas").val(now.getDate() + "/" + mes + "/" + now.getFullYear());
 
     $.ajax({
@@ -318,8 +318,9 @@
     })
     /**----------------------------------------------------------------------------------------------------- */
     $("#Concluir_vendas").click(() => {
-        let cliente = $("#Nome_cliente").val();
-        Venda.cliente_venda = $("#Nome_cliente").val();
+        let cliente = $("#Nome_cliente option:selected").val();
+        Venda.cliente_venda = $("#Nome_cliente option:selected").text();
+
         $('#gif').hide();
 
         if (cliente === "") {
@@ -336,31 +337,59 @@
             let total_venda = $("#Total_vendas").val();
 
             Venda.idUsuario = user.idUsuario;
+            Venda.idCliente =  $("#Nome_cliente option:selected").val();;
             Venda.data_venda = $("#Data_vendas").val();
-
             Venda.tipo_venda = var_name;
             Venda.pedido_venda = numeroPedido + 1;
             Venda.total_venda = parseFloat(total_venda);
 
             $('#Modal').modal('show');
-
         }
     });
     /**----------------------------------------------------------------------------------------------------- */
     $("#modal-btn-sim").click(() => {
         $('#gif').show();
-        const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir";
-        var gif = '<img src="images/carregando-gif-animado-9.gif" >';
-        $("#gif").append(gif)
+        const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir2";
+        var gif = '<img src="https://pa1.narvii.com/6890/f52432aea86cab93504a3e469767a0fdc6caea3cr1-320-240_hq.gif" >';
 
+        $("#gif").append(gif);
+        $("#confirmar").hide();
+
+        console.log(Venda)
         $.ajax({
             url: post_url,
             type: 'POST',
             data: Venda,
             dataType: 'json',
             complete: function () {
-                location.reload();
+
+                // location.reload();
             }
 
+        }).then(function (response) {
+            console.log(response)
         })
-    })
+    });
+
+
+    /**----------------------------------------------------------------- */
+    const get_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/listar";
+    var array_clientes = []
+    $.ajax({
+        url: get_cliente_url,
+        type: 'GET'
+    }).then(function (response) { //
+
+        // let array_clientes = []
+        $.each(response, function (i, item) {
+            array_clientes.push(item.Nome)
+        });
+        console.log(response)
+        var selectbox5 = $('#Nome_cliente');
+        $.each(response, function (j, d) {
+            $('<option>').val(d.idCliente).text(d.Nome).appendTo(selectbox5);
+        });
+
+    }).catch(function (err) {
+        console.error(err);
+    });

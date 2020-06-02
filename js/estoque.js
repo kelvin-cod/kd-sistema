@@ -137,7 +137,7 @@ $.ajax({
 
     });
     objFornecedor = response;
-   
+
     //popula a tabela
     $.each(response, function (i, item) {
 
@@ -176,58 +176,48 @@ $.ajax({
     // url: 'http://localhost:3000/produtos/listar',
     type: 'GET',
     dataType: 'json', // added data type
-
     success: function (response) {
         var trHTML = '';
         let produto = "produto";
-        /*Organiza o Arrya */
+        /*Organiza o Array */
         response = response.sort(function compare(a, b) {
             if (a.idProduto < b.idProduto) return -1;
             if (a.idProduto > b.idProduto) return 1;
             return 0;
         })
-
-        objProdutos = response; // atribui o obje de resposta
+        objProdutos = response; // atribui o obj de resposta
         //Popula a tabela com a respostas
-        //console.log(objProdutos)
-
         $.each(response, function (i, item) {
             trHTML +=
-                '<tr><td>' + item.idProduto + '</td>' +
+                '<tr>' +
+                '<td>' + item.idProduto + '</td>' +
                 '<td>' + item.Descricao + '</td>' +
                 '<td>' + parseFloat(item.Valor_Venda).toFixed(2) + '</td>'
 
             if (item.Estoque < 10) {
-                trHTML += '<td class="bg-abaixo  ">' + item.Estoque + '</td>'
+                trHTML += '<td class="bg-abaixo">' + item.Estoque + '</td>'
             } else {
-                trHTML += '<td class="bg-acima  ">' + item.Estoque + '</td>'
+                trHTML += '<td class="bg-acima">' + item.Estoque + '</td>'
             }
 
-            trHTML += '<td>' + item.categoria +
-                '</td><td>' + item.nomeFornecedor +
-                '</td><td>' + item.Unidade_Medida + '</td>' +
-
+            trHTML += '<td>' + item.categoria + '</td>' +
+                '<td>' + item.nomeFornecedor + '</td>' +
+                '<td>' + item.Unidade_Medida + '</td>' +
                 '<td>' +
-                '<button type="button" onclick="editarProduto(' + item.idProduto +
-                ')"  class="btn btn-info " >' +
-
+                '<button type="button" onclick="editarProduto(' + item.idProduto + ')' +
+                '"class="btn btn-info">' +
                 '<i class="fas fa-pencil-alt"></i> ' +
                 '</button>' +
                 '</td>' +
-
                 '<td><button type="button" onclick="excluir(' + item.idProduto + ',' + 1 + ')" ' +
                 'class="btn btn-danger" data-toggle="modal" data-target="#excluirModal">' +
                 '<i class="fas fa-trash"></i>' +
-                '</button></td>' +
-
+                '</button>' +
+                '</td>' +
                 '</tr>';
         });
         $('#tabelaProduto').append(trHTML);
-
-
-
     }
-
 });
 
 function teste(id) {
@@ -246,8 +236,6 @@ function editarProduto(_id) {
             produto = (item);
         }
     });
-
-
     $("#idProduto").val(produto.idProduto);
     $("#Descricao").val(produto.Descricao);
     $("#Valor_compra").val(parseFloat(produto.Valor_Compra).toFixed(2));
@@ -272,7 +260,6 @@ var objexcluir = {
     idProduto: ''
 };
 
-
 function excluirSim() {
     // var post_url = "http://localhost:3000/produtos/excluirum/" + objexcluir.idProduto;
 
@@ -286,8 +273,6 @@ function excluirSim() {
         document.location.reload();
 
     });
-
-
 }
 
 function excluir(id, tipo) {
