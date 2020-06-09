@@ -29,7 +29,7 @@
         tipo_venda: '',
         Pedidos: []
     }
-
+    var user = JSON.parse(sessionStorage.user);
     /************************************************************************************************************************* */
     Array.prototype.duplicates = function () {
         return this.filter(function (x, y, k) {
@@ -337,7 +337,7 @@
             let total_venda = $("#Total_vendas").val();
 
             Venda.idUsuario = user.idUsuario;
-            Venda.idCliente =  $("#Nome_cliente option:selected").val();;
+            Venda.idCliente = $("#Nome_cliente option:selected").val();;
             Venda.data_venda = $("#Data_vendas").val();
             Venda.tipo_venda = var_name;
             Venda.pedido_venda = numeroPedido + 1;
@@ -373,23 +373,75 @@
 
 
     /**----------------------------------------------------------------- */
-    const get_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/listar";
-    var array_clientes = []
-    $.ajax({
-        url: get_cliente_url,
-        type: 'GET'
-    }).then(function (response) { //
+    function buscarCliente() {
+        const get_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/listar";
+        var array_clientes = []
+        $.ajax({
+            url: get_cliente_url,
+            type: 'GET'
+        }).then(function (response) { //
 
-        // let array_clientes = []
-        $.each(response, function (i, item) {
-            array_clientes.push(item.Nome)
-        });
-        console.log(response)
-        var selectbox5 = $('#Nome_cliente');
-        $.each(response, function (j, d) {
-            $('<option>').val(d.idCliente).text(d.Nome).appendTo(selectbox5);
-        });
+            // let array_clientes = []
+            $.each(response, function (i, item) {
+                array_clientes.push(item.Nome)
+            });
+            console.log(response)
+            var selectbox5 = $('#Nome_cliente');
+            $.each(response, function (j, d) {
+                $('<option>')
+                    .val(d.idCliente)
+                    .text(d.Nome.toUpperCase() + ',  rua:  ' + d.Rua + ', nº' + d.Numero)
+                    .appendTo(selectbox5);
+            });
 
-    }).catch(function (err) {
-        console.error(err);
-    });
+        }).catch(function (err) {
+            console.error(err);
+        });
+    }
+
+    buscarCliente();
+
+    /*--------------ENVIAR CLIENTE*/
+    function enviarCliente() {
+
+        var obj = {
+            nome: '',
+            email: '',
+            cep: '',
+            bairro: '',
+            cidade: '',
+            endereco: '',
+            numero: 0,
+            telefone: '',
+            celular: '',
+            uf: '',
+            complemento: '',
+            idUsuario: 0
+        };
+
+        obj.nome = $("#nome").val();
+        obj.email = $("#email").val();
+        obj.cep = $("#cep").val();
+        obj.bairro = $("#bairro").val();
+        obj.cidade = $("#cidade").val();
+        obj.endereco = $("#endereco").val();
+        obj.numero = $("#numero").val();
+        obj.telefone = $("#telefone").val();
+        obj.celular = $("#celular").val();
+        obj.uf = $("#uf").val();
+        obj.complemento = $("#complemento").val();
+        obj.idUsuario = user.idUsuario;
+
+        // let post_cliente_url = "http://localhost:3000/cliente/criar";
+        let post_cliente_url = "https://kd-gerenciador.herokuapp.com/cliente/criar";
+
+        $.ajax({
+            url: post_cliente_url,
+            type: 'POST',
+            data: obj
+        }).done(function (response) { //
+            $("#novoCliente").hide();
+            buscarCliente();
+
+        });
+    };

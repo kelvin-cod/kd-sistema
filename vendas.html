@@ -111,15 +111,97 @@
                           <div class="container-fluid bg-burguer">
                             <div class="row">
                               <div class="form-group col-md-5">
-                                <label>Cliente</label>
+                                <div>
+                                  <label>Cliente </label>
+                                  <button type="button" class="btn btn-success" id="btnCliente" type="button"
+                                    data-toggle="collapse" data-target="#novoCliente" aria-expanded="false"
+                                    aria-controls="novoCliente">
+                                    <i class="zmdi zmdi-plus"></i>
+                                  </button>
+                                </div>
+                                <div class="collapse" id="novoCliente">
+                                  <div class="row">
+                                    <div class="form-group col-md-6">
+                                      <label>Cliente</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="cliente"
+                                        placeholder="Nome Cliente" id="nome">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label>E-mail</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="email"
+                                        placeholder="E-mail" id="email">
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="form-group col-md-6">
+                                      <label>CEP</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="cep" placeholder="CEP"
+                                        id="cep">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                      <label>Número</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="numero"
+                                        placeholder="Número" id="numero">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                      <label>Endereço</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="rua" placeholder="Rua"
+                                        id="endereco">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="form-group col-md-5">
+                                      <label>Bairro</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="bairro"
+                                        placeholder="Bairro" id="bairro">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label>Cidade</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="cidade"
+                                        placeholder="Cidade" id="cidade">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label>Estado</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="Uf" placeholder="Estado"
+                                        id="uf">
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="form-group col-md-6 col-6">
+                                      <label>Celular</label>
+                                      <input class="au-input au-input--full border-input"
+                                       type="text" name="Celular"
+                                        placeholder="Celular" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}"
+                                        id="celular">
+                                    </div>
+
+                                    <div class="form-group col-md-6  col-6">
+                                      <label>Telefone</label>
+                                      <input class="au-input au-input--full border-input" type="text"
+                                       placeholder="Telefone"
+                                        id="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                      <label>Complemento</label>
+                                      <input class="au-input au-input--full border-input" type="text" name="Complemento"
+                                        placeholder="Complemento" id="complemento">
+                                    </div>
+                                      <div class="offset-10 col-10  pr-5">
+                                          <button class="btn btn-primary " type="button" onclick=" enviarCliente()">Salvar</button>
+                                      </div>
+                                  </div>
+                                </div>
                                 <!--
                                 <input class="au-input au-input--full border-input " type="text" name="cliente"
                                   placeholder="Nome Cliente" >
 -->
-                                <select class="form-control border-input " name="Produto" id="Nome_cliente">
+                                <select class="form-control border-input mt-2 " name="Produto" id="Nome_cliente">
                                   <option value=""></option>
                                 </select>
-                           
+
                               </div>
 
                               <div class="form-group col-md-2 text-center">
@@ -132,7 +214,7 @@
                               <div class=" text-center col-12 col-md-5 ">
                                 <label for="">Tipo</label><br>
                                 <div class="form-check  form-check-inline  text-center">
-                                  <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1"
+                                  <input class="form-check-input border-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                     value="Consumo" checked>
                                   <label class="form-check-label" for="exampleRadios1">
                                     Consumo
@@ -166,7 +248,7 @@
                                   <option value=""></option>
                                 </select>
 
-                                <input class="au-input au-input--full" type="text" name="observacao"
+                                <input class="au-input au-input--full border-input" type="text" name="observacao"
                                   placeholder="Obs deste Produto " id="Obs_vendas">
 
                                 <div class="form-group mt-1 adicional" id="Adicional" style="display: none;">
@@ -216,13 +298,7 @@
                       </table>
                     </div>
                     <div style="border: 1px grey solid;">
-                      <div class="row justify-content-center text-center mt-3">
-                        <div class="form-group offset-md-9 col-md-2 col-6 text-center">
-                          <label>Desconto</label>
-                          <input class="au-input au-input--full text-center font_vendas" type="text" name="desconto"
-                            id="Desconto_vendas" placeholder="0.00" min="0" style="border: 1px green solid;">
-                        </div>
-                      </div>
+                    
                       <div class="row justify-content-center  text-center ">
                         <div class="form-group offset-md-7 col-md-2 col-5">
                           <label for="">Total Produtos</label>
@@ -237,6 +313,13 @@
                             style="border: 1px green solid;">
                         </div>
 
+                      </div>
+                      <div class="row justify-content-center text-center mt-3">
+                        <div class="form-group offset-md-9 col-md-2 col-6 text-center">
+                          <label>Desconto</label>
+                          <input class="au-input au-input--full text-center font_vendas" type="text" name="desconto"
+                            id="Desconto_vendas" placeholder="0.00" min="0" style="border: 1px green solid;">
+                        </div>
                       </div>
                     </div>
                     <div class="form-group row justify-content-center text-center mt-5 ">
@@ -339,6 +422,40 @@
 
     });
   </script>
+   <script src="js/utils/jquery.mask.js"></script>
+   <script src="js/utils/jquery.correios.min.js"></script>
+   <script src="js/utils/jquery.quick.search.js"></script>
+   <script>
+     $("#celular").mask("(00) 00000-0000");
+     $("#telefone").mask("(00) 0000-0000");
+     $("#modalCelular").mask("(00) 0000-0000");
+     /*função cep correios*/
+     $("#cep").mask("00000-000");
+     var typingTimer; //timer identifier
+     var doneTypingInterval = 1000; //time in ms, 1 second for example
+     $("#cep").keydown(function () {
+       clearTimeout(typingTimer);
+       if ($('#cep').val) {
+         typingTimer = setTimeout(doneTyping, doneTypingInterval);
+       }
+     })
+ 
+     function doneTyping() {
+       let cep = $('#cep').val();
+       let httpCorreio =
+         ` https://webmaniabr.com/api/1/cep/${cep}/?app_key=Fx03yD7mTXbZ57X7LtdGjUW3l5eswMF9&app_secret=6WcBEPTDX9wzl90y7uBSaruT6tohhqWJe2I3wDYYI1s6aAi4`;
+ 
+       $.ajax({
+         url: httpCorreio,
+         type: 'GET'
+       }).then(function (response) { //
+         $("#bairro").val(response.bairro);
+         $("#endereco").val(response.endereco);
+         $("#cidade").val(response.cidade);
+         $("#uf").val(response.uf);
+       });
+     }
+   </script>
   <script src="js/vendas.js"> </script>
 </body>
 
