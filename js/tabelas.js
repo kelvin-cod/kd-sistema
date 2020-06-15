@@ -8,6 +8,15 @@ $.ajax({
         var tbHTML = '';
         objCategoria = {};
         let quantidade_total;
+        let vet = []
+        console.log(response)
+
+        $.each(response, function (i, item) {
+            if (item.idPedido == item.pedido) {
+                vet.push(item)
+            }
+            console.log(vet)
+        });
         $.each(response, function (i, item) {
             let data = new Date(item.data_venda);
             tbHTML +=
