@@ -5,6 +5,10 @@ var user = JSON.parse(sessionStorage.user); // pega user do session
 var objProdutos = {};
 var objCategoria = {};
 let idExcluirFornecedor;
+var gif = '<img width="100" src="https://pa1.narvii.com/6890/f52432aea86cab93504a3e469767a0fdc6caea3cr1-320-240_hq.gif" >';
+
+$("#gif").append(gif);
+$("#gif").hide()
 /**----------------------------------------------------------------- */
 $('#fornecedor').change(function () {
     combofornecedorNovo = $(this).val()
@@ -42,12 +46,12 @@ function fazerRequisicaoUM(id) {
 //var get_url_fornecedor = 'http://localhost:3000/produtos/fornecedores';
 //var get_url_fornecedor = 'https://kd-gerenciador.herokuapp.com/produtos/fornecedor';
 var get_url_fornecedor = 'https://kd-gerenciador.herokuapp.com/fornecedores/listar';
-let get_url = 'https://kd-gerenciador.herokuapp.com/categorias/listar';
+let get_url_categoria = 'https://kd-gerenciador.herokuapp.com/categorias/listar';
 var vet_ativo_categoria = [];
 var vet_inativo_categoria = [];
 
 $.ajax({
-    url: get_url,
+    url: get_url_categoria ,
     type: 'GET'
 }).done(function (response) { //
 
@@ -210,7 +214,7 @@ $.ajax({
                 '</button>' +
                 '</td>' +
                 '<td><button type="button" onclick="excluir(' + item.idProduto + ',' + 1 + ')" ' +
-                'class="btn btn-danger" data-toggle="modal" data-target="#excluirModal">' +
+                'class="btn btn-danger" >' +
                 '<i class="fas fa-trash"></i>' +
                 '</button>' +
                 '</td>' +
@@ -225,6 +229,8 @@ function teste(id) {
     fazerRequisicaoUM(idProduto);
     return idProduto;
 }
+
+
 /**------------------------------------------------------------------------------------------------------------ */
 function editarProduto(_id) {
     let produto;
@@ -260,33 +266,22 @@ var objexcluir = {
     idProduto: ''
 };
 
-function excluirSim() {
-    // var post_url = "http://localhost:3000/produtos/excluirum/" + objexcluir.idProduto;
-
-    $.ajax({
-        url: post_url,
-        type: 'POST',
-        data: objexcluir
-    }).done(function (response) { //
-
-        objexcluir.idProduto = '';
-        document.location.reload();
-
-    });
-}
-
 function excluir(id, tipo) {
     objexcluir.idProduto = id;
 
     $('#modalExcluir').modal('show');
+    let botao = '<button type="button" class="btn btn-success font-weight-bold ml-5"' +
+        '   name="button" id="modal-btn-sim">  ' +
+        '  <i class = "fas fa-check"> </i> Sim </button>';
 
+    $("#botao_excluir").append(botao);
     switch (tipo) {
         case 1:
-            let post_url = "https://kd-gerenciador.herokuapp.com/produtos/excluirum/";
+            let excluir_url = "https://kd-gerenciador.herokuapp.com/produtos/excluirum/";
 
             $("#modal-btn-sim").click(() => {
                 $.ajax({
-                    url: `${post_url + id}`,
+                    url: `${  excluir_url + id}`,
                     type: 'POST',
                     data: objexcluir
                 }).done(function (response) { //
@@ -487,8 +482,9 @@ $("#excluir_Categoria").click(() => {
 
 function excluirCategoria() {
 
-    let delete_url_categoria = "https://kd-gerenciador.herokuapp.com/categorias/excluir/";
-
+  let delete_url_categoria = "https://kd-gerenciador.herokuapp.com/categorias/excluir/";
+   // let delete_url_categoria="http://localhost:3000/categorias/excluir/"
+    $("gif").show()
     $.ajax({
         url: `${delete_url_categoria + idExcluirCategoria}`,
         type: 'POST'
@@ -498,7 +494,7 @@ function excluirCategoria() {
         document.location.reload();
 
     }).catch(function (err) {
-        alert(err)
+       console.log(err.responseText)
     });
 } //função para excluir categoria
 
@@ -592,7 +588,7 @@ $("#fornecedor_modal").click(() => {
     $("#email").val("");
     $("#represetante").val("");
     $("#fantasia").val("");
-
+    $("#Estatus").val()
     //atribui botao a div no html
     $("#botaoEnviarFornecedor").append(botao);
 
@@ -608,6 +604,7 @@ function enviarFornecedor() {
         telefone: "",
         celular: "",
         email: "",
+        EstatusFornecedor: "",
         representante: "",
         idUsuario: 0
     }
@@ -618,9 +615,10 @@ function enviarFornecedor() {
     objFornecedor.telefone = $("#telefone").val();
     objFornecedor.email = $("#email").val();
     objFornecedor.fantasia = $("#fantasia").val();
+    objFornecedor.EstatusFornecedor = $("input[name='statusFornecedor']:checked").val()
     objFornecedor.idUsuario = user.idUsuario;
     //console.log(objFornecedor)
-
+    $("#gif").show();
     $.ajax({
         url: post_url_fornecedor,
         type: 'POST',
@@ -658,7 +656,6 @@ function editarFornecedor(_id) {
 
     $("#botaoEnviarFornecedor").append(botao);
     $('#modal_Fornecedor').modal('show');
-    return idCategoria;
 }
 
 function atualizarFornecedor(_id) {
@@ -685,7 +682,7 @@ function atualizarFornecedor(_id) {
 
     //let put_url_fornecedor = 'http://localhost:3000/fornecedores/atualizar/' + _id;
     let put_url_fornecedor = 'https://kd-gerenciador.herokuapp.com/fornecedores/atualizar/' + _id;
-
+    $("#gif").show();
     $.ajax({
         url: put_url_fornecedor,
         type: 'PUT',

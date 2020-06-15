@@ -350,9 +350,7 @@
     $("#modal-btn-sim").click(() => {
         $('#gif').show();
         const post_url = "https://kd-gerenciador.herokuapp.com/vendas/concluir";
-        var gif = '<img src="https://pa1.narvii.com/6890/f52432aea86cab93504a3e469767a0fdc6caea3cr1-320-240_hq.gif" >';
-
-        $("#gif").append(gif);
+   
         $("#confirmar").hide();
 
         console.log(Venda)

@@ -154,13 +154,13 @@
                   <div class="text-center">
                     <h2 class=" mb-1 mt-3">Fornecedores</h2>
                     <div class="form-group ">
-  
+
                       <input type="checkbox" class="checkbox1" name="inativosFornecedores" id="inativosFornecedores"
                         value="1">
                       <label for="inativosFornecedores" class="mt-1 "> Mostrar Inativos</label>
                     </div>
                   </div>
-                
+
                   <div class="row pr-3 pl-3" id="tblFornecedor">
 
                     <div class=" bg-light bg-burguer-center table-responsive">
@@ -174,9 +174,9 @@
                             <th scope="col">Fantasia</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Telefone</th>
-                          <!--<th scope="col">Email</th> --> 
-                            <th scope="col">Status</th>                     
-                            <th scope="col">Editar</th>                        
+                            <!--<th scope="col">Email</th> -->
+                            <th scope="col">Status</th>
+                            <th scope="col">Editar</th>
                           </tr>
                         </thead>
                         <tbody id="tabelaFornecedor" class="text-center font-weight-bold">
@@ -350,6 +350,7 @@
                 </form>
               </div>
               <div class="modal-footer text-center row justify-content-center  mb-2">
+                <div class="gif col-md-12" id="gif"></div>
                 <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
                   <i class="fas fa-times"></i> Fechar
                 </button>
@@ -375,10 +376,13 @@
               <div class="modal-body">
                 <form id="formFornecedor">
                   <div class="bg-burguer-center inputs ">
+
                     <div class="row ml-1 mr-1">
+
                       <div class="form-group col-md-2 col-3">
                         <label for="idFornecedor">ID</label>
                         <input id="idFornecedor" class="form-control" type="text" name="idFornecedo" disabled>
+
                       </div>
 
                       <div class="offset-md-9 col-md-1 offset-7 col-1" id="checkboxFornecedor">
@@ -413,7 +417,7 @@
                         <label for="representante">Representante</label>
                         <input id="representante" class="form-control" type="text" name="representante">
                       </div>
-                    
+
                     </div>
                     <div class="row ml-1 mr-1 ">
 
@@ -437,13 +441,16 @@
                     </div>
                 </form>
               </div>
+            
               <div class="modal-footer text-center row justify-content-center  mb-2">
+                <div class="gif col-md-12" id="gif"></div>
                 <button type="button" class="btn btn-danger mr-5" data-dismiss="modal">
                   <i class="fas fa-times"></i> Fechar
                 </button>
                 <div id="botaoEnviarFornecedor">
 
                 </div>
+
               </div>
             </div>
           </div>
@@ -506,8 +513,9 @@
             </form>
 
           </div>
-          <div class="modal-footer text-center row justify-content-center mb-2">
 
+          <div class="modal-footer text-center row justify-content-center mb-2">
+            <div class="gif col-md-12" id="gif"></div>
             <button type="button" class="btn btn-danger font-weight-bold mr-5" data-dismiss="modal">
               <i class="fas fa-times"></i> Fechar</button>
 
@@ -529,7 +537,7 @@
           </div>
           <div class="modal-body m-4 " id="modal_body_excluir">
             <div>
-              <h2 class="text-center">Deseja Realmente Excluir?</h2>
+              <h3 class="text-center">Deseja Realmente Excluir?</h3>
             </div>
             <div class="gif" id="gif"></div>
           </div>

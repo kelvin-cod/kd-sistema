@@ -1267,7 +1267,7 @@ try {
     loading: true,
     loadingParentElement: 'html',
     loadingClass: 'page-loader',
-    loadingInner: '<div class="page-loader__spin"><img class="text-center" src="../images/logo branco.png" ></div>',
+    loadingInner: '<div class="page-loader__spin"></div>',
     timeout: false,
     timeoutCountdown: 5000,
     onLoadEvent: true,
