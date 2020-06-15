@@ -323,14 +323,14 @@ input[type=checkbox] {
 */
 .page-wrapper {
     overflow: hidden;
-    background: #e5e5e5;
+    background: #000000;
 
 }
 
 @media (max-width: 991px) {
     .page-wrapper {
         overflow: auto;
-        background: #e5e5e5;
+        background: #000000;
     }
 }
 
