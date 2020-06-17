@@ -1,3 +1,9 @@
+var gif = '<img width="100" src="https://pa1.narvii.com/6890/f52432aea86cab93504a3e469767a0fdc6caea3cr1-320-240_hq.gif" >';
+
+$("#gif").append(gif);
+$("#gif").hide();
+/*=======================================================================================*/
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -35,7 +41,6 @@ $("#submit").click(function () {
 
     let aux = $("#foto")[0].files[0];;
 
-
     obj.nome = $("#nome").val();
     obj.email = $("#email").val();
     obj.password = $("#password").val();
@@ -47,7 +52,7 @@ $("#submit").click(function () {
     // let img_url = "https://api.imgbb.com/1/upload?key=cc6802445a8fe48713fbbf176fa47179";
 
     let post_url = "https://kd-gerenciador.herokuapp.com/user/create";
-
+    $("#gif").show();
     $.ajax({
         url: post_url,
         type: 'POST',
@@ -56,7 +61,6 @@ $("#submit").click(function () {
         var teste44 = $("#email").val();
 
         window.location.href = "login.html";
-
 
     }).fail(function (response) {
         console.log(response)
