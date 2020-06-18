@@ -3,7 +3,10 @@ try {
     $("#nome").val(user.Nome);
     $("#email").val(user.Email);
     $("#email_recuperacao").val(user.Email_recuperacao);
-    $("#image").attr('src', user.Foto);
+
+    if(user.Foto != null){
+        $("#image").attr('src', user.Foto);
+    }
     getUser()
 } catch (error) {
     console.log(error)
@@ -31,7 +34,6 @@ function encodeImgtoBase64(element) {
 
     reader.onloadend = function () {
         result = reader.result;
-        console.log(result)
     }
     reader.readAsDataURL(img);
 };
@@ -123,7 +125,7 @@ $("#atualizar").click(() => {
 
         setTimeout(function () {
             document.location.reload();
-        }, 500);
+        }, 600);
         
      
 
