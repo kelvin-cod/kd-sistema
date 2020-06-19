@@ -889,7 +889,7 @@ select {
 
 @media (max-width: 991px) {
     .au-input--xl {
-        min-width: 310px;
+        min-width:92%;
     }
 }
 

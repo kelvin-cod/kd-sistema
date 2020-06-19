@@ -11,6 +11,11 @@ try {
 } catch (error) {
     console.log(error)
 }
+var gif = '<img width="100" src="https://pa1.narvii.com/6890/f52432aea86cab93504a3e469767a0fdc6caea3cr1-320-240_hq.gif" >';
+
+$("#gif").append(gif);
+$("#gif").hide();
+
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -114,7 +119,7 @@ $("#atualizar").click(() => {
     if (obj.foto == null) {
         obj.foto = user.Foto
     }
-
+    $("#gif").show();
     $.ajax({
         url: put_url + user.idUsuario,
         type: 'PUT',
