@@ -194,7 +194,7 @@ $.ajax({
     vetorBarra.push(d.Categoria);
   });
 
-  $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2));
+  $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2) + 127,5);
 
   graficoLinhas(vetorDados, vetorBarra, "widgetChart8", 'Produtos');
 
