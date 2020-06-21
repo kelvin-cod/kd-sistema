@@ -115,7 +115,7 @@ $.ajax({
     vetorBarra.push(d.Categoria);
   });
 
-  $('#painel_valor_pago').text(parseFloat(somarPagoEstoque));
+  $('#painel_valor_pago').text(somarPagoEstoque.toFixed(2));
 
   graficoLinhas(vetorDados, vetorBarra, "widgetChart5", 'Valor');
 }).catch(function (err) {
@@ -193,7 +193,7 @@ $.ajax({
     vetorDados.push(parseFloat(d.Lucro.toFixed(2)));
     vetorBarra.push(d.Categoria);
   });
-  somarTotalLucro= somarTotalLucro + 126,50
+  somarTotalLucro= somarTotalLucro + 127
   $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2) );
 
   graficoLinhas(vetorDados, vetorBarra, "widgetChart8", 'Produtos');
