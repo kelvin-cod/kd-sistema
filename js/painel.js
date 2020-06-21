@@ -90,7 +90,7 @@ $.ajax({
   })
 
   graficoLinhasSimples(vetorDados, retornaMes(vetorBarra), "widgetChart4", 'Vendas');
-  $('#painel_vendas_total').text(somarTotalVendas)
+  $('#painel_vendas_total').text(somarTotalVendas.toFixed(2))
 
 }).catch(function (err) {
   console.error(err)
