@@ -367,7 +367,7 @@ input[type=checkbox] {
     padding-top: 116px;
     min-height: 100vh;
     background-color: #d3d3d3;
-    background-image: url("././images/Background.png") !important;
+    background-image: url("../images/Background.png") !important;
     background: fixed;
 }
 
