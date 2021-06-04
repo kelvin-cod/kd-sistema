@@ -17,6 +17,10 @@ tendo em mãos dados importantes, como os produtos mais vendidos, os menos
 vendidos e quanto obtiveram de lucro ou prejuízo. Assim, podemos dizer que através
 desse sistema é possível ao usuário avaliar melhor seu negócio e tomar decisões
 assertivas, permanecendo ativo e competitivo no mercado.
+![image](https://user-images.githubusercontent.com/38567544/120850395-c1d44600-c54d-11eb-8664-c9f5315fa90a.png)
+![image](https://user-images.githubusercontent.com/38567544/120850475-e2040500-c54d-11eb-9ef8-c2815e50187f.png)![image](https://user-images.githubusercontent.com/38567544/120850550-f8aa5c00-c54d-11eb-9420-a83b32aab1b7.png)
+
+
 
 
 
