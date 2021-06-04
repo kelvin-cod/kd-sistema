@@ -1,7 +1,6 @@
 .altura-painel {
-    height: 755px;
+    height: 800px;
 }
-
 
 @media (max-width: 1024px) {
 
