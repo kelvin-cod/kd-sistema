@@ -173,7 +173,12 @@ $.ajax({
     $('#tabelaFornecedor').append(tblFornecedor);
     esconderInativos("tabelaFornecedor", "hide", 5);
 });
-
+        /*Organiza o Array */
+        response = response.sort(function compare(a, b) {
+            if (a.idProduto < b.idProduto) return -1;
+            if (a.idProduto > b.idProduto) return 1;
+            return 0;
+        })
 /* funçao traz combo*/
 $.ajax({
     url: 'https://kd-gerenciador.herokuapp.com/produtos/listar',
@@ -183,12 +188,7 @@ $.ajax({
     success: function (response) {
         var trHTML = '';
         let produto = "produto";
-        /*Organiza o Array */
-        response = response.sort(function compare(a, b) {
-            if (a.idProduto < b.idProduto) return -1;
-            if (a.idProduto > b.idProduto) return 1;
-            return 0;
-        })
+
         objProdutos = response; // atribui o obj de resposta
         //Popula a tabela com a respostas
         $.each(response, function (i, item) {

@@ -13,7 +13,7 @@ $(document).ready(function () {
   $.get("navbar-desktop.html", function (data) {
     $(".navbar-desktop-html").append(data);
   });
-})
+});
 
 // USE STRICT
 "use strict";

@@ -1,7 +1,7 @@
 {
-  "name": "cooladmin-master",
+  "name": "kd-sistema",
   "version": "1.0.0",
-  "description": "**CoolAdmin** is a responsive Bootstrap 4.1 admin template. It provides you with a collection of ready to use code snippets and utilities, custom pages, loads of charts, 4 different dashboard variations, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/cooladmin/index.html",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "npx-server": "0.0.42",
-    "server": "^1.0.27"
+    "server": "^1.0.33"
   }
 }

@@ -1,57 +1,25 @@
-# CoolAdmin Bootstrap 4.1 Admin Dashboard Template
-**CoolAdmin** is a responsive Bootstrap 4.1 admin template. It provides you with a collection of ready to use code snippets and utilities, custom pages, loads of charts, 4 different dashboard variations, a collection of applications and some useful widgets. Preview of this awesome admin template available here: https://colorlib.com/polygon/cooladmin/index.html
+Este projeto descreve o desenvolvimento de um sistema web responsivo, projetado
+para facilitar os processos de uma lanchonete, como serviço de vendas, controle de
+estoque, registro de clientes, produtos, fornecedores e entregas. Na criação deste
+software, foram estudadas as rotinas e as necessidades operacionais de uma
+lanchonete e a partir dos dados obtidos, foi estruturado, desenvolvido e aplicado o
+conhecimento específico da tecnologia da informação. O objetivo foi desenvolver um
+software personalizado na área de fast-food, para ajudar as empresas a obter
+informações importantes, precisas e confiáveis para se manter em operação no
+mercado competitivo. Atualmente no ramo de prestação de serviços, as empresas
+buscam reduzir custos, melhorar a qualidade e a satisfação do cliente e
+consequentemente, crescer e aumentar seus lucros em um mercado muito
+competitivo. O sistema foi desenvolvido para otimizar os processos de serviço,
+oferecendo informações relevantes e oportunas, para que os usuários possam
+trabalhar com dados precisos e verdadeiros, ajudando a reduzir custos e aumentar os
+lucros. Por meio desse software, o usuário obterá relatórios extraídos do sistema,
+tendo em mãos dados importantes, como os produtos mais vendidos, os menos
+vendidos e quanto obtiveram de lucro ou prejuízo. Assim, podemos dizer que através
+desse sistema é possível ao usuário avaliar melhor seu negócio e tomar decisões
+assertivas, permanecendo ativo e competitivo no mercado.
 
-# Preview
 
-### Screenshot
 
-![CoolAdmin admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/Dashboard-v2.jpg)
 
-### Demo Site: [[Here]](https://colorlib.com/polygon/cooladmin/index.html)
+link para demo: https://kelvin-cod.github.io/kd-sistema/
 
-### TOC
-- [Built With](#built-with)
-- [Changelog](#changelog)
-- [Authors](#authors)
-- [License](#license)
-
-### Built With
-
-- [Accordion.JS](https://github.com/awps/Accordion.JS)
-- [animsition](http://blivesta.github.io/animsition)
-- [bootstrap-progressbar](https://github.com/minddust/bootstrap-progressbar)
-- [Bootstrap](http://getbootstrap.com/)
-- [Chart.js](http://www.chartjs.org/)
-- [Counter-Up](https://github.com/bfintal/Counter-Up)
-- [CSS Hamburgers](https://github.com/jonsuh/hamburgers)
-- [Full Calendar](https://fullcalendar.io)
-- [Fontawesome](http://fontawesome.io/)
-- [jquery-circle-progress](http://kottenator.github.io/jquery-circle-progress/)
-- [jQuery](https://jquery.com/)
-- [JQVMap](https://jqvmap.com/)
-- [Lightbox2](https://github.com/lokesh/lightbox2)
-- [Material Design Icons](https://github.com/Templarian/MaterialDesign-Webfont)
-- [perfect-scrollbar](https://github.com/utatti/perfect-scrollbar)
-- [ProgressBar.js](https://github.com/kimmobrunfeldt/progressbar.js)
-- [Select2](https://github.com/select2/select2)
-- [Slick](http://kenwheeler.github.io/slick/)
-- [Sweetalwer](https://github.com/sweetalert2/sweetalert2)
-- [The Final Countdown for jQuery](http://hilios.github.io/jQuery.countdown/)
-- [WOW](https://github.com/matthieua/WOW)
-
-### Changelog
-#### V 1.0.0
-Initial Release
-### Authors
-[Colorlib](https://colorlib.com)
-
-### More info
-- [Bootstrap dashboards](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)
-- [Angular dashboards](https://colorlib.com/wp/angularjs-admin-templates/)
-- [Free Admin Dashboards](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)
-- [Website Templates](https://colorlib.com/wp/templates/)
-- [Free WordPress Themes](https://colorlib.com/wp/free-wordpress-themes/)
-
-### License
-
-CoolAdmin is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. But you always need to state that Colorlib is the original author of this template.
