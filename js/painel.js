@@ -37,7 +37,7 @@ $.ajax({
     vetorDados.push(d.Quantidade);
     vetorBarra.push(d.Categoria);
   });
-  
+
   //exbir a soma dos produtos
   $('#painel_produtos').text(somarProdutos);
 
@@ -193,8 +193,8 @@ $.ajax({
     vetorDados.push(parseFloat(d.Lucro.toFixed(2)));
     vetorBarra.push(d.Categoria);
   });
-  somarTotalLucro= somarTotalLucro + 127
-  $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2) );
+// somarTotalLucro = somarTotalLucro + 127
+  $('#painel_estoque_lucro').text(somarTotalLucro.toFixed(2));
 
   graficoLinhas(vetorDados, vetorBarra, "widgetChart8", 'Produtos');
 
